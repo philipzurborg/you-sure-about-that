@@ -13,20 +13,32 @@ const PHASES = { WAGER: "wager", QUESTION: "question", RESULT: "result" };
 const TIMER_SECONDS = 30;
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
-const STORAGE_KEY = "ysat_player";
-const SEEN_KEY    = "ysat_seen";
-const todayStr    = () => new Date().toISOString().slice(0, 10);
+const STORAGE_KEY    = "ysat_player";
+const SEEN_KEY       = "ysat_seen";
+const SCHEMA_VERSION = 1;
+const todayStr       = () => new Date().toISOString().slice(0, 10);
 
 const defaultStats = () => ({
+  schemaVersion: SCHEMA_VERSION,
   points: 0, streak: 0, totalCorrect: 0, totalPlayed: 0,
   lastPlayedDate: null, lastPlayedDay: null, history: [],
 });
+
+const migrateStats = (saved) => {
+  const version = saved.schemaVersion ?? 0;
+  if (version < 1) {
+    // v0 → v1: add schemaVersion, everything else stays as-is
+    saved = { ...saved, schemaVersion: 1 };
+  }
+  // Future migrations go here: if (version < 2) { ... }
+  return saved;
+};
 
 const loadStats = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return defaultStats();
-    const saved = JSON.parse(raw);
+    let saved = migrateStats(JSON.parse(raw));
     if (saved.lastPlayedDate) {
       const daysDiff = Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000);
       if (daysDiff > 1) return { ...saved, points: 0, streak: 0 };
@@ -35,7 +47,7 @@ const loadStats = () => {
   } catch { return defaultStats(); }
 };
 
-const saveStats = (s) => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {} };
+const saveStats = (s) => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...s, schemaVersion: SCHEMA_VERSION })); } catch {} };
 
 // ─── Rules modal ──────────────────────────────────────────────────────────────
 const RULES = [
@@ -47,7 +59,7 @@ const RULES = [
   {
     icon: "?",
     heading: "Answer the question",
-    body: "A Final Jeopardy-style clue is revealed. You have 30 seconds to type your answer. Alternate spellings and last-name-only answers are accepted.",
+    body: "A trivia clue is revealed. You have 30 seconds to type your answer. Alternate spellings and last-name-only answers are accepted.",
   },
   {
     icon: "\u2713",
@@ -243,19 +255,27 @@ export default function App() {
   };
 
   const handleShare = () => {
-    const lines = [
+    const statusEmoji = result ? "\uD83D\uDFE9" : timedOut ? "\uD83D\uDFEA" : "\uD83D\uDFE5";
+    const statusText  = result ? "CORRECT" : timedOut ? "DID NOT COMPLETE" : "INCORRECT";
+    const trendEmoji  = result ? "\uD83D\uDCC8" : "\uD83D\uDCC9";
+
+    const text = [
       `You Sure About That? #${String(gameData.day).padStart(3, "0")}`,
-      result ? "Answered Correctly" : timedOut ? "Ran Out of Time" : "Answered Incorrectly",
-      `Category: ${gameData.category}`,
-      `Wagered: ${formatPoints(wagerLocked)} pts`,
-      `Total: ${formatPoints(stats.points)} pts`,
-      `Streak: ${stats.streak} days`,
+      `${statusEmoji} ${statusText}`,
+      `\uD83D\uDCB5 Wagered (${formatPoints(wagerLocked)} pts)`,
+      `${trendEmoji} New Total: ${formatPoints(stats.points)} pts`,
+      `\uD83D\uDD25 Streak: ${stats.streak}`,
       "",
-      "Play at yousureabout.that",
-    ];
-    navigator.clipboard.writeText(lines.join("\n")).then(() => {
-      setCopied(true); setTimeout(() => setCopied(false), 2000);
-    });
+      "yousureabout.that",
+    ].join("\n");
+
+    if (navigator.share) {
+      navigator.share({ text }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(text).then(() => {
+        setCopied(true); setTimeout(() => setCopied(false), 2000);
+      });
+    }
   };
 
   // ─── Main content renderer ────────────────────────────────────────────────
@@ -532,7 +552,7 @@ function ResultPhase({ result, wagerLocked, points, streak, totalCorrect, totalP
       <div style={S.streakMessage}>{streakMsg}</div>
 
       <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={handleShare}>
-        {copied ? "\u2713 Copied!" : "Share Result"}
+        {copied ? "\u2713 Copied to clipboard!" : "Share Result"}
       </button>
 
       {alreadyPlayed && (
