@@ -223,7 +223,7 @@ export default function App() {
   // ─── Game actions ─────────────────────────────────────────────────────────
   const handleWager = () => {
     const w = parseInt(wager, 10);
-    if (isNaN(w) || w < 0 || w > maxWager) return;
+    if (isNaN(w) || w < 1 || w > maxWager) return;
     const next = [...wagers];
     next[questionIndex] = w;
     setWagers(next);
@@ -336,7 +336,7 @@ export default function App() {
     const text = [
       `You Sure About That? #${String(gameData.day).padStart(3, "0")}`,
       squares,
-      `\uD83C\uDFB0 Total wagered today: ${formatPoints(totalWagered)} pts`,
+      `\uD83C\uDFB0 Total wagered: ${formatPoints(totalWagered)} pts`,
       `\uD83D\uDCB0 New total: ${formatPoints(displayPoints)} pts`,
       `\uD83D\uDD25 Streak: ${stats.streak}`,
     ].join("\n");
@@ -517,7 +517,7 @@ export default function App() {
 // ─── Wager phase ──────────────────────────────────────────────────────────────
 function WagerPhase({ wager, setWager, maxWager, handleWager, category, questionIndex, dayBudget, allocatedSoFar }) {
   const w     = parseInt(wager, 10);
-  const valid = !isNaN(w) && w >= 0 && w <= maxWager;
+  const valid = !isNaN(w) && w >= 1 && w <= maxWager;
   const pct   = valid ? Math.min(100, maxWager > 0 ? (w / maxWager) * 100 : 0) : 0;
   const remaining = dayBudget - allocatedSoFar;
 
@@ -545,8 +545,8 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
         <div style={S.wagerRow}>
           <div style={S.wagerInputWrap}>
             <span style={S.wagerCurrency}>&#9733;</span>
-            <input type="number" min={0} max={maxWager} value={wager}
-              onChange={e => setWager(e.target.value)} placeholder="0" style={S.wagerInput}
+            <input type="number" min={1} max={maxWager} value={wager}
+              onChange={e => setWager(e.target.value)} placeholder="1" style={S.wagerInput}
               onKeyDown={e => e.key === "Enter" && valid && handleWager()} />
           </div>
         </div>
@@ -707,12 +707,10 @@ function ResultPhase({ results, timedOuts, wagers, questions, finalPoints, strea
               <div style={{ ...S.breakdownIcon, color: accent }}>{icon}</div>
               <div style={S.breakdownContent}>
                 <div style={S.breakdownCategory}>{q.category}</div>
-                {!correct && (
-                  <div style={S.breakdownAnswer}>
-                    <span style={{ color: "var(--muted)", fontSize: 11 }}>Answer: </span>
-                    <span style={{ fontWeight: 600, color: "var(--text)" }}>{q.answer}</span>
-                  </div>
-                )}
+                <div style={S.breakdownAnswer}>
+                  <span style={{ color: "var(--muted)", fontSize: 11 }}>Answer: </span>
+                  <span style={{ fontWeight: 600, color: "var(--text)" }}>{q.answer}</span>
+                </div>
               </div>
               <div style={{ ...S.breakdownWager, color: correct ? "var(--green)" : "var(--red)" }}>
                 {correct ? "+" : "-"}{formatPoints(wagers[i] ?? 0)}
