@@ -2,14 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const GAME_DATA = {
-  day: 1,
-  category: "NFL",
-  question: "This quarterback won the most Super Bowl MVP awards in NFL history, earning the honor a record 5 times.",
-  answer: "Tom Brady",
-  alternateAnswers: ["brady", "thomas brady", "tom"],
-};
-
 const formatPoints = (n) => {
   if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(2).replace(/\.00$/, "") + "B";
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(2).replace(/\.00$/, "") + "M";
@@ -109,7 +101,57 @@ function RulesModal({ onClose, isOnboarding }) {
 export default function App() {
   const [stats, setStats] = useState(() => loadStats());
 
-  const alreadyPlayed = stats.lastPlayedDay === GAME_DATA.day;
+  // ─── Remote question state ─────────────────────────────────────────────────
+  const [gameData, setGameData]     = useState(null);
+  const [loading, setLoading]       = useState(true);
+  const [fetchError, setFetchError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+
+  // ─── Game state ────────────────────────────────────────────────────────────
+  const [phase, setPhase]             = useState(PHASES.WAGER);
+  const [wager, setWager]             = useState("");
+  const [answer, setAnswer]           = useState("");
+  const [result, setResult]           = useState(null);
+  const [timedOut, setTimedOut]       = useState(false);
+  const [wagerLocked, setWagerLocked] = useState(null);
+  const [checking, setChecking]       = useState(false);
+  const [copied, setCopied]           = useState(false);
+  const [matchMethod, setMatchMethod] = useState(null);
+  const [showInfo, setShowInfo]       = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(() => {
+    try { return !localStorage.getItem(SEEN_KEY); } catch { return true; }
+  });
+  const inputRef = useRef(null);
+
+  // ─── Fetch today's question ────────────────────────────────────────────────
+  useEffect(() => {
+    setLoading(true);
+    setFetchError(false);
+
+    fetch("/api/question")
+      .then(res => {
+        if (!res.ok) throw new Error("no question");
+        return res.json();
+      })
+      .then(data => {
+        setGameData(data);
+        // Restore UI state if this question was already played today
+        const played = stats.lastPlayedDay === data.day;
+        if (played) {
+          setPhase(PHASES.RESULT);
+          setResult(stats.history.at(-1)?.correct ?? null);
+          setTimedOut(stats.history.at(-1)?.timedOut ?? false);
+          setWagerLocked(stats.history.at(-1)?.wager ?? null);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setFetchError(true);
+        setLoading(false);
+      });
+  }, [retryCount]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const alreadyPlayed = gameData ? stats.lastPlayedDay === gameData.day : false;
 
   // Detect missed-day: saved data had a positive streak but today's loaded stats zeroed it
   const missedDay = (() => {
@@ -121,21 +163,6 @@ export default function App() {
       return Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000) > 1;
     } catch { return false; }
   })();
-
-  const [phase, setPhase]             = useState(alreadyPlayed ? PHASES.RESULT : PHASES.WAGER);
-  const [wager, setWager]             = useState("");
-  const [answer, setAnswer]           = useState("");
-  const [result, setResult]           = useState(alreadyPlayed ? (stats.history.at(-1)?.correct ?? null) : null);
-  const [timedOut, setTimedOut]       = useState(alreadyPlayed ? (stats.history.at(-1)?.timedOut ?? false) : false);
-  const [wagerLocked, setWagerLocked] = useState(alreadyPlayed ? (stats.history.at(-1)?.wager ?? null) : null);
-  const [checking, setChecking]       = useState(false);
-  const [copied, setCopied]           = useState(false);
-  const [matchMethod, setMatchMethod] = useState(null);
-  const [showInfo, setShowInfo]       = useState(false);
-  const [showOnboarding, setShowOnboarding] = useState(() => {
-    try { return !localStorage.getItem(SEEN_KEY); } catch { return true; }
-  });
-  const inputRef = useRef(null);
 
   const points       = stats.points;
   const streak       = stats.streak;
@@ -154,7 +181,7 @@ export default function App() {
     setShowOnboarding(false);
   };
 
-  // ─── Answer matching tiers ───────────────────────────────────────────────
+  // ─── Answer matching tiers ────────────────────────────────────────────────
   const normalize = (s) =>
     s.toLowerCase().replace(/['''"".,()\-]/g, "").replace(/\b(the|a|an)\b/g, "").replace(/\s+/g, " ").trim();
 
@@ -209,9 +236,9 @@ export default function App() {
         totalCorrect: prev.totalCorrect + (isCorrect ? 1 : 0),
         totalPlayed: prev.totalPlayed + 1,
         lastPlayedDate: todayStr(),
-        lastPlayedDay: GAME_DATA.day,
+        lastPlayedDay: gameData.day,
         history: [...prev.history, {
-          day: GAME_DATA.day, date: todayStr(), correct: isCorrect,
+          day: gameData.day, date: todayStr(), correct: isCorrect,
           timedOut: isTimeout, wager: w, pointsBefore: prev.points, pointsAfter,
         }],
       };
@@ -228,12 +255,12 @@ export default function App() {
       return;
     }
     const ua = answer.trim();
-    const altsLc = GAME_DATA.alternateAnswers.map(a => a.toLowerCase());
+    const altsLc = gameData.alternateAnswers.map(a => a.toLowerCase());
     let res =
-      tierExact(ua.toLowerCase(), GAME_DATA.answer.toLowerCase(), altsLc) ||
-      tierNorm(ua, GAME_DATA.answer, GAME_DATA.alternateAnswers) ||
-      tierKeyword(ua, GAME_DATA.answer) ||
-      await tierLLM(ua, GAME_DATA.answer, GAME_DATA.question, GAME_DATA.category);
+      tierExact(ua.toLowerCase(), gameData.answer.toLowerCase(), altsLc) ||
+      tierNorm(ua, gameData.answer, gameData.alternateAnswers) ||
+      tierKeyword(ua, gameData.answer) ||
+      await tierLLM(ua, gameData.answer, gameData.question, gameData.category);
     setMatchMethod(res.method);
     setResult(res.match);
     commitResult(res.match, false, wagerLocked);
@@ -242,9 +269,9 @@ export default function App() {
 
   const handleShare = () => {
     const lines = [
-      `You Sure About That? #${String(GAME_DATA.day).padStart(3, "0")}`,
+      `You Sure About That? #${String(gameData.day).padStart(3, "0")}`,
       result ? "Answered Correctly" : timedOut ? "Ran Out of Time" : "Answered Incorrectly",
-      `Category: ${GAME_DATA.category}`,
+      `Category: ${gameData.category}`,
       `Wagered: ${formatPoints(wagerLocked)} pts`,
       `Total: ${formatPoints(stats.points)} pts`,
       `Streak: ${stats.streak} days`,
@@ -254,6 +281,57 @@ export default function App() {
     navigator.clipboard.writeText(lines.join("\n")).then(() => {
       setCopied(true); setTimeout(() => setCopied(false), 2000);
     });
+  };
+
+  // ─── Main content renderer ────────────────────────────────────────────────
+  const renderMain = () => {
+    if (loading) {
+      return (
+        <div style={S.card} className="fadeIn">
+          <div style={S.loadingWrap}>
+            <div style={S.loadingSpinner} className="spinner" />
+            <div style={S.loadingText}>Loading today&apos;s question&hellip;</div>
+          </div>
+        </div>
+      );
+    }
+
+    if (fetchError || !gameData) {
+      return (
+        <div style={S.card} className="fadeIn">
+          <div style={S.errorWrap}>
+            <div style={S.errorIcon}>!</div>
+            <div style={S.errorTitle}>No question today</div>
+            <div style={S.errorText}>
+              We couldn&apos;t load today&apos;s question. Check back later or try refreshing.
+            </div>
+            <button
+              style={{ ...S.mainBtn, background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)" }}
+              onClick={() => setRetryCount(c => c + 1)}
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <>
+        {phase === PHASES.WAGER && (
+          <WagerPhase {...{ wager, setWager, maxWager, minWager, handleWager }}
+            category={gameData.category} />
+        )}
+        {phase === PHASES.QUESTION && (
+          <QuestionPhase {...{ answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef }}
+            category={gameData.category} question={gameData.question} />
+        )}
+        {phase === PHASES.RESULT && (
+          <ResultPhase {...{ result, wagerLocked, points, streak, totalCorrect, totalPlayed, handleShare, copied, matchMethod, timedOut, alreadyPlayed }}
+            correctAnswer={gameData.answer} userAnswer={answer} />
+        )}
+      </>
+    );
   };
 
   return (
@@ -268,7 +346,9 @@ export default function App() {
         {/* ── Header ── */}
         <header style={S.header}>
           <div style={S.headerInner}>
-            <div style={S.dayBadge}>#{String(GAME_DATA.day).padStart(3, "0")}</div>
+            <div style={S.dayBadge}>
+              {gameData ? `#${String(gameData.day).padStart(3, "0")}` : "\u2026"}
+            </div>
             <h1 style={S.title}>
               <span style={S.titleYou}>You</span>
               <span style={S.titleSure}> Sure </span>
@@ -287,7 +367,7 @@ export default function App() {
         </header>
 
         {/* ── Missed-day banner ── */}
-        {missedDay && phase === PHASES.WAGER && (
+        {missedDay && phase === PHASES.WAGER && !loading && (
           <div style={S.missedDayBanner} className="fadeIn">
             <span style={S.missedDayIcon}>&#x1F494;</span>
             <div>
@@ -298,19 +378,7 @@ export default function App() {
         )}
 
         {/* ── Main card ── */}
-        <main>
-          {phase === PHASES.WAGER && (
-            <WagerPhase {...{ wager, setWager, maxWager, minWager, handleWager }} />
-          )}
-          {phase === PHASES.QUESTION && (
-            <QuestionPhase {...{ answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef }}
-              category={GAME_DATA.category} question={GAME_DATA.question} />
-          )}
-          {phase === PHASES.RESULT && (
-            <ResultPhase {...{ result, wagerLocked, points, streak, totalCorrect, totalPlayed, handleShare, copied, matchMethod, timedOut, alreadyPlayed }}
-              correctAnswer={GAME_DATA.answer} userAnswer={answer} />
-          )}
-        </main>
+        <main>{renderMain()}</main>
 
         <footer style={S.footer}>
           {alreadyPlayed
@@ -323,7 +391,7 @@ export default function App() {
 }
 
 // ─── Wager phase ──────────────────────────────────────────────────────────────
-function WagerPhase({ wager, setWager, maxWager, minWager, handleWager }) {
+function WagerPhase({ wager, setWager, maxWager, minWager, handleWager, category }) {
   const w     = parseInt(wager, 10);
   const valid = !isNaN(w) && w >= minWager && w <= maxWager;
   const pct   = valid ? Math.min(100, (w / maxWager) * 100) : 0;
@@ -337,7 +405,7 @@ function WagerPhase({ wager, setWager, maxWager, minWager, handleWager }) {
       <div style={S.phaseTag}>PLACE YOUR WAGER</div>
       <div style={S.categoryReveal}>
         <div style={S.categoryLabel}>Today&apos;s Category</div>
-        <div style={S.categoryName} className="popIn">{GAME_DATA.category}</div>
+        <div style={S.categoryName} className="popIn">{category}</div>
       </div>
       <div style={S.wagerSection}>
         <div style={S.wagerRow}>
@@ -450,7 +518,6 @@ function ResultPhase({ result, wagerLocked, points, streak, totalCorrect, totalP
   const bannerLabel = result ? "CORRECT!" : timedOut ? "TIME'S UP!" : "INCORRECT";
   const accent      = result ? "var(--green)" : timedOut ? "var(--purple)" : "var(--red)";
 
-  // Streak messaging: after a correct answer keep streak going; after wrong still come back
   const streakMsg = result
     ? "Come back tomorrow to keep your streak and points!"
     : "Come back tomorrow \u2014 you can still keep your streak going!";
@@ -487,7 +554,6 @@ function ResultPhase({ result, wagerLocked, points, streak, totalCorrect, totalP
         <Stat label="Games"         value={totalPlayed} />
       </div>
 
-      {/* Come-back reminder */}
       <div style={S.streakMessage}>{streakMsg}</div>
 
       <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={handleShare}>
@@ -541,6 +607,8 @@ const css = `
   .checking{display:inline-flex;align-items:center;gap:2px;}
   .dots{display:inline-block;animation:dots 1s infinite;}
   @keyframes dots{0%,100%{opacity:0.3}50%{opacity:1}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .spinner{animation:spin 0.8s linear infinite;}
 `;
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
@@ -570,6 +638,15 @@ const S = {
 
   card:       { background:"var(--surface)", border:"1px solid var(--border)", borderRadius:16, padding:"24px 20px", display:"flex", flexDirection:"column", gap:20 },
   phaseTag:   { fontSize:10, fontWeight:700, letterSpacing:"0.15em", color:"var(--gold)", textTransform:"uppercase" },
+
+  loadingWrap:{ display:"flex", flexDirection:"column", alignItems:"center", gap:16, padding:"40px 0" },
+  loadingSpinner:{ width:32, height:32, borderRadius:"50%", border:"3px solid var(--border)", borderTopColor:"var(--gold)" },
+  loadingText:{ fontSize:14, color:"var(--muted)" },
+
+  errorWrap:  { display:"flex", flexDirection:"column", alignItems:"center", gap:12, padding:"32px 0", textAlign:"center" },
+  errorIcon:  { width:48, height:48, borderRadius:"50%", background:"rgba(239,68,68,0.1)", border:"1px solid rgba(239,68,68,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, fontWeight:700, color:"var(--red)" },
+  errorTitle: { fontSize:16, fontWeight:700, color:"var(--text)" },
+  errorText:  { fontSize:13, color:"var(--muted)", lineHeight:1.6, maxWidth:280 },
 
   categoryReveal:{ textAlign:"center", padding:"8px 0" },
   categoryLabel: { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
