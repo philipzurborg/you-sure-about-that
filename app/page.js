@@ -181,43 +181,6 @@ export default function App() {
     setShowOnboarding(false);
   };
 
-  // ─── Answer matching tiers ────────────────────────────────────────────────
-  const normalize = (s) =>
-    s.toLowerCase().replace(/['''"".,()\-]/g, "").replace(/\b(the|a|an)\b/g, "").replace(/\s+/g, " ").trim();
-
-  const tierExact = (u, c, alts) => {
-    if (u === c || alts.includes(u)) return { match: true, method: "exact" };
-    return null;
-  };
-  const tierNorm = (u, c, alts) => {
-    const nu = normalize(u), nc = normalize(c);
-    if (nu === nc || alts.map(normalize).includes(nu)) return { match: true, method: "normalized" };
-    return null;
-  };
-  const tierKeyword = (u, c) => {
-    const uw = normalize(u).split(" "), cw = normalize(c).split(" ");
-    const last = cw[cw.length - 1];
-    if (last.length > 2 && uw.includes(last)) return { match: true, method: "keyword" };
-    if (uw.length === 1 && cw.includes(uw[0]) && uw[0].length > 3) return { match: true, method: "keyword" };
-    return null;
-  };
-  const tierLLM = async (ua, ca, q, cat) => {
-    try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-haiku-4-5-20251001", max_tokens: 10,
-          system: "You are a strict trivia judge. Reply YES or NO only.",
-          messages: [{ role: "user", content: `Category: ${cat}\nQuestion: ${q}\nCorrect: ${ca}\nPlayer: ${ua}\n\nCorrect? YES or NO.` }],
-        }),
-      });
-      const data = await res.json();
-      const v = data?.content?.[0]?.text?.trim().toUpperCase();
-      return { match: v === "YES", method: "ai" };
-    } catch { return { match: false, method: "ai-error" }; }
-  };
-
   // ─── Game actions ─────────────────────────────────────────────────────────
   const handleWager = () => {
     const w = parseInt(wager, 10);
@@ -254,16 +217,28 @@ export default function App() {
       setChecking(false); setPhase(PHASES.RESULT);
       return;
     }
-    const ua = answer.trim();
-    const altsLc = gameData.alternateAnswers.map(a => a.toLowerCase());
-    let res =
-      tierExact(ua.toLowerCase(), gameData.answer.toLowerCase(), altsLc) ||
-      tierNorm(ua, gameData.answer, gameData.alternateAnswers) ||
-      tierKeyword(ua, gameData.answer) ||
-      await tierLLM(ua, gameData.answer, gameData.question, gameData.category);
-    setMatchMethod(res.method);
-    setResult(res.match);
-    commitResult(res.match, false, wagerLocked);
+    try {
+      const res = await fetch("/api/validate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userAnswer: answer.trim(),
+          correctAnswer: gameData.answer,
+          alternateAnswers: gameData.alternateAnswers,
+          question: gameData.question,
+          category: gameData.category,
+        }),
+      });
+      const data = await res.json();
+      setMatchMethod(data.method);
+      setResult(data.correct);
+      commitResult(data.correct, false, wagerLocked);
+    } catch {
+      // Network failure — treat as incorrect
+      setMatchMethod(null);
+      setResult(false);
+      commitResult(false, false, wagerLocked);
+    }
     setChecking(false); setPhase(PHASES.RESULT);
   };
 
