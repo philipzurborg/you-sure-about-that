@@ -258,6 +258,7 @@ export default function App() {
     const statusEmoji = result ? "\uD83D\uDFE9" : timedOut ? "\uD83D\uDFEA" : "\uD83D\uDFE5";
     const statusText  = result ? "CORRECT" : timedOut ? "DID NOT COMPLETE" : "INCORRECT";
     const trendEmoji  = result ? "\uD83D\uDCC8" : "\uD83D\uDCC9";
+    const url         = "https://yousureaboutthat.app";
 
     const text = [
       `You Sure About That? #${String(gameData.day).padStart(3, "0")}`,
@@ -265,14 +266,13 @@ export default function App() {
       `\uD83D\uDCB5 Wagered (${formatPoints(wagerLocked)} pts)`,
       `${trendEmoji} New Total: ${formatPoints(stats.points)} pts`,
       `\uD83D\uDD25 Streak: ${stats.streak}`,
-      "",
-      "yousureabout.that",
     ].join("\n");
 
     if (navigator.share) {
-      navigator.share({ text }).catch(() => {});
+      // url is passed separately so platforms render it as a rich link/preview
+      navigator.share({ text, url }).catch(() => {});
     } else {
-      navigator.clipboard.writeText(text).then(() => {
+      navigator.clipboard.writeText(`${text}\n\n${url}`).then(() => {
         setCopied(true); setTimeout(() => setCopied(false), 2000);
       });
     }
