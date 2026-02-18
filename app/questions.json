@@ -2,721 +2,721 @@
   {
     "day": 1,
     "date": "2026-02-17",
-    "category": "MOVIES",
-    "question": "Directed by James Cameron and starring Leonardo DiCaprio and Kate Winslet, this 1997 Oscar-winning film follows a doomed romance aboard a British ocean liner on its ill-fated maiden voyage.",
-    "answer": "Titanic",
-    "alternateAnswers": ["titanic film", "titanic movie", "titanic 1997"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "Directed by James Cameron and starring Leonardo DiCaprio and Kate Winslet, this 1997 Oscar-winning film follows a doomed romance aboard a British ocean liner on its ill-fated maiden voyage.",
+        "answer": "Titanic",
+        "alternateAnswers": ["titanic film", "titanic movie", "titanic 1997"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This Swedish pop group, consisting of two couples, became one of the best-selling music acts of all time with hits like 'Dancing Queen,' 'Mamma Mia,' and 'Fernando.'",
+        "answer": "ABBA",
+        "alternateAnswers": ["abba band", "abba group"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Led by quarterback Patrick Mahomes, this NFL franchise from Missouri won three Super Bowl championships between 2020 and 2024, establishing themselves as the dominant dynasty of the era.",
+        "answer": "Kansas City Chiefs",
+        "alternateAnswers": ["chiefs", "kc chiefs", "the chiefs", "kansas city"]
+      }
+    ]
   },
   {
     "day": 2,
     "date": "2026-02-18",
-    "category": "MUSIC",
-    "question": "This Swedish pop group, consisting of two couples, became one of the best-selling music acts of all time with hits like 'Dancing Queen,' 'Mamma Mia,' and 'Fernando.'",
-    "answer": "ABBA",
-    "alternateAnswers": ["abba band", "abba group"]
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "The largest island in the Mediterranean Sea and an autonomous region of Italy, this volcanic island is home to Mount Etna — Europe's tallest and most active volcano.",
+        "answer": "Sicily",
+        "alternateAnswers": ["sicily italy", "sicilian island", "la sicilia"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This creamy dip, a staple of Mexican and Tex-Mex cuisine, is made primarily from mashed avocados, lime juice, cilantro, and salt, and is famously consumed in record quantities on Super Bowl Sunday.",
+        "answer": "Guacamole",
+        "alternateAnswers": ["guac", "avocado dip", "guacamole dip"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "This Netflix crime drama, set on the Lake of the Ozarks in Missouri, stars Jason Bateman as financial planner Marty Byrde, who is forced to launder money for a Mexican drug cartel after a scheme goes wrong.",
+        "answer": "Ozark",
+        "alternateAnswers": ["ozark series", "ozark show", "ozark netflix"]
+      }
+    ]
   },
   {
     "day": 3,
     "date": "2026-02-19",
-    "category": "SPORTS",
-    "question": "Led by quarterback Patrick Mahomes, this NFL franchise from Missouri won three Super Bowl championships between 2020 and 2024, establishing themselves as the dominant dynasty of the era.",
-    "answer": "Kansas City Chiefs",
-    "alternateAnswers": ["chiefs", "kc chiefs", "the chiefs", "kansas city"]
+    "questions": [
+      {
+        "category": "SCIENCE",
+        "question": "Making up approximately 78% of Earth's atmosphere, this colorless, odorless gas is essential for all living organisms but cannot be directly used by animals in its atmospheric form.",
+        "answer": "Nitrogen",
+        "alternateAnswers": ["nitrogen gas", "n2", "nitrogen element"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "On July 20, 1969, this NASA mission landed astronauts Neil Armstrong and Buzz Aldrin on the lunar surface, fulfilling President Kennedy's promise to reach the Moon before the end of the decade.",
+        "answer": "Apollo 11",
+        "alternateAnswers": ["apollo eleven", "apollo 11 mission", "apollo xi"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "In this 2003 Pixar film, a timid clownfish named Marlin traverses the ocean with a forgetful blue tang named Dory to rescue his son from a dentist's fish tank in Sydney, Australia.",
+        "answer": "Finding Nemo",
+        "alternateAnswers": ["nemo", "finding nemo film", "finding nemo movie"]
+      }
+    ]
   },
   {
     "day": 4,
     "date": "2026-02-20",
-    "category": "GEOGRAPHY",
-    "question": "The largest island in the Mediterranean Sea and an autonomous region of Italy, this volcanic island is home to Mount Etna — Europe's tallest and most active volcano.",
-    "answer": "Sicily",
-    "alternateAnswers": ["sicily italy", "sicilian island", "la sicilia"]
+    "questions": [
+      {
+        "category": "MUSIC",
+        "question": "Known as 'The King of Pop,' this artist's 1982 album 'Thriller' remains the best-selling album of all time, with estimated sales of over 66 million copies worldwide.",
+        "answer": "Michael Jackson",
+        "alternateAnswers": ["mj", "michael joseph jackson", "jackson", "king of pop"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "This NBA franchise has won 17 championships — the most in league history — and has retired the jerseys of Kareem Abdul-Jabbar, Magic Johnson, and Kobe Bryant, whose numbers 8 and 24 both hang in its rafters.",
+        "answer": "Los Angeles Lakers",
+        "alternateAnswers": ["lakers", "la lakers", "the lakers", "l.a. lakers"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "The largest country in South America by both area and population, this Portuguese-speaking nation is home to the Amazon River basin and hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics.",
+        "answer": "Brazil",
+        "alternateAnswers": ["brasil", "federative republic of brazil", "brazil country"]
+      }
+    ]
   },
   {
     "day": 5,
     "date": "2026-02-21",
-    "category": "FOOD & DRINK",
-    "question": "This creamy dip, a staple of Mexican and Tex-Mex cuisine, is made primarily from mashed avocados, lime juice, cilantro, and salt, and is famously consumed in record quantities on Super Bowl Sunday.",
-    "answer": "Guacamole",
-    "alternateAnswers": ["guac", "avocado dip", "guacamole dip"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "This 2008 Marvel film, starring Robert Downey Jr. as a billionaire weapons manufacturer who builds a powered suit of armor to escape captivity, launched what became the highest-grossing film franchise in history.",
+        "answer": "Iron Man",
+        "alternateAnswers": ["iron man film", "iron man movie", "ironman"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This soft Italian cheese, traditionally made from the milk of water buffaloes, is named from the Italian word meaning 'to cut off' and is most recognizable melted atop pizza.",
+        "answer": "Mozzarella",
+        "alternateAnswers": ["mozzarella cheese", "fresh mozzarella", "buffalo mozzarella"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "This Corsican-born military genius rose to become Emperor of the French in 1804, conquered much of Europe, and introduced a legal code that still influences the laws of dozens of countries today.",
+        "answer": "Napoleon Bonaparte",
+        "alternateAnswers": ["napoleon", "napoleon i", "napoleon the first", "napoleon bonaporte"]
+      }
+    ]
   },
   {
     "day": 6,
     "date": "2026-02-22",
-    "category": "TELEVISION",
-    "question": "This Netflix crime drama, set on the Lake of the Ozarks in Missouri, stars Jason Bateman as financial planner Marty Byrde, who is forced to launder money for a Mexican drug cartel after a scheme goes wrong.",
-    "answer": "Ozark",
-    "alternateAnswers": ["ozark series", "ozark show", "ozark netflix"]
+    "questions": [
+      {
+        "category": "SCIENCE",
+        "question": "The chemical symbol 'Au,' derived from the Latin word 'Aurum,' represents this precious metal with atomic number 79, long prized for its resistance to tarnish and its role as a monetary standard.",
+        "answer": "Gold",
+        "alternateAnswers": ["au", "aurum", "gold element", "gold metal"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "This HBO drama, which aired from 1999 to 2007, follows Tony Soprano, a New Jersey mob boss who attends weekly therapy sessions while juggling the pressures of organized crime and his suburban family life.",
+        "answer": "The Sopranos",
+        "alternateAnswers": ["sopranos", "the sopranos hbo", "sopranos show"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Nicknamed 'Air,' this Chicago Bulls shooting guard won six NBA championships in the 1990s, five regular-season MVP awards, and was named the greatest North American athlete of the 20th century by ESPN.",
+        "answer": "Michael Jordan",
+        "alternateAnswers": ["jordan", "mj", "michael jeffrey jordan", "air jordan"]
+      }
+    ]
   },
   {
     "day": 7,
     "date": "2026-02-23",
-    "category": "SCIENCE",
-    "question": "Making up approximately 78% of Earth's atmosphere, this colorless, odorless gas is essential for all living organisms but cannot be directly used by animals in its atmospheric form.",
-    "answer": "Nitrogen",
-    "alternateAnswers": ["nitrogen gas", "n2", "nitrogen element"]
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "The capital of Japan and the world's most populous metropolitan area with over 37 million residents, this city hosted the Summer Olympics in both 1964 and 2021.",
+        "answer": "Tokyo",
+        "alternateAnswers": ["tokyo japan", "tokyo city", "edo"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This British rock band, fronted by Freddie Mercury, released the 1975 song 'Bohemian Rhapsody' — a six-minute operatic rock epic that topped the UK singles chart twice, forty years apart.",
+        "answer": "Queen",
+        "alternateAnswers": ["queen band", "queen rock band", "the band queen"]
+      },
+      {
+        "category": "ANIMALS",
+        "question": "The largest animal ever known to have lived on Earth, this marine mammal can grow up to 100 feet long and weigh 200 tons — its heart alone is roughly the size of a small car.",
+        "answer": "Blue Whale",
+        "alternateAnswers": ["blue whale mammal", "blue whales", "balaenoptera musculus"]
+      }
+    ]
   },
   {
     "day": 8,
     "date": "2026-02-24",
-    "category": "HISTORY",
-    "question": "On July 20, 1969, this NASA mission landed astronauts Neil Armstrong and Buzz Aldrin on the lunar surface, fulfilling President Kennedy's promise to reach the Moon before the end of the decade.",
-    "answer": "Apollo 11",
-    "alternateAnswers": ["apollo eleven", "apollo 11 mission", "apollo xi"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "Voiced by Mike Myers, the titular hero of this 2001 DreamWorks animated film is a reclusive swamp-dwelling ogre who reluctantly teams with a talking donkey to rescue a princess from a tower guarded by a dragon.",
+        "answer": "Shrek",
+        "alternateAnswers": ["shrek film", "shrek movie", "shrek 2001"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This Japanese dish of thinly sliced raw protein — typically tuna or salmon — is served without rice and accompanied by soy sauce, wasabi, and pickled ginger, distinguishing it from its close relative sushi.",
+        "answer": "Sashimi",
+        "alternateAnswers": ["sashimi dish", "japanese sashimi"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "This surprise Japanese air attack on December 7, 1941 killed over 2,400 Americans and damaged or destroyed 19 naval vessels, prompting President Roosevelt to call it 'a date which will live in infamy.'",
+        "answer": "Pearl Harbor",
+        "alternateAnswers": ["pearl harbor attack", "attack on pearl harbor", "pearl harbor hawaii"]
+      }
+    ]
   },
   {
     "day": 9,
     "date": "2026-02-25",
-    "category": "MOVIES",
-    "question": "In this 2003 Pixar film, a timid clownfish named Marlin traverses the ocean with a forgetful blue tang named Dory to rescue his son from a dentist's fish tank in Sydney, Australia.",
-    "answer": "Finding Nemo",
-    "alternateAnswers": ["nemo", "finding nemo film", "finding nemo movie"]
+    "questions": [
+      {
+        "category": "SCIENCE",
+        "question": "The largest organ of the human body by surface area, this outer covering accounts for roughly 16% of body weight, houses nerve endings that detect temperature and pain, and serves as the body's primary barrier against infection.",
+        "answer": "Skin",
+        "alternateAnswers": ["the skin", "human skin", "skin organ"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This pop star, born Stefani Germanotta in New York City, became a global phenomenon with her debut single 'Just Dance' in 2008 and later won an Oscar for Best Original Song for 'Shallow' from 'A Star Is Born.'",
+        "answer": "Lady Gaga",
+        "alternateAnswers": ["gaga", "stefani germanotta", "lady gaga singer"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "The first episode of this CBS reality competition, which has aired since 2000, drew 51 million viewers; contestants are isolated in a remote location and vote each other out one by one until a sole winner remains.",
+        "answer": "Survivor",
+        "alternateAnswers": ["survivor cbs", "survivor show", "survivor tv"]
+      }
+    ]
   },
   {
     "day": 10,
     "date": "2026-02-26",
-    "category": "MUSIC",
-    "question": "Known as 'The King of Pop,' this artist's 1982 album 'Thriller' remains the best-selling album of all time, with estimated sales of over 66 million copies worldwide.",
-    "answer": "Michael Jackson",
-    "alternateAnswers": ["mj", "michael joseph jackson", "jackson", "king of pop"]
+    "questions": [
+      {
+        "category": "SPORTS",
+        "question": "In tennis, a score of zero is called by this name — a term whose fun etymology often traces back to the French word for 'egg,' which visually resembles the numeral zero.",
+        "answer": "Love",
+        "alternateAnswers": ["love score", "love tennis", "tennis love"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "Home to the Great Wall, the Terracotta Army, and the Forbidden City, this East Asian country had the world's largest population until 2023 and remains the second-largest economy on Earth.",
+        "answer": "China",
+        "alternateAnswers": ["china country", "people's republic of china", "prc", "zhongguo"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "This 2009 James Cameron film — set on the lush alien moon Pandora — became the highest-grossing movie of all time at the time of its release and features a paraplegic Marine who bonds with a blue-skinned species called the Na'vi.",
+        "answer": "Avatar",
+        "alternateAnswers": ["avatar film", "avatar movie", "avatar 2009"]
+      }
+    ]
   },
   {
     "day": 11,
     "date": "2026-02-27",
-    "category": "SPORTS",
-    "question": "This NBA franchise has won 17 championships — the most in league history — and has retired the jerseys of Kareem Abdul-Jabbar, Magic Johnson, and Kobe Bryant, whose numbers 8 and 24 both hang in its rafters.",
-    "answer": "Los Angeles Lakers",
-    "alternateAnswers": ["lakers", "la lakers", "the lakers", "l.a. lakers"]
+    "questions": [
+      {
+        "category": "FOOD & DRINK",
+        "question": "This rich emulsion sauce — made from egg yolks, melted butter, and lemon juice — is the hallmark of Eggs Benedict and is counted among the five classical French 'mother sauces.'",
+        "answer": "Hollandaise Sauce",
+        "alternateAnswers": ["hollandaise", "sauce hollandaise"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "Signed on July 4, 1776, this document formally announced the separation of thirteen American colonies from Great Britain and includes the famous line 'We hold these truths to be self-evident, that all men are created equal.'",
+        "answer": "Declaration of Independence",
+        "alternateAnswers": ["the declaration of independence", "declaration of independence 1776", "american declaration"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "Plants absorb this greenhouse gas during photosynthesis to produce oxygen and sugars, while its rising concentration in Earth's atmosphere — largely from burning fossil fuels — is the primary driver of modern climate change.",
+        "answer": "Carbon Dioxide",
+        "alternateAnswers": ["co2", "carbon dioxide gas", "co 2"]
+      }
+    ]
   },
   {
     "day": 12,
     "date": "2026-02-28",
-    "category": "GEOGRAPHY",
-    "question": "The largest country in South America by both area and population, this Portuguese-speaking nation is home to the Amazon River basin and hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics.",
-    "answer": "Brazil",
-    "alternateAnswers": ["brasil", "federative republic of brazil", "brazil country"]
+    "questions": [
+      {
+        "category": "MUSIC",
+        "question": "This Houston-born singer and performer released the groundbreaking visual album 'Lemonade' in 2016 and has won more Grammy Awards than any other singer in history, cementing her reign as 'Queen Bey.'",
+        "answer": "Beyoncé",
+        "alternateAnswers": ["beyonce", "queen bey", "beyonce knowles", "beyonce knowles-carter"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "This animated Fox sitcom, set in the fictional Rhode Island town of Quahog, follows the Griffin family — including the martini-drinking baby Stewie and the culturally literate talking dog Brian — and has aired since 1999.",
+        "answer": "Family Guy",
+        "alternateAnswers": ["family guy fox", "family guy show", "the family guy"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "This American swimmer from Baltimore won a record 28 Olympic medals — 23 of them gold — over four Games, including a stunning eight gold medals at the 2008 Beijing Olympics, making him the most decorated Olympian in history.",
+        "answer": "Michael Phelps",
+        "alternateAnswers": ["phelps", "michael fred phelps", "the baltimore bullet"]
+      }
+    ]
   },
   {
     "day": 13,
     "date": "2026-03-01",
-    "category": "MOVIES",
-    "question": "This 2008 Marvel film, starring Robert Downey Jr. as a billionaire weapons manufacturer who builds a powered suit of armor to escape captivity, launched what became the highest-grossing film franchise in history.",
-    "answer": "Iron Man",
-    "alternateAnswers": ["iron man film", "iron man movie", "ironman"]
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "This boot-shaped country in southern Europe holds more UNESCO World Heritage Sites than any other nation and uniquely contains two independent countries — Vatican City and San Marino — entirely within its borders.",
+        "answer": "Italy",
+        "alternateAnswers": ["italy country", "italian republic", "italia"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "In this 2008 Christopher Nolan film, Heath Ledger's portrayal of the Joker earned a posthumous Oscar for Best Supporting Actor, helping the film become the first superhero movie to gross over $1 billion worldwide.",
+        "answer": "The Dark Knight",
+        "alternateAnswers": ["dark knight", "batman dark knight", "the dark knight film", "dark knight 2008"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This buttery, flaky French breakfast pastry is created through a technique called 'lamination' — repeatedly folding dough with layers of butter — and is baked into a golden, crescent shape.",
+        "answer": "Croissant",
+        "alternateAnswers": ["croissants", "french croissant"]
+      }
+    ]
   },
   {
     "day": 14,
     "date": "2026-03-02",
-    "category": "FOOD & DRINK",
-    "question": "This soft Italian cheese, traditionally made from the milk of water buffaloes, is named from the Italian word meaning 'to cut off' and is most recognizable melted atop pizza.",
-    "answer": "Mozzarella",
-    "alternateAnswers": ["mozzarella cheese", "fresh mozzarella", "buffalo mozzarella"]
+    "questions": [
+      {
+        "category": "HISTORY",
+        "question": "This ancient Roman amphitheater, completed around 80 AD and capable of holding up to 80,000 spectators, was the largest arena of its kind and hosted gladiatorial contests, animal hunts, and public executions.",
+        "answer": "Colosseum",
+        "alternateAnswers": ["the colosseum", "coliseum", "roman colosseum", "colosseo"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "On the Fahrenheit scale, water boils at sea level at this temperature — equivalent to 100 degrees Celsius — a key reference point embedded in American kitchens and science classrooms alike.",
+        "answer": "212 Degrees Fahrenheit",
+        "alternateAnswers": ["212", "212 degrees", "212 f", "212°f", "two hundred twelve"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "Formed in Dublin, Ireland in 1976, this rock band became one of the world's best-selling acts with anthems including 'With or Without You,' 'One,' and 'Sunday Bloody Sunday,' fronted by singer Bono.",
+        "answer": "U2",
+        "alternateAnswers": ["u2 band", "u2 rock band", "u 2"]
+      }
+    ]
   },
   {
     "day": 15,
     "date": "2026-03-03",
-    "category": "HISTORY",
-    "question": "This Corsican-born military genius rose to become Emperor of the French in 1804, conquered much of Europe, and introduced a legal code that still influences the laws of dozens of countries today.",
-    "answer": "Napoleon Bonaparte",
-    "alternateAnswers": ["napoleon", "napoleon i", "napoleon the first", "napoleon bonaporte"]
+    "questions": [
+      {
+        "category": "TELEVISION",
+        "question": "This NBC mockumentary sitcom, starring Amy Poehler as the relentlessly optimistic deputy parks director Leslie Knope, is set in the fictional Indiana city of Pawnee and aired from 2009 to 2015.",
+        "answer": "Parks and Recreation",
+        "alternateAnswers": ["parks and rec", "parks & recreation", "parks and recreation nbc"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Governed globally by FIFA and played by an estimated 250 million people across more than 200 countries, this is the world's most popular sport — known as 'football' nearly everywhere outside the United States.",
+        "answer": "Soccer",
+        "alternateAnswers": ["football", "association football", "soccer sport", "futbol"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "This North African country is home to the Pyramids of Giza, the Great Sphinx, and the Nile River delta, and was the cradle of one of the world's earliest and longest-lasting civilizations.",
+        "answer": "Egypt",
+        "alternateAnswers": ["egypt country", "arab republic of egypt", "kemet"]
+      }
+    ]
   },
   {
     "day": 16,
     "date": "2026-03-04",
-    "category": "SCIENCE",
-    "question": "The chemical symbol 'Au,' derived from the Latin word 'Aurum,' represents this precious metal with atomic number 79, long prized for its resistance to tarnish and its role as a monetary standard.",
-    "answer": "Gold",
-    "alternateAnswers": ["au", "aurum", "gold element", "gold metal"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "In this 2014 Marvel film, a rag-tag team of cosmic misfits — including a talking raccoon named Rocket and a tree creature who can only say three words — join forces to protect the universe from a powerful villain.",
+        "answer": "Guardians of the Galaxy",
+        "alternateAnswers": ["guardians of the galaxy film", "gotg", "gotg movie", "guardians"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This cured, spiced, and smoked beef — a centerpiece of New York City Jewish deli culture — is most famously served piled high on rye bread at Katz's Delicatessen on the Lower East Side.",
+        "answer": "Pastrami",
+        "alternateAnswers": ["pastrami sandwich", "pastrami beef", "pastrami meat"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "Ratified in August 1920 after decades of activism by figures like Susan B. Anthony, this constitutional amendment guaranteed American women the right to vote — one of the most significant expansions of democracy in U.S. history.",
+        "answer": "19th Amendment",
+        "alternateAnswers": ["the nineteenth amendment", "nineteenth amendment", "amendment 19", "women's suffrage amendment"]
+      }
+    ]
   },
   {
     "day": 17,
     "date": "2026-03-05",
-    "category": "TELEVISION",
-    "question": "This HBO drama, which aired from 1999 to 2007, follows Tony Soprano, a New Jersey mob boss who attends weekly therapy sessions while juggling the pressures of organized crime and his suburban family life.",
-    "answer": "The Sopranos",
-    "alternateAnswers": ["sopranos", "the sopranos hbo", "sopranos show"]
+    "questions": [
+      {
+        "category": "SCIENCE",
+        "question": "This biological process, occurring in the chloroplasts of plant cells, converts sunlight, water, and carbon dioxide into glucose and oxygen, forming the foundation of nearly every food chain on Earth.",
+        "answer": "Photosynthesis",
+        "alternateAnswers": ["photosynthesis process", "plant photosynthesis"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This singer-songwriter from Reading, Pennsylvania crossed over from country to pop and became the first artist to simultaneously occupy all top 10 spots on the Billboard Hot 100 with tracks from her 2022 album 'Midnights.'",
+        "answer": "Taylor Swift",
+        "alternateAnswers": ["swift", "taylor alison swift", "t-swift"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "This HBO anthology series, created by Mike White, follows wealthy guests and overworked staff at luxury resorts — first in Hawaii, then Sicily — and won 10 Emmy Awards for its debut season alone.",
+        "answer": "The White Lotus",
+        "alternateAnswers": ["white lotus", "the white lotus hbo", "white lotus hbo"]
+      }
+    ]
   },
   {
     "day": 18,
     "date": "2026-03-06",
-    "category": "SPORTS",
-    "question": "Nicknamed 'Air,' this Chicago Bulls shooting guard won six NBA championships in the 1990s, five regular-season MVP awards, and was named the greatest North American athlete of the 20th century by ESPN.",
-    "answer": "Michael Jordan",
-    "alternateAnswers": ["jordan", "mj", "michael jeffrey jordan", "air jordan"]
+    "questions": [
+      {
+        "category": "SPORTS",
+        "question": "First held in 1903 and covering roughly 3,400 kilometers across 21 stages through the French Alps and Pyrenees, this annual bicycle race is the world's most prestigious and grueling endurance sports event.",
+        "answer": "Tour de France",
+        "alternateAnswers": ["the tour de france", "le tour de france", "the tour", "tour de france cycling"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "This purpose-built city, chosen as a compromise between Sydney and Melbourne, became the capital of Australia in 1913 and is frequently overlooked by tourists who assume the capital is one of the country's coastal giants.",
+        "answer": "Canberra",
+        "alternateAnswers": ["canberra australia", "canberra city", "canberra capital"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "This 1994 Disney animated film, set in the Pride Lands of Africa, follows young Simba as he grows up to reclaim his throne from his murderous uncle Scar, backed by a beloved Elton John soundtrack.",
+        "answer": "The Lion King",
+        "alternateAnswers": ["lion king", "the lion king 1994", "lion king animated", "lion king disney"]
+      }
+    ]
   },
   {
     "day": 19,
     "date": "2026-03-07",
-    "category": "GEOGRAPHY",
-    "question": "The capital of Japan and the world's most populous metropolitan area with over 37 million residents, this city hosted the Summer Olympics in both 1964 and 2021.",
-    "answer": "Tokyo",
-    "alternateAnswers": ["tokyo japan", "tokyo city", "edo"]
+    "questions": [
+      {
+        "category": "FOOD & DRINK",
+        "question": "One of the most popular cocktails in America, this tequila-based drink is made with lime juice and triple sec or Cointreau, typically served shaken or on the rocks in a glass with a salted rim.",
+        "answer": "Margarita",
+        "alternateAnswers": ["margarita cocktail", "margarita drink", "margaritas"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "Elected in 2008, this Illinois senator became the 44th President of the United States — the first African American to hold the office — and was awarded the Nobel Peace Prize during his first year in power.",
+        "answer": "Barack Obama",
+        "alternateAnswers": ["obama", "barack hussein obama", "president obama"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "Measured in hertz, this property of a wave describes the number of complete cycles that occur per second — it determines the pitch of a sound and, in the case of light waves, its color.",
+        "answer": "Frequency",
+        "alternateAnswers": ["frequency hz", "wave frequency", "sound frequency"]
+      }
+    ]
   },
   {
     "day": 20,
     "date": "2026-03-08",
-    "category": "MUSIC",
-    "question": "This British rock band, fronted by Freddie Mercury, released the 1975 song 'Bohemian Rhapsody' — a six-minute operatic rock epic that topped the UK singles chart twice, forty years apart.",
-    "answer": "Queen",
-    "alternateAnswers": ["queen band", "queen rock band", "the band queen"]
+    "questions": [
+      {
+        "category": "MUSIC",
+        "question": "This rapper from Detroit, born Marshall Mathers, is the best-selling hip-hop artist of all time and won an Academy Award for Best Original Song in 2003 for 'Lose Yourself' from his semi-autobiographical film '8 Mile.'",
+        "answer": "Eminem",
+        "alternateAnswers": ["marshall mathers", "slim shady", "em", "marshall bruce mathers"]
+      },
+      {
+        "category": "TELEVISION",
+        "question": "This NBC mockumentary sitcom, adapted from a British series by Ricky Gervais, is set at the Dunder Mifflin paper company in Scranton, Pennsylvania, and starred Steve Carell as the painfully oblivious boss Michael Scott.",
+        "answer": "The Office",
+        "alternateAnswers": ["the office us", "the office nbc", "the office show"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Held annually on the first Saturday in May at Churchill Downs in Louisville, this thoroughbred horse race is the first leg of the Triple Crown and is nicknamed 'The Most Exciting Two Minutes in Sports.'",
+        "answer": "Kentucky Derby",
+        "alternateAnswers": ["the kentucky derby", "derby race", "the derby", "the run for the roses"]
+      }
+    ]
   },
   {
     "day": 21,
     "date": "2026-03-09",
-    "category": "ANIMALS",
-    "question": "The largest animal ever known to have lived on Earth, this marine mammal can grow up to 100 feet long and weigh 200 tons — its heart alone is roughly the size of a small car.",
-    "answer": "Blue Whale",
-    "alternateAnswers": ["blue whale mammal", "blue whales", "balaenoptera musculus"]
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "Spanning eleven time zones and sharing borders with more countries than any other nation, this country is the world's largest by total area and has Moscow as its capital.",
+        "answer": "Russia",
+        "alternateAnswers": ["russia country", "russian federation", "the russian federation"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "In this 1991 thriller, FBI trainee Clarice Starling seeks the help of incarcerated psychiatrist Dr. Hannibal Lecter to catch a serial killer — making it one of only three films in history to win Oscars for all five major categories.",
+        "answer": "The Silence of the Lambs",
+        "alternateAnswers": ["silence of the lambs", "silence of the lambs film", "the silence of the lambs 1991"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "Made by fermenting soybeans with salt and koji mold, this Japanese paste is the base for one of the country's most beloved soups, traditionally served with tofu, seaweed, and green onions.",
+        "answer": "Miso",
+        "alternateAnswers": ["miso paste", "miso soup base", "miso soup"]
+      }
+    ]
   },
   {
     "day": 22,
     "date": "2026-03-10",
-    "category": "MOVIES",
-    "question": "Voiced by Mike Myers, the titular hero of this 2001 DreamWorks animated film is a reclusive swamp-dwelling ogre who reluctantly teams with a talking donkey to rescue a princess from a tower guarded by a dragon.",
-    "answer": "Shrek",
-    "alternateAnswers": ["shrek film", "shrek movie", "shrek 2001"]
+    "questions": [
+      {
+        "category": "HISTORY",
+        "question": "Held in August 1969 on Max Yasgur's dairy farm in upstate New York, this three-day music festival attracted roughly 400,000 attendees and featured performances by Jimi Hendrix, Janis Joplin, and The Who.",
+        "answer": "Woodstock",
+        "alternateAnswers": ["woodstock festival", "woodstock music festival", "woodstock 1969"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "Unlike fission, which splits atoms apart, this process combines two light atomic nuclei to form a heavier one, releasing enormous amounts of energy — the same reaction that powers the sun and every other star.",
+        "answer": "Nuclear Fusion",
+        "alternateAnswers": ["fusion", "nuclear fusion reaction", "thermonuclear fusion"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This rapper and producer from Compton, California co-founded Death Row Records, launched the careers of Snoop Dogg and Eminem, later founded Beats Electronics, and sold the headphone company to Apple for $3 billion.",
+        "answer": "Dr. Dre",
+        "alternateAnswers": ["dre", "andre romelle young", "dr dre", "doctor dre"]
+      }
+    ]
   },
   {
     "day": 23,
     "date": "2026-03-11",
-    "category": "FOOD & DRINK",
-    "question": "This Japanese dish of thinly sliced raw protein — typically tuna or salmon — is served without rice and accompanied by soy sauce, wasabi, and pickled ginger, distinguishing it from its close relative sushi.",
-    "answer": "Sashimi",
-    "alternateAnswers": ["sashimi dish", "japanese sashimi"]
+    "questions": [
+      {
+        "category": "TELEVISION",
+        "question": "Set on Madison Avenue in 1960s New York City, this AMC drama stars Jon Hamm as the brilliant but mysterious ad executive Don Draper and is celebrated for its meticulous period detail and exploration of the American Dream.",
+        "answer": "Mad Men",
+        "alternateAnswers": ["mad men show", "mad men amc", "madmen"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "This quarterback played for the New England Patriots and Tampa Bay Buccaneers and won a record seven Super Bowl championships, widely cementing his status as the greatest player in NFL history.",
+        "answer": "Tom Brady",
+        "alternateAnswers": ["brady", "thomas brady", "thomas edward patrick brady", "tb12"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "Built across 118 small islands connected by over 400 bridges, this northeastern Italian city is famous for its gondolas, its annual Carnival festival, and the gradual sinking that threatens its long-term survival.",
+        "answer": "Venice",
+        "alternateAnswers": ["venice italy", "venezia", "venice city", "la serenissima"]
+      }
+    ]
   },
   {
     "day": 24,
     "date": "2026-03-12",
-    "category": "HISTORY",
-    "question": "This surprise Japanese air attack on December 7, 1941 killed over 2,400 Americans and damaged or destroyed 19 naval vessels, prompting President Roosevelt to call it 'a date which will live in infamy.'",
-    "answer": "Pearl Harbor",
-    "alternateAnswers": ["pearl harbor attack", "attack on pearl harbor", "pearl harbor hawaii"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "In this 1985 John Hughes film, five high school students from different social cliques — the brain, the athlete, the basket case, the princess, and the criminal — spend a Saturday detention together and break down their social walls.",
+        "answer": "The Breakfast Club",
+        "alternateAnswers": ["breakfast club", "the breakfast club film", "the breakfast club 1985"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This deep-fried dough pastry, generously dusted with powdered sugar, is the signature treat of New Orleans and is traditionally served alongside café au lait at the historic Café Du Monde.",
+        "answer": "Beignet",
+        "alternateAnswers": ["beignets", "beignet pastry", "new orleans beignet", "new orleans beignets"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "On December 1, 1955, this Montgomery, Alabama seamstress refused to give up her bus seat to a white passenger, an act of quiet defiance that ignited the Montgomery Bus Boycott and galvanized the American civil rights movement.",
+        "answer": "Rosa Parks",
+        "alternateAnswers": ["parks", "rosa louise parks", "rosa mccauley parks"]
+      }
+    ]
   },
   {
     "day": 25,
     "date": "2026-03-13",
-    "category": "SCIENCE",
-    "question": "The largest organ of the human body by surface area, this outer covering accounts for roughly 16% of body weight, houses nerve endings that detect temperature and pain, and serves as the body's primary barrier against infection.",
-    "answer": "Skin",
-    "alternateAnswers": ["the skin", "human skin", "skin organ"]
+    "questions": [
+      {
+        "category": "VIDEO GAMES",
+        "question": "Launched by Epic Games in 2017, this free-to-play battle royale game drops up to 100 players onto a shrinking island where they scavenge for weapons and build structures to be the last one standing.",
+        "answer": "Fortnite",
+        "alternateAnswers": ["fortnite game", "fortnite battle royale", "fortnite epic games"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "This English singer-songwriter's second album '21,' released in 2011 and featuring the worldwide hit 'Rolling in the Deep,' became one of the best-selling albums in UK and US chart history.",
+        "answer": "Adele",
+        "alternateAnswers": ["adele adkins", "adele singer", "adele laurie blue adkins"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "This San Francisco Giants outfielder holds the all-time MLB career home run record with 762, surpassing Hank Aaron's mark of 755 in 2007, though his legacy remains clouded by performance-enhancing drug allegations.",
+        "answer": "Barry Bonds",
+        "alternateAnswers": ["bonds", "barry lamar bonds", "barry bonds giants"]
+      }
+    ]
   },
   {
     "day": 26,
     "date": "2026-03-14",
-    "category": "MUSIC",
-    "question": "This pop star, born Stefani Germanotta in New York City, became a global phenomenon with her debut single 'Just Dance' in 2008 and later won an Oscar for Best Original Song for 'Shallow' from 'A Star Is Born.'",
-    "answer": "Lady Gaga",
-    "alternateAnswers": ["gaga", "stefani germanotta", "lady gaga singer"]
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "Located on the northwestern shore of Lake Ontario, this Canadian city is the country's largest, home to the CN Tower and the Hockey Hall of Fame, and is frequently called one of the most multicultural cities in the world.",
+        "answer": "Toronto",
+        "alternateAnswers": ["toronto canada", "toronto ontario", "toronto city"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "Starring the late Chadwick Boseman as the king of the fictional African nation of Wakanda, this 2018 Marvel film was the first superhero movie ever nominated for the Academy Award for Best Picture.",
+        "answer": "Black Panther",
+        "alternateAnswers": ["black panther film", "black panther movie", "black panther 2018"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "Introduced by McDonald's in 1968, this burger stacks two beef patties with special sauce, lettuce, cheese, pickles, and onions on a three-part sesame-seed bun, and has become one of the most recognized foods on the planet.",
+        "answer": "Big Mac",
+        "alternateAnswers": ["the big mac", "big mac burger", "mcdonald's big mac", "mcdonalds big mac"]
+      }
+    ]
   },
   {
     "day": 27,
     "date": "2026-03-15",
-    "category": "TELEVISION",
-    "question": "The first episode of this CBS reality competition, which has aired since 2000, drew 51 million viewers; contestants are isolated in a remote location and vote each other out one by one until a sole winner remains.",
-    "answer": "Survivor",
-    "alternateAnswers": ["survivor cbs", "survivor show", "survivor tv"]
+    "questions": [
+      {
+        "category": "HISTORY",
+        "question": "This English naturalist, who sailed on the HMS Beagle in the 1830s and observed wildlife on the Galápagos Islands, published 'On the Origin of Species' in 1859 and transformed humanity's understanding of life on Earth.",
+        "answer": "Charles Darwin",
+        "alternateAnswers": ["darwin", "charles robert darwin", "c. darwin"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "Known as the 'universal recipient,' this blood type can receive red blood cells from donors of any ABO and Rh blood group, making it the most flexible type to match for transfusions.",
+        "answer": "AB Positive",
+        "alternateAnswers": ["ab+", "ab positive blood type", "blood type ab positive", "ab pos"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "Born Benito Antonio Martínez Ocasio in Puerto Rico, this Latin trap and reggaeton artist became the most-streamed artist on Spotify globally in 2020, 2021, and 2022 — three consecutive years.",
+        "answer": "Bad Bunny",
+        "alternateAnswers": ["bad bunny singer", "benito ocasio", "benito martinez"]
+      }
+    ]
   },
   {
     "day": 28,
     "date": "2026-03-16",
-    "category": "SPORTS",
-    "question": "In tennis, a score of zero is called by this name — a term whose fun etymology often traces back to the French word for 'egg,' which visually resembles the numeral zero.",
-    "answer": "Love",
-    "alternateAnswers": ["love score", "love tennis", "tennis love"]
+    "questions": [
+      {
+        "category": "TELEVISION",
+        "question": "Released on Netflix in 2015, this true-crime documentary series sparked worldwide debate about the American justice system through the intertwined cases of Steven Avery and his nephew Brendan Dassey.",
+        "answer": "Making a Murderer",
+        "alternateAnswers": ["making a murderer documentary", "making a murderer netflix", "making a murderer series"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "This British Formula One driver won seven World Championship titles between 2008 and 2020, and holds all-time records for the most race wins and the most pole positions in F1 history.",
+        "answer": "Lewis Hamilton",
+        "alternateAnswers": ["hamilton", "lewis", "sir lewis hamilton", "l. hamilton"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "Completely encircled by Italy and covering just 61 square kilometers, this tiny republic on the slopes of Mount Titano claims to be the world's oldest constitutional republic, founded by tradition in 301 AD.",
+        "answer": "San Marino",
+        "alternateAnswers": ["republic of san marino", "san marino country", "most serene republic of san marino"]
+      }
+    ]
   },
   {
     "day": 29,
     "date": "2026-03-17",
-    "category": "GEOGRAPHY",
-    "question": "Home to the Great Wall, the Terracotta Army, and the Forbidden City, this East Asian country had the world's largest population until 2023 and remains the second-largest economy on Earth.",
-    "answer": "China",
-    "alternateAnswers": ["china country", "people's republic of china", "prc", "zhongguo"]
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "In this 1999 sci-fi film by the Wachowskis, a computer hacker named Neo discovers that the reality everyone perceives is a simulated prison designed by machines, and joins a rebel group fighting to free humanity.",
+        "answer": "The Matrix",
+        "alternateAnswers": ["matrix", "the matrix film", "matrix movie", "the matrix 1999"]
+      },
+      {
+        "category": "FOOD & DRINK",
+        "question": "This sweet Italian liqueur, flavored with almonds and apricot pits, is a key ingredient in the Amaretto Sour and Alabama Slammer cocktails, and is most famously sold under the brand name Disaronno.",
+        "answer": "Amaretto",
+        "alternateAnswers": ["amaretto liqueur", "amaretto di saronno", "disaronno amaretto"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "On November 9th of this year, the Berlin Wall — which had divided East and West Germany for 28 years — fell, symbolizing the collapse of the Iron Curtain and marking the effective end of the Cold War.",
+        "answer": "1989",
+        "alternateAnswers": ["nineteen eighty-nine", "november 1989", "the year 1989"]
+      }
+    ]
   },
   {
     "day": 30,
     "date": "2026-03-18",
-    "category": "MOVIES",
-    "question": "This 2009 James Cameron film — set on the lush alien moon Pandora — became the highest-grossing movie of all time at the time of its release and features a paraplegic Marine who bonds with a blue-skinned species called the Na'vi.",
-    "answer": "Avatar",
-    "alternateAnswers": ["avatar film", "avatar movie", "avatar 2009"]
-  },
-  {
-    "day": 31,
-    "date": "2026-03-19",
-    "category": "FOOD & DRINK",
-    "question": "This rich emulsion sauce — made from egg yolks, melted butter, and lemon juice — is the hallmark of Eggs Benedict and is counted among the five classical French 'mother sauces.'",
-    "answer": "Hollandaise Sauce",
-    "alternateAnswers": ["hollandaise", "sauce hollandaise", "hollandaise"]
-  },
-  {
-    "day": 32,
-    "date": "2026-03-20",
-    "category": "HISTORY",
-    "question": "Signed on July 4, 1776, this document formally announced the separation of thirteen American colonies from Great Britain and includes the famous line 'We hold these truths to be self-evident, that all men are created equal.'",
-    "answer": "Declaration of Independence",
-    "alternateAnswers": ["the declaration of independence", "declaration of independence 1776", "american declaration"]
-  },
-  {
-    "day": 33,
-    "date": "2026-03-21",
-    "category": "SCIENCE",
-    "question": "Plants absorb this greenhouse gas during photosynthesis to produce oxygen and sugars, while its rising concentration in Earth's atmosphere — largely from burning fossil fuels — is the primary driver of modern climate change.",
-    "answer": "Carbon Dioxide",
-    "alternateAnswers": ["co2", "carbon dioxide gas", "co 2"]
-  },
-  {
-    "day": 34,
-    "date": "2026-03-22",
-    "category": "MUSIC",
-    "question": "This Houston-born singer and performer released the groundbreaking visual album 'Lemonade' in 2016 and has won more Grammy Awards than any other singer in history, cementing her reign as 'Queen Bey.'",
-    "answer": "Beyoncé",
-    "alternateAnswers": ["beyonce", "queen bey", "beyonce knowles", "beyonce knowles-carter"]
-  },
-  {
-    "day": 35,
-    "date": "2026-03-23",
-    "category": "TELEVISION",
-    "question": "This animated Fox sitcom, set in the fictional Rhode Island town of Quahog, follows the Griffin family — including the martini-drinking baby Stewie and the culturally literate talking dog Brian — and has aired since 1999.",
-    "answer": "Family Guy",
-    "alternateAnswers": ["family guy fox", "family guy show", "the family guy"]
-  },
-  {
-    "day": 36,
-    "date": "2026-03-24",
-    "category": "SPORTS",
-    "question": "This American swimmer from Baltimore won a record 28 Olympic medals — 23 of them gold — over four Games, including a stunning eight gold medals at the 2008 Beijing Olympics, making him the most decorated Olympian in history.",
-    "answer": "Michael Phelps",
-    "alternateAnswers": ["phelps", "michael fred phelps", "the baltimore bullet"]
-  },
-  {
-    "day": 37,
-    "date": "2026-03-25",
-    "category": "GEOGRAPHY",
-    "question": "This boot-shaped country in southern Europe holds more UNESCO World Heritage Sites than any other nation and uniquely contains two independent countries — Vatican City and San Marino — entirely within its borders.",
-    "answer": "Italy",
-    "alternateAnswers": ["italy country", "italian republic", "italia"]
-  },
-  {
-    "day": 38,
-    "date": "2026-03-26",
-    "category": "MOVIES",
-    "question": "In this 2008 Christopher Nolan film, Heath Ledger's portrayal of the Joker earned a posthumous Oscar for Best Supporting Actor, helping the film become the first superhero movie to gross over $1 billion worldwide.",
-    "answer": "The Dark Knight",
-    "alternateAnswers": ["dark knight", "batman dark knight", "the dark knight film", "dark knight 2008"]
-  },
-  {
-    "day": 39,
-    "date": "2026-03-27",
-    "category": "FOOD & DRINK",
-    "question": "This buttery, flaky French breakfast pastry is created through a technique called 'lamination' — repeatedly folding dough with layers of butter — and is baked into a golden, crescent shape.",
-    "answer": "Croissant",
-    "alternateAnswers": ["croissants", "french croissant"]
-  },
-  {
-    "day": 40,
-    "date": "2026-03-28",
-    "category": "HISTORY",
-    "question": "This ancient Roman amphitheater, completed around 80 AD and capable of holding up to 80,000 spectators, was the largest arena of its kind and hosted gladiatorial contests, animal hunts, and public executions.",
-    "answer": "Colosseum",
-    "alternateAnswers": ["the colosseum", "coliseum", "roman colosseum", "colosseo"]
-  },
-  {
-    "day": 41,
-    "date": "2026-03-29",
-    "category": "SCIENCE",
-    "question": "On the Fahrenheit scale, water boils at sea level at this temperature — equivalent to 100 degrees Celsius — a key reference point embedded in American kitchens and science classrooms alike.",
-    "answer": "212 Degrees Fahrenheit",
-    "alternateAnswers": ["212", "212 degrees", "212 f", "212°f", "two hundred twelve"]
-  },
-  {
-    "day": 42,
-    "date": "2026-03-30",
-    "category": "MUSIC",
-    "question": "Formed in Dublin, Ireland in 1976, this rock band became one of the world's best-selling acts with anthems including 'With or Without You,' 'One,' and 'Sunday Bloody Sunday,' fronted by singer Bono.",
-    "answer": "U2",
-    "alternateAnswers": ["u2 band", "u2 rock band", "u 2"]
-  },
-  {
-    "day": 43,
-    "date": "2026-03-31",
-    "category": "TELEVISION",
-    "question": "This NBC mockumentary sitcom, starring Amy Poehler as the relentlessly optimistic deputy parks director Leslie Knope, is set in the fictional Indiana city of Pawnee and aired from 2009 to 2015.",
-    "answer": "Parks and Recreation",
-    "alternateAnswers": ["parks and rec", "parks & recreation", "parks and recreation nbc"]
-  },
-  {
-    "day": 44,
-    "date": "2026-04-01",
-    "category": "SPORTS",
-    "question": "Governed globally by FIFA and played by an estimated 250 million people across more than 200 countries, this is the world's most popular sport — known as 'football' nearly everywhere outside the United States.",
-    "answer": "Soccer",
-    "alternateAnswers": ["football", "association football", "soccer sport", "futbol"]
-  },
-  {
-    "day": 45,
-    "date": "2026-04-02",
-    "category": "GEOGRAPHY",
-    "question": "This North African country is home to the Pyramids of Giza, the Great Sphinx, and the Nile River delta, and was the cradle of one of the world's earliest and longest-lasting civilizations.",
-    "answer": "Egypt",
-    "alternateAnswers": ["egypt country", "arab republic of egypt", "kemet"]
-  },
-  {
-    "day": 46,
-    "date": "2026-04-03",
-    "category": "MOVIES",
-    "question": "In this 2014 Marvel film, a rag-tag team of cosmic misfits — including a talking raccoon named Rocket and a tree creature who can only say three words — join forces to protect the universe from a powerful villain.",
-    "answer": "Guardians of the Galaxy",
-    "alternateAnswers": ["guardians of the galaxy film", "gotg", "gotg movie", "guardians"]
-  },
-  {
-    "day": 47,
-    "date": "2026-04-04",
-    "category": "FOOD & DRINK",
-    "question": "This cured, spiced, and smoked beef — a centerpiece of New York City Jewish deli culture — is most famously served piled high on rye bread at Katz's Delicatessen on the Lower East Side.",
-    "answer": "Pastrami",
-    "alternateAnswers": ["pastrami sandwich", "pastrami beef", "pastrami meat"]
-  },
-  {
-    "day": 48,
-    "date": "2026-04-05",
-    "category": "HISTORY",
-    "question": "Ratified in August 1920 after decades of activism by figures like Susan B. Anthony, this constitutional amendment guaranteed American women the right to vote — one of the most significant expansions of democracy in U.S. history.",
-    "answer": "19th Amendment",
-    "alternateAnswers": ["the nineteenth amendment", "nineteenth amendment", "amendment 19", "women's suffrage amendment"]
-  },
-  {
-    "day": 49,
-    "date": "2026-04-06",
-    "category": "SCIENCE",
-    "question": "This biological process, occurring in the chloroplasts of plant cells, converts sunlight, water, and carbon dioxide into glucose and oxygen, forming the foundation of nearly every food chain on Earth.",
-    "answer": "Photosynthesis",
-    "alternateAnswers": ["photosynthesis process", "plant photosynthesis"]
-  },
-  {
-    "day": 50,
-    "date": "2026-04-07",
-    "category": "MUSIC",
-    "question": "This singer-songwriter from Reading, Pennsylvania crossed over from country to pop and became the first artist to simultaneously occupy all top 10 spots on the Billboard Hot 100 with tracks from her 2022 album 'Midnights.'",
-    "answer": "Taylor Swift",
-    "alternateAnswers": ["swift", "taylor alison swift", "t-swift"]
-  },
-  {
-    "day": 51,
-    "date": "2026-04-08",
-    "category": "TELEVISION",
-    "question": "This HBO anthology series, created by Mike White, follows wealthy guests and overworked staff at luxury resorts — first in Hawaii, then Sicily — and won 10 Emmy Awards for its debut season alone.",
-    "answer": "The White Lotus",
-    "alternateAnswers": ["white lotus", "the white lotus hbo", "white lotus hbo"]
-  },
-  {
-    "day": 52,
-    "date": "2026-04-09",
-    "category": "SPORTS",
-    "question": "First held in 1903 and covering roughly 3,400 kilometers across 21 stages through the French Alps and Pyrenees, this annual bicycle race is the world's most prestigious and grueling endurance sports event.",
-    "answer": "Tour de France",
-    "alternateAnswers": ["the tour de france", "le tour de france", "the tour", "tour de france cycling"]
-  },
-  {
-    "day": 53,
-    "date": "2026-04-10",
-    "category": "GEOGRAPHY",
-    "question": "This purpose-built city, chosen as a compromise between Sydney and Melbourne, became the capital of Australia in 1913 and is frequently overlooked by tourists who assume the capital is one of the country's coastal giants.",
-    "answer": "Canberra",
-    "alternateAnswers": ["canberra australia", "canberra city", "canberra capital"]
-  },
-  {
-    "day": 54,
-    "date": "2026-04-11",
-    "category": "MOVIES",
-    "question": "This 1994 Disney animated film, set in the Pride Lands of Africa, follows young Simba as he grows up to reclaim his throne from his murderous uncle Scar, backed by a beloved Elton John soundtrack.",
-    "answer": "The Lion King",
-    "alternateAnswers": ["lion king", "the lion king 1994", "lion king animated", "lion king disney"]
-  },
-  {
-    "day": 55,
-    "date": "2026-04-12",
-    "category": "FOOD & DRINK",
-    "question": "One of the most popular cocktails in America, this tequila-based drink is made with lime juice and triple sec or Cointreau, typically served shaken or on the rocks in a glass with a salted rim.",
-    "answer": "Margarita",
-    "alternateAnswers": ["margarita cocktail", "margarita drink", "margaritas"]
-  },
-  {
-    "day": 56,
-    "date": "2026-04-13",
-    "category": "HISTORY",
-    "question": "Elected in 2008, this Illinois senator became the 44th President of the United States — the first African American to hold the office — and was awarded the Nobel Peace Prize during his first year in power.",
-    "answer": "Barack Obama",
-    "alternateAnswers": ["obama", "barack hussein obama", "president obama"]
-  },
-  {
-    "day": 57,
-    "date": "2026-04-14",
-    "category": "SCIENCE",
-    "question": "Measured in hertz, this property of a wave describes the number of complete cycles that occur per second — it determines the pitch of a sound and, in the case of light waves, its color.",
-    "answer": "Frequency",
-    "alternateAnswers": ["frequency hz", "wave frequency", "sound frequency"]
-  },
-  {
-    "day": 58,
-    "date": "2026-04-15",
-    "category": "MUSIC",
-    "question": "This rapper from Detroit, born Marshall Mathers, is the best-selling hip-hop artist of all time and won an Academy Award for Best Original Song in 2003 for 'Lose Yourself' from his semi-autobiographical film '8 Mile.'",
-    "answer": "Eminem",
-    "alternateAnswers": ["marshall mathers", "slim shady", "em", "marshall bruce mathers"]
-  },
-  {
-    "day": 59,
-    "date": "2026-04-16",
-    "category": "TELEVISION",
-    "question": "This NBC mockumentary sitcom, adapted from a British series by Ricky Gervais, is set at the Dunder Mifflin paper company in Scranton, Pennsylvania, and starred Steve Carell as the painfully oblivious boss Michael Scott.",
-    "answer": "The Office",
-    "alternateAnswers": ["the office us", "the office nbc", "the office show"]
-  },
-  {
-    "day": 60,
-    "date": "2026-04-17",
-    "category": "SPORTS",
-    "question": "Held annually on the first Saturday in May at Churchill Downs in Louisville, this thoroughbred horse race is the first leg of the Triple Crown and is nicknamed 'The Most Exciting Two Minutes in Sports.'",
-    "answer": "Kentucky Derby",
-    "alternateAnswers": ["the kentucky derby", "derby race", "the derby", "the run for the roses"]
-  },
-  {
-    "day": 61,
-    "date": "2026-04-18",
-    "category": "GEOGRAPHY",
-    "question": "Spanning eleven time zones and sharing borders with more countries than any other nation, this country is the world's largest by total area and has Moscow as its capital.",
-    "answer": "Russia",
-    "alternateAnswers": ["russia country", "russian federation", "the russian federation"]
-  },
-  {
-    "day": 62,
-    "date": "2026-04-19",
-    "category": "MOVIES",
-    "question": "In this 1991 thriller, FBI trainee Clarice Starling seeks the help of incarcerated psychiatrist Dr. Hannibal Lecter to catch a serial killer — making it one of only three films in history to win Oscars for all five major categories.",
-    "answer": "The Silence of the Lambs",
-    "alternateAnswers": ["silence of the lambs", "silence of the lambs film", "the silence of the lambs 1991"]
-  },
-  {
-    "day": 63,
-    "date": "2026-04-20",
-    "category": "FOOD & DRINK",
-    "question": "Made by fermenting soybeans with salt and koji mold, this Japanese paste is the base for one of the country's most beloved soups, traditionally served with tofu, seaweed, and green onions.",
-    "answer": "Miso",
-    "alternateAnswers": ["miso paste", "miso soup base", "miso soup"]
-  },
-  {
-    "day": 64,
-    "date": "2026-04-21",
-    "category": "HISTORY",
-    "question": "Held in August 1969 on Max Yasgur's dairy farm in upstate New York, this three-day music festival attracted roughly 400,000 attendees and featured performances by Jimi Hendrix, Janis Joplin, and The Who.",
-    "answer": "Woodstock",
-    "alternateAnswers": ["woodstock festival", "woodstock music festival", "woodstock 1969"]
-  },
-  {
-    "day": 65,
-    "date": "2026-04-22",
-    "category": "SCIENCE",
-    "question": "Unlike fission, which splits atoms apart, this process combines two light atomic nuclei to form a heavier one, releasing enormous amounts of energy — the same reaction that powers the sun and every other star.",
-    "answer": "Nuclear Fusion",
-    "alternateAnswers": ["fusion", "nuclear fusion reaction", "thermonuclear fusion"]
-  },
-  {
-    "day": 66,
-    "date": "2026-04-23",
-    "category": "MUSIC",
-    "question": "This rapper and producer from Compton, California co-founded Death Row Records, launched the careers of Snoop Dogg and Eminem, later founded Beats Electronics, and sold the headphone company to Apple for $3 billion.",
-    "answer": "Dr. Dre",
-    "alternateAnswers": ["dre", "andre romelle young", "dr dre", "doctor dre"]
-  },
-  {
-    "day": 67,
-    "date": "2026-04-24",
-    "category": "TELEVISION",
-    "question": "Set on Madison Avenue in 1960s New York City, this AMC drama stars Jon Hamm as the brilliant but mysterious ad executive Don Draper and is celebrated for its meticulous period detail and exploration of the American Dream.",
-    "answer": "Mad Men",
-    "alternateAnswers": ["mad men show", "mad men amc", "madmen"]
-  },
-  {
-    "day": 68,
-    "date": "2026-04-25",
-    "category": "SPORTS",
-    "question": "This quarterback played for the New England Patriots and Tampa Bay Buccaneers and won a record seven Super Bowl championships, widely cementing his status as the greatest player in NFL history.",
-    "answer": "Tom Brady",
-    "alternateAnswers": ["brady", "thomas brady", "thomas edward patrick brady", "tb12"]
-  },
-  {
-    "day": 69,
-    "date": "2026-04-26",
-    "category": "GEOGRAPHY",
-    "question": "Built across 118 small islands connected by over 400 bridges, this northeastern Italian city is famous for its gondolas, its annual Carnival festival, and the gradual sinking that threatens its long-term survival.",
-    "answer": "Venice",
-    "alternateAnswers": ["venice italy", "venezia", "venice city", "la serenissima"]
-  },
-  {
-    "day": 70,
-    "date": "2026-04-27",
-    "category": "MOVIES",
-    "question": "In this 1985 John Hughes film, five high school students from different social cliques — the brain, the athlete, the basket case, the princess, and the criminal — spend a Saturday detention together and break down their social walls.",
-    "answer": "The Breakfast Club",
-    "alternateAnswers": ["breakfast club", "the breakfast club film", "the breakfast club 1985"]
-  },
-  {
-    "day": 71,
-    "date": "2026-04-28",
-    "category": "FOOD & DRINK",
-    "question": "This deep-fried dough pastry, generously dusted with powdered sugar, is the signature treat of New Orleans and is traditionally served alongside café au lait at the historic Café Du Monde.",
-    "answer": "Beignet",
-    "alternateAnswers": ["beignets", "beignet pastry", "new orleans beignet", "new orleans beignets"]
-  },
-  {
-    "day": 72,
-    "date": "2026-04-29",
-    "category": "HISTORY",
-    "question": "On December 1, 1955, this Montgomery, Alabama seamstress refused to give up her bus seat to a white passenger, an act of quiet defiance that ignited the Montgomery Bus Boycott and galvanized the American civil rights movement.",
-    "answer": "Rosa Parks",
-    "alternateAnswers": ["parks", "rosa louise parks", "rosa mccauley parks"]
-  },
-  {
-    "day": 73,
-    "date": "2026-04-30",
-    "category": "VIDEO GAMES",
-    "question": "Launched by Epic Games in 2017, this free-to-play battle royale game drops up to 100 players onto a shrinking island where they scavenge for weapons and build structures to be the last one standing.",
-    "answer": "Fortnite",
-    "alternateAnswers": ["fortnite game", "fortnite battle royale", "fortnite epic games"]
-  },
-  {
-    "day": 74,
-    "date": "2026-05-01",
-    "category": "MUSIC",
-    "question": "This English singer-songwriter's second album '21,' released in 2011 and featuring the worldwide hit 'Rolling in the Deep,' became one of the best-selling albums in UK and US chart history.",
-    "answer": "Adele",
-    "alternateAnswers": ["adele adkins", "adele singer", "adele laurie blue adkins"]
-  },
-  {
-    "day": 75,
-    "date": "2026-05-02",
-    "category": "SPORTS",
-    "question": "This San Francisco Giants outfielder holds the all-time MLB career home run record with 762, surpassing Hank Aaron's mark of 755 in 2007, though his legacy remains clouded by performance-enhancing drug allegations.",
-    "answer": "Barry Bonds",
-    "alternateAnswers": ["bonds", "barry lamar bonds", "barry bonds giants"]
-  },
-  {
-    "day": 76,
-    "date": "2026-05-03",
-    "category": "GEOGRAPHY",
-    "question": "Located on the northwestern shore of Lake Ontario, this Canadian city is the country's largest, home to the CN Tower and the Hockey Hall of Fame, and is frequently called one of the most multicultural cities in the world.",
-    "answer": "Toronto",
-    "alternateAnswers": ["toronto canada", "toronto ontario", "toronto city"]
-  },
-  {
-    "day": 77,
-    "date": "2026-05-04",
-    "category": "MOVIES",
-    "question": "Starring the late Chadwick Boseman as the king of the fictional African nation of Wakanda, this 2018 Marvel film was the first superhero movie ever nominated for the Academy Award for Best Picture.",
-    "answer": "Black Panther",
-    "alternateAnswers": ["black panther film", "black panther movie", "black panther 2018"]
-  },
-  {
-    "day": 78,
-    "date": "2026-05-05",
-    "category": "FOOD & DRINK",
-    "question": "Introduced by McDonald's in 1968, this burger stacks two beef patties with special sauce, lettuce, cheese, pickles, and onions on a three-part sesame-seed bun, and has become one of the most recognized foods on the planet.",
-    "answer": "Big Mac",
-    "alternateAnswers": ["the big mac", "big mac burger", "mcdonald's big mac", "mcdonalds big mac"]
-  },
-  {
-    "day": 79,
-    "date": "2026-05-06",
-    "category": "HISTORY",
-    "question": "This English naturalist, who sailed on the HMS Beagle in the 1830s and observed wildlife on the Galápagos Islands, published 'On the Origin of Species' in 1859 and transformed humanity's understanding of life on Earth.",
-    "answer": "Charles Darwin",
-    "alternateAnswers": ["darwin", "charles robert darwin", "c. darwin"]
-  },
-  {
-    "day": 80,
-    "date": "2026-05-07",
-    "category": "SCIENCE",
-    "question": "Known as the 'universal recipient,' this blood type can receive red blood cells from donors of any ABO and Rh blood group, making it the most flexible type to match for transfusions.",
-    "answer": "AB Positive",
-    "alternateAnswers": ["ab+", "ab positive blood type", "blood type ab positive", "ab pos"]
-  },
-  {
-    "day": 81,
-    "date": "2026-05-08",
-    "category": "MUSIC",
-    "question": "Born Benito Antonio Martínez Ocasio in Puerto Rico, this Latin trap and reggaeton artist became the most-streamed artist on Spotify globally in 2020, 2021, and 2022 — three consecutive years.",
-    "answer": "Bad Bunny",
-    "alternateAnswers": ["bad bunny singer", "benito ocasio", "benito martinez"]
-  },
-  {
-    "day": 82,
-    "date": "2026-05-09",
-    "category": "TELEVISION",
-    "question": "Released on Netflix in 2015, this true-crime documentary series sparked worldwide debate about the American justice system through the intertwined cases of Steven Avery and his nephew Brendan Dassey.",
-    "answer": "Making a Murderer",
-    "alternateAnswers": ["making a murderer documentary", "making a murderer netflix", "making a murderer series"]
-  },
-  {
-    "day": 83,
-    "date": "2026-05-10",
-    "category": "SPORTS",
-    "question": "This British Formula One driver won seven World Championship titles between 2008 and 2020, and holds all-time records for the most race wins and the most pole positions in F1 history.",
-    "answer": "Lewis Hamilton",
-    "alternateAnswers": ["hamilton", "lewis", "sir lewis hamilton", "l. hamilton"]
-  },
-  {
-    "day": 84,
-    "date": "2026-05-11",
-    "category": "GEOGRAPHY",
-    "question": "Completely encircled by Italy and covering just 61 square kilometers, this tiny republic on the slopes of Mount Titano claims to be the world's oldest constitutional republic, founded by tradition in 301 AD.",
-    "answer": "San Marino",
-    "alternateAnswers": ["republic of san marino", "san marino country", "most serene republic of san marino"]
-  },
-  {
-    "day": 85,
-    "date": "2026-05-12",
-    "category": "MOVIES",
-    "question": "In this 1999 sci-fi film by the Wachowskis, a computer hacker named Neo discovers that the reality everyone perceives is a simulated prison designed by machines, and joins a rebel group fighting to free humanity.",
-    "answer": "The Matrix",
-    "alternateAnswers": ["matrix", "the matrix film", "matrix movie", "the matrix 1999"]
-  },
-  {
-    "day": 86,
-    "date": "2026-05-13",
-    "category": "FOOD & DRINK",
-    "question": "This sweet Italian liqueur, flavored with almonds and apricot pits, is a key ingredient in the Amaretto Sour and Alabama Slammer cocktails, and is most famously sold under the brand name Disaronno.",
-    "answer": "Amaretto",
-    "alternateAnswers": ["amaretto liqueur", "amaretto di saronno", "disaronno amaretto"]
-  },
-  {
-    "day": 87,
-    "date": "2026-05-14",
-    "category": "HISTORY",
-    "question": "On November 9th of this year, the Berlin Wall — which had divided East and West Germany for 28 years — fell, symbolizing the collapse of the Iron Curtain and marking the effective end of the Cold War.",
-    "answer": "1989",
-    "alternateAnswers": ["nineteen eighty-nine", "november 1989", "the year 1989"]
-  },
-  {
-    "day": 88,
-    "date": "2026-05-15",
-    "category": "SCIENCE",
-    "question": "The most abundant metal in Earth's crust, this lightweight silvery element with the chemical symbol Al is used in everything from soda cans to aircraft fuselages and was once so scarce it was considered more precious than gold.",
-    "answer": "Aluminum",
-    "alternateAnswers": ["aluminium", "al", "aluminum element", "aluminium element"]
-  },
-  {
-    "day": 89,
-    "date": "2026-05-16",
-    "category": "ANIMALS",
-    "question": "The world's largest and heaviest living bird, this flightless African native can sprint at up to 45 miles per hour and lays the largest eggs of any living bird species, each weighing up to three pounds.",
-    "answer": "Ostrich",
-    "alternateAnswers": ["ostriches", "ostrich bird", "african ostrich"]
-  },
-  {
-    "day": 90,
-    "date": "2026-05-17",
-    "category": "POP CULTURE",
-    "question": "Created by Stan Lee and Steve Ditko and first appearing in 1962, this Marvel superhero from Queens, New York gained his powers from a radioactive spider bite and lives by the motto 'with great power comes great responsibility.'",
-    "answer": "Spider-Man",
-    "alternateAnswers": ["spiderman", "peter parker", "spider man", "the amazing spider-man"]
+    "questions": [
+      {
+        "category": "SCIENCE",
+        "question": "The most abundant metal in Earth's crust, this lightweight silvery element with the chemical symbol Al is used in everything from soda cans to aircraft fuselages and was once so scarce it was considered more precious than gold.",
+        "answer": "Aluminum",
+        "alternateAnswers": ["aluminium", "al", "aluminum element", "aluminium element"]
+      },
+      {
+        "category": "ANIMALS",
+        "question": "The world's largest and heaviest living bird, this flightless African native can sprint at up to 45 miles per hour and lays the largest eggs of any living bird species, each weighing up to three pounds.",
+        "answer": "Ostrich",
+        "alternateAnswers": ["ostriches", "ostrich bird", "african ostrich"]
+      },
+      {
+        "category": "POP CULTURE",
+        "question": "Created by Stan Lee and Steve Ditko and first appearing in 1962, this Marvel superhero from Queens, New York gained his powers from a radioactive spider bite and lives by the motto 'with great power comes great responsibility.'",
+        "answer": "Spider-Man",
+        "alternateAnswers": ["spiderman", "peter parker", "spider man", "the amazing spider-man"]
+      }
+    ]
   }
 ]

@@ -9,28 +9,33 @@ const formatPoints = (n) => {
   return String(n);
 };
 
-const PHASES = { WAGER: "wager", QUESTION: "question", RESULT: "result" };
+const PHASES = { WAGER: "wager", QUESTION: "question", INTER_RESULT: "inter_result", RESULT: "result" };
 const TIMER_SECONDS = 30;
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
 const STORAGE_KEY    = "ysat_player";
 const SEEN_KEY       = "ysat_seen";
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 const todayStr       = () => new Date().toISOString().slice(0, 10);
 
 const defaultStats = () => ({
   schemaVersion: SCHEMA_VERSION,
   points: 0, streak: 0, totalCorrect: 0, totalPlayed: 0,
-  lastPlayedDate: null, lastPlayedDay: null, history: [],
+  lastPlayedDate: null, lastPlayedDay: null,
+  dayStartPoints: null, dayStartedDay: null,
+  history: [],
 });
 
 const migrateStats = (saved) => {
   const version = saved.schemaVersion ?? 0;
   if (version < 1) {
-    // v0 → v1: add schemaVersion, everything else stays as-is
     saved = { ...saved, schemaVersion: 1 };
   }
-  // Future migrations go here: if (version < 2) { ... }
+  if (version < 2) {
+    // v1 → v2: add day-budget tracking fields
+    saved = { ...saved, schemaVersion: 2, dayStartPoints: null, dayStartedDay: null };
+  }
+  // Future migrations go here: if (version < 3) { ... }
   return saved;
 };
 
@@ -41,7 +46,7 @@ const loadStats = () => {
     let saved = migrateStats(JSON.parse(raw));
     if (saved.lastPlayedDate) {
       const daysDiff = Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000);
-      if (daysDiff > 1) return { ...saved, points: 0, streak: 0 };
+      if (daysDiff > 1) return { ...saved, points: 0, streak: 0, dayStartPoints: null, dayStartedDay: null };
     }
     return saved;
   } catch { return defaultStats(); }
@@ -53,8 +58,13 @@ const saveStats = (s) => { try { localStorage.setItem(STORAGE_KEY, JSON.stringif
 const RULES = [
   {
     icon: "★",
-    heading: "Wager your points",
-    body: "Each day you see today's category. Decide how many points to bet — up to your total (or 1,000 if you have less than that).",
+    heading: "Three questions a day",
+    body: "Each day has three trivia questions across three different categories. You see one category at a time — the next is only revealed after you submit your answer.",
+  },
+  {
+    icon: "$",
+    heading: "Wager your balance",
+    body: "Before each question you place a wager from your previous day's total. You can't bet today's winnings — only the balance you carried in. You must keep at least $1 in reserve for each remaining question.",
   },
   {
     icon: "?",
@@ -69,7 +79,7 @@ const RULES = [
   {
     icon: "\uD83D\uDD25",
     heading: "Keep your streak",
-    body: "Points and streak accumulate every day you play. Miss a single day and both reset to zero — so come back tomorrow!",
+    body: "Complete all three questions each day to keep your streak alive. Miss a day entirely and your streak resets to zero.",
   },
 ];
 
@@ -98,7 +108,7 @@ function RulesModal({ onClose, isOnboarding }) {
         </div>
 
         <div style={S.modalNote}>
-          A new question drops every day at midnight UTC. Don&apos;t miss a day!
+          A new set of questions drops every day at midnight UTC. Don&apos;t miss a day!
         </div>
 
         <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={onClose}>
@@ -120,15 +130,20 @@ export default function App() {
   const [retryCount, setRetryCount] = useState(0);
 
   // ─── Game state ────────────────────────────────────────────────────────────
-  const [phase, setPhase]             = useState(PHASES.WAGER);
-  const [wager, setWager]             = useState("");
-  const [answer, setAnswer]           = useState("");
-  const [result, setResult]           = useState(null);
-  const [timedOut, setTimedOut]       = useState(false);
-  const [wagerLocked, setWagerLocked] = useState(null);
+  const [phase, setPhase]                 = useState(PHASES.WAGER);
+  const [questionIndex, setQuestionIndex] = useState(0);
+
+  const [wagers, setWagers]         = useState([null, null, null]);
+  const [wager, setWager]           = useState("");
+  const [answers, setAnswers]       = useState(["", "", ""]);
+  const [answer, setAnswer]         = useState("");
+  const [results, setResults]       = useState([null, null, null]);
+  const [timedOuts, setTimedOuts]   = useState([false, false, false]);
+  const [matchMethods, setMatchMethods] = useState([null, null, null]);
+
+  const [finalPoints, setFinalPoints] = useState(null);
   const [checking, setChecking]       = useState(false);
   const [copied, setCopied]           = useState(false);
-  const [matchMethod, setMatchMethod] = useState(null);
   const [showInfo, setShowInfo]       = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(() => {
     try { return !localStorage.getItem(SEEN_KEY); } catch { return true; }
@@ -147,14 +162,28 @@ export default function App() {
       })
       .then(data => {
         setGameData(data);
-        // Restore UI state if this question was already played today
-        const played = stats.lastPlayedDay === data.day;
-        if (played) {
+
+        if (stats.lastPlayedDay === data.day) {
+          // Already completed today — restore final result screen
+          const last = stats.history.at(-1);
+          if (last?.questions) {
+            setResults(last.questions.map(q => q.correct));
+            setTimedOuts(last.questions.map(q => q.timedOut ?? false));
+            setWagers(last.questions.map(q => q.wager));
+            setFinalPoints(last.pointsAfter ?? stats.points);
+          }
           setPhase(PHASES.RESULT);
-          setResult(stats.history.at(-1)?.correct ?? null);
-          setTimedOut(stats.history.at(-1)?.timedOut ?? false);
-          setWagerLocked(stats.history.at(-1)?.wager ?? null);
+        } else if (stats.dayStartedDay !== data.day) {
+          // First time seeing today — lock the budget
+          setStats(prev => ({
+            ...prev,
+            dayStartPoints: prev.points,
+            dayStartedDay: data.day,
+          }));
         }
+        // If dayStartedDay === data.day but not fully played: they refreshed mid-game.
+        // Reset to Q1 wager with locked budget still in stats.
+
         setLoading(false);
       })
       .catch(() => {
@@ -165,7 +194,6 @@ export default function App() {
 
   const alreadyPlayed = gameData ? stats.lastPlayedDay === gameData.day : false;
 
-  // Detect missed-day: saved data had a positive streak but today's loaded stats zeroed it
   const missedDay = (() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -176,12 +204,11 @@ export default function App() {
     } catch { return false; }
   })();
 
-  const points       = stats.points;
-  const streak       = stats.streak;
-  const totalCorrect = stats.totalCorrect;
-  const totalPlayed  = stats.totalPlayed;
-  const minWager     = 0;
-  const maxWager     = points < 1000 ? 1000 : points;
+  // ─── Budget ────────────────────────────────────────────────────────────────
+  const dayBudget      = Math.max(stats.dayStartPoints ?? stats.points, 1000);
+  const allocatedSoFar = wagers.slice(0, questionIndex).reduce((sum, w) => sum + (w ?? 0), 0);
+  const reserve        = Math.max(0, 2 - questionIndex); // $1 per remaining future question
+  const maxWager       = Math.max(0, dayBudget - allocatedSoFar - reserve);
 
   useEffect(() => { saveStats(stats); }, [stats]);
   useEffect(() => {
@@ -196,80 +223,125 @@ export default function App() {
   // ─── Game actions ─────────────────────────────────────────────────────────
   const handleWager = () => {
     const w = parseInt(wager, 10);
-    if (isNaN(w) || w < minWager || w > maxWager) return;
-    setWagerLocked(w);
+    if (isNaN(w) || w < 0 || w > maxWager) return;
+    const next = [...wagers];
+    next[questionIndex] = w;
+    setWagers(next);
+    setWager("");
     setPhase(PHASES.QUESTION);
   };
 
-  const commitResult = (isCorrect, isTimeout, w) => {
-    setStats(prev => {
-      const pointsAfter = isCorrect ? prev.points + w : Math.max(0, prev.points - w);
-      return {
-        ...prev,
-        points: pointsAfter,
-        streak: isCorrect ? prev.streak + 1 : 0,
-        totalCorrect: prev.totalCorrect + (isCorrect ? 1 : 0),
-        totalPlayed: prev.totalPlayed + 1,
-        lastPlayedDate: todayStr(),
-        lastPlayedDay: gameData.day,
-        history: [...prev.history, {
-          day: gameData.day, date: todayStr(), correct: isCorrect,
-          timedOut: isTimeout, wager: w, pointsBefore: prev.points, pointsAfter,
-        }],
-      };
-    });
+  const commitFinalResult = (finalResults, finalTimedOuts, finalWagers) => {
+    const pointsBefore = stats.dayStartPoints ?? stats.points;
+    let pointsChange = 0;
+    for (let i = 0; i < 3; i++) {
+      const w = finalWagers[i] ?? 0;
+      pointsChange += finalResults[i] ? w : -w;
+    }
+    const pointsAfter = Math.max(0, pointsBefore + pointsChange);
+    setFinalPoints(pointsAfter);
+
+    setStats(prev => ({
+      ...prev,
+      points: pointsAfter,
+      streak: prev.streak + 1,
+      totalCorrect: prev.totalCorrect + finalResults.filter(Boolean).length,
+      totalPlayed: prev.totalPlayed + 3,
+      lastPlayedDate: todayStr(),
+      lastPlayedDay: gameData.day,
+      dayStartPoints: null,
+      dayStartedDay: null,
+      history: [...prev.history, {
+        day: gameData.day,
+        date: todayStr(),
+        questions: finalResults.map((correct, i) => ({
+          correct,
+          timedOut: finalTimedOuts[i],
+          wager: finalWagers[i] ?? 0,
+        })),
+        pointsBefore,
+        pointsAfter,
+      }],
+    }));
   };
 
   const checkAnswer = async (isTimeout = false) => {
     if (!answer.trim() && !isTimeout) return;
     setChecking(true);
+
+    const lockedWager = wagers[questionIndex];
+
+    const finalize = (correct, timedOut, method) => {
+      const newResults    = results.map((r, i) => i === questionIndex ? correct : r);
+      const newTimedOuts  = timedOuts.map((t, i) => i === questionIndex ? timedOut : t);
+      const newMethods    = matchMethods.map((m, i) => i === questionIndex ? method : m);
+      const newAnswers    = answers.map((a, i) => i === questionIndex ? answer.trim() : a);
+      const newWagers     = wagers.map((w, i) => i === questionIndex ? lockedWager : w);
+
+      setResults(newResults);
+      setTimedOuts(newTimedOuts);
+      setMatchMethods(newMethods);
+      setAnswers(newAnswers);
+
+      if (questionIndex === 2) {
+        commitFinalResult(newResults, newTimedOuts, newWagers);
+        setPhase(PHASES.RESULT);
+      } else {
+        setPhase(PHASES.INTER_RESULT);
+      }
+    };
+
     if (isTimeout) {
-      setTimedOut(true); setResult(false); setMatchMethod(null);
-      commitResult(false, true, wagerLocked);
-      setChecking(false); setPhase(PHASES.RESULT);
+      finalize(false, true, null);
+      setChecking(false);
       return;
     }
+
     try {
+      const q = gameData.questions[questionIndex];
       const res = await fetch("/api/validate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userAnswer: answer.trim(),
-          correctAnswer: gameData.answer,
-          alternateAnswers: gameData.alternateAnswers,
-          question: gameData.question,
-          category: gameData.category,
+          correctAnswer: q.answer,
+          alternateAnswers: q.alternateAnswers,
+          question: q.question,
+          category: q.category,
         }),
       });
       const data = await res.json();
-      setMatchMethod(data.method);
-      setResult(data.correct);
-      commitResult(data.correct, false, wagerLocked);
+      finalize(data.correct, false, data.method);
     } catch {
-      // Network failure — treat as incorrect
-      setMatchMethod(null);
-      setResult(false);
-      commitResult(false, false, wagerLocked);
+      finalize(false, false, null);
     }
-    setChecking(false); setPhase(PHASES.RESULT);
+
+    setChecking(false);
+  };
+
+  const advanceToNextQuestion = () => {
+    const next = questionIndex + 1;
+    setQuestionIndex(next);
+    setAnswer("");
+    setPhase(PHASES.WAGER);
   };
 
   const handleShare = () => {
-    const statusEmoji = result ? "\uD83D\uDFE9" : timedOut ? "\uD83D\uDFEA" : "\uD83D\uDFE5";
-    const statusText  = result ? "CORRECT" : timedOut ? "DID NOT COMPLETE" : "INCORRECT";
-    const trendEmoji  = result ? "\uD83D\uDCC8" : "\uD83D\uDCC9";
-    const url         = "https://yousureaboutthat.app";
+    const emojiFor = (i) => results[i] ? "\uD83D\uDFE9" : timedOuts[i] ? "\uD83D\uDFEA" : "\uD83D\uDFE5";
+    const squares  = [0, 1, 2].map(emojiFor).join("");
+    const totalWagered = wagers.reduce((sum, w) => sum + (w ?? 0), 0);
+    const displayPoints = finalPoints ?? stats.points;
+    const url = "https://yousureaboutthat.app";
 
     const text = [
       `You Sure About That? #${String(gameData.day).padStart(3, "0")}`,
-      `${statusEmoji} ${statusText}`,
-      `\uD83D\uDCB5 Wagered (${formatPoints(wagerLocked)} pts)`,
-      `${trendEmoji} New Total: ${formatPoints(stats.points)} pts`,
+      squares,
+      `\uD83C\uDFB0 Total wagered today: ${formatPoints(totalWagered)} pts`,
+      `\uD83D\uDCB0 New total: ${formatPoints(displayPoints)} pts`,
       `\uD83D\uDD25 Streak: ${stats.streak}`,
     ].join("\n");
 
     if (navigator.share) {
-      // url is passed separately so platforms render it as a rich link/preview
       navigator.share({ text, url }).catch(() => {});
     } else {
       navigator.clipboard.writeText(`${text}\n\n${url}`).then(() => {
@@ -285,7 +357,7 @@ export default function App() {
         <div style={S.card} className="fadeIn">
           <div style={S.loadingWrap}>
             <div style={S.loadingSpinner} className="spinner" />
-            <div style={S.loadingText}>Loading today&apos;s question&hellip;</div>
+            <div style={S.loadingText}>Loading today&apos;s questions&hellip;</div>
           </div>
         </div>
       );
@@ -296,9 +368,9 @@ export default function App() {
         <div style={S.card} className="fadeIn">
           <div style={S.errorWrap}>
             <div style={S.errorIcon}>!</div>
-            <div style={S.errorTitle}>No question today</div>
+            <div style={S.errorTitle}>No questions today</div>
             <div style={S.errorText}>
-              We couldn&apos;t load today&apos;s question. Check back later or try refreshing.
+              We couldn&apos;t load today&apos;s questions. Check back later or try refreshing.
             </div>
             <button
               style={{ ...S.mainBtn, background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)" }}
@@ -311,29 +383,66 @@ export default function App() {
       );
     }
 
+    const q = gameData.questions[questionIndex];
+
     return (
       <>
         {phase === PHASES.WAGER && (
-          <WagerPhase {...{ wager, setWager, maxWager, minWager, handleWager }}
-            category={gameData.category} />
+          <WagerPhase
+            {...{ wager, setWager, maxWager, handleWager }}
+            category={q.category}
+            questionIndex={questionIndex}
+            dayBudget={dayBudget}
+            allocatedSoFar={allocatedSoFar}
+          />
         )}
         {phase === PHASES.QUESTION && (
-          <QuestionPhase {...{ answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef }}
-            category={gameData.category} question={gameData.question} />
+          <QuestionPhase
+            {...{ answer, setAnswer, checking, checkAnswer, inputRef }}
+            wagerLocked={wagers[questionIndex]}
+            category={q.category}
+            question={q.question}
+            questionIndex={questionIndex}
+          />
+        )}
+        {phase === PHASES.INTER_RESULT && (
+          <InterResultPhase
+            result={results[questionIndex]}
+            timedOut={timedOuts[questionIndex]}
+            correctAnswer={q.answer}
+            userAnswer={answers[questionIndex]}
+            nextCategory={gameData.questions[questionIndex + 1]?.category}
+            questionIndex={questionIndex}
+            onContinue={advanceToNextQuestion}
+          />
         )}
         {phase === PHASES.RESULT && (
-          <ResultPhase {...{ result, wagerLocked, points, streak, totalCorrect, totalPlayed, handleShare, copied, matchMethod, timedOut, alreadyPlayed }}
-            correctAnswer={gameData.answer} userAnswer={answer} />
+          <ResultPhase
+            results={results}
+            timedOuts={timedOuts}
+            wagers={wagers}
+            questions={gameData.questions}
+            finalPoints={finalPoints ?? stats.points}
+            streak={stats.streak}
+            totalCorrect={stats.totalCorrect}
+            totalPlayed={stats.totalPlayed}
+            handleShare={handleShare}
+            copied={copied}
+            alreadyPlayed={alreadyPlayed}
+          />
         )}
       </>
     );
   };
 
+  const displayPoints = (phase === PHASES.RESULT || alreadyPlayed)
+    ? (finalPoints ?? stats.points)
+    : (stats.dayStartPoints ?? stats.points);
+
   return (
     <div style={S.root}>
       <style>{css}</style>
 
-      {/* Modals */}
       {showOnboarding && <RulesModal onClose={dismissOnboarding} isOnboarding />}
       {showInfo && !showOnboarding && <RulesModal onClose={() => setShowInfo(false)} />}
 
@@ -355,20 +464,40 @@ export default function App() {
           <div style={S.pointsBar}>
             <div style={S.pointsLeft}>
               <span style={S.pointsLabel}>Your Points</span>
-              <span style={S.pointsValue}>{formatPoints(points)}</span>
+              <span style={S.pointsValue}>{formatPoints(displayPoints)}</span>
             </div>
-            <div style={S.streakBadge}>&#x1F525; {streak}</div>
+            <div style={S.streakBadge}>&#x1F525; {stats.streak}</div>
           </div>
         </header>
 
         {/* ── Missed-day banner ── */}
-        {missedDay && phase === PHASES.WAGER && !loading && (
+        {missedDay && phase === PHASES.WAGER && questionIndex === 0 && !loading && (
           <div style={S.missedDayBanner} className="fadeIn">
             <span style={S.missedDayIcon}>&#x1F494;</span>
             <div>
               <div style={S.missedDayTitle}>Your streak is over</div>
               <div style={S.missedDayText}>Keep playing daily to build your points back up.</div>
             </div>
+          </div>
+        )}
+
+        {/* ── Progress dots ── */}
+        {!loading && !fetchError && gameData && phase !== PHASES.RESULT && (
+          <div style={S.progressDots}>
+            {[0, 1, 2].map(i => (
+              <div
+                key={i}
+                style={{
+                  ...S.progressDot,
+                  background: i < questionIndex
+                    ? (results[i] ? "var(--green)" : timedOuts[i] ? "var(--purple)" : "var(--red)")
+                    : i === questionIndex
+                      ? "var(--gold)"
+                      : "var(--surface2)",
+                  border: i === questionIndex ? "2px solid var(--gold)" : "2px solid transparent",
+                }}
+              />
+            ))}
           </div>
         )}
 
@@ -386,10 +515,12 @@ export default function App() {
 }
 
 // ─── Wager phase ──────────────────────────────────────────────────────────────
-function WagerPhase({ wager, setWager, maxWager, minWager, handleWager, category }) {
+function WagerPhase({ wager, setWager, maxWager, handleWager, category, questionIndex, dayBudget, allocatedSoFar }) {
   const w     = parseInt(wager, 10);
-  const valid = !isNaN(w) && w >= minWager && w <= maxWager;
-  const pct   = valid ? Math.min(100, (w / maxWager) * 100) : 0;
+  const valid = !isNaN(w) && w >= 0 && w <= maxWager;
+  const pct   = valid ? Math.min(100, maxWager > 0 ? (w / maxWager) * 100 : 0) : 0;
+  const remaining = dayBudget - allocatedSoFar;
+
   const presets = [
     { label: "Safe",   val: Math.floor(maxWager * 0.1) },
     { label: "Half",   val: Math.floor(maxWager * 0.5) },
@@ -397,16 +528,24 @@ function WagerPhase({ wager, setWager, maxWager, minWager, handleWager, category
   ];
   return (
     <div style={S.card} className="fadeIn">
-      <div style={S.phaseTag}>PLACE YOUR WAGER</div>
+      <div style={S.phaseTag}>QUESTION {questionIndex + 1} OF 3 &nbsp;·&nbsp; PLACE YOUR WAGER</div>
       <div style={S.categoryReveal}>
-        <div style={S.categoryLabel}>Today&apos;s Category</div>
+        <div style={S.categoryLabel}>Category {questionIndex + 1}</div>
         <div style={S.categoryName} className="popIn">{category}</div>
       </div>
+
+      {questionIndex > 0 && (
+        <div style={S.budgetRow}>
+          <span style={S.budgetLabel}>Budget remaining</span>
+          <span style={S.budgetValue}>{formatPoints(remaining)} pts</span>
+        </div>
+      )}
+
       <div style={S.wagerSection}>
         <div style={S.wagerRow}>
           <div style={S.wagerInputWrap}>
             <span style={S.wagerCurrency}>&#9733;</span>
-            <input type="number" min={minWager} max={maxWager} value={wager}
+            <input type="number" min={0} max={maxWager} value={wager}
               onChange={e => setWager(e.target.value)} placeholder="0" style={S.wagerInput}
               onKeyDown={e => e.key === "Enter" && valid && handleWager()} />
           </div>
@@ -432,8 +571,8 @@ function WagerPhase({ wager, setWager, maxWager, minWager, handleWager, category
 }
 
 // ─── Question phase ───────────────────────────────────────────────────────────
-function QuestionPhase({ category, question, answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef }) {
-  const [timeLeft, setTimeLeft]   = useState(TIMER_SECONDS);
+function QuestionPhase({ category, question, answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef, questionIndex }) {
+  const [timeLeft, setTimeLeft]     = useState(TIMER_SECONDS);
   const [checkStage, setCheckStage] = useState(0);
   const timerRef = useRef(null);
 
@@ -446,7 +585,7 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [checking]);
+  }, [checking]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!checking) { setCheckStage(0); return; }
@@ -455,14 +594,14 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
     return () => clearInterval(t);
   }, [checking]);
 
-  const stages = ["Checking", "Normalizing", "Analyzing", "AI verifying"];
+  const stages    = ["Checking", "Normalizing", "Analyzing", "AI verifying"];
   const pct       = (timeLeft / TIMER_SECONDS) * 100;
   const isUrgent  = timeLeft <= 10;
   const timerColor = timeLeft > 10 ? "var(--gold)" : timeLeft > 5 ? "#ff9500" : "var(--red)";
 
   return (
     <div style={S.card} className="fadeIn">
-      <div style={S.phaseTag}>ANSWER THE QUESTION</div>
+      <div style={S.phaseTag}>QUESTION {questionIndex + 1} OF 3 &nbsp;·&nbsp; ANSWER THE QUESTION</div>
       <div style={S.wagerDisplay}>Wagered <strong>{formatPoints(wagerLocked)} pts</strong></div>
 
       <div style={S.timerWrap}>
@@ -496,60 +635,103 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
   );
 }
 
-// ─── Result phase ─────────────────────────────────────────────────────────────
-const METHOD_LABELS = {
-  exact:      { label: "Exact match",      icon: "\u26A1", color: "rgba(34,197,94,0.15)",  border: "rgba(34,197,94,0.3)"  },
-  normalized: { label: "Normalized match", icon: "\u2726",  color: "rgba(34,197,94,0.12)",  border: "rgba(34,197,94,0.25)" },
-  keyword:    { label: "Key word match",   icon: "\u25CE",  color: "rgba(234,179,8,0.12)",  border: "rgba(234,179,8,0.3)"  },
-  ai:         { label: "AI verified",      icon: "\u2726",  color: "rgba(139,92,246,0.15)", border: "rgba(139,92,246,0.3)" },
-  "ai-error": { label: "AI check failed",  icon: "\u26A0",  color: "rgba(239,68,68,0.1)",   border: "rgba(239,68,68,0.2)"  },
-};
-
-function ResultPhase({ result, wagerLocked, points, streak, totalCorrect, totalPlayed, handleShare, copied, correctAnswer, userAnswer, matchMethod, timedOut, alreadyPlayed }) {
-  const delta       = result ? `+${formatPoints(wagerLocked)}` : `-${formatPoints(wagerLocked)}`;
-  const method      = matchMethod && METHOD_LABELS[matchMethod];
+// ─── Inter-result popup ───────────────────────────────────────────────────────
+function InterResultPhase({ result, timedOut, correctAnswer, userAnswer, nextCategory, questionIndex, onContinue }) {
   const bannerBg    = result ? "var(--green)" : timedOut ? "var(--purple)" : "var(--red)";
   const bannerIcon  = result ? "\u2713" : timedOut ? "\u23F1" : "\u2717";
   const bannerLabel = result ? "CORRECT!" : timedOut ? "TIME'S UP!" : "INCORRECT";
-  const accent      = result ? "var(--green)" : timedOut ? "var(--purple)" : "var(--red)";
 
-  const streakMsg = result
-    ? "Come back tomorrow to keep your streak and points!"
-    : "Come back tomorrow \u2014 you can still keep your streak going!";
+  return (
+    <div style={S.modalOverlay}>
+      <div style={{ ...S.modal, gap: 16 }} className="modalIn">
+        <div style={S.interPhaseTag}>QUESTION {questionIndex + 1} RESULT</div>
+
+        <div style={{ ...S.resultBanner, background: bannerBg }} className="popIn">
+          <span style={S.resultEmoji}>{bannerIcon}</span>
+          <span style={S.resultLabel}>{bannerLabel}</span>
+        </div>
+
+        {!result && (
+          <div style={{
+            ...S.correctAnswerBox,
+            background: timedOut ? "rgba(139,92,246,0.08)" : "rgba(239,68,68,0.08)",
+            border: `1px solid ${timedOut ? "rgba(139,92,246,0.25)" : "rgba(239,68,68,0.2)"}`,
+          }}>
+            {timedOut && <span style={{ ...S.correctAnswerLabel, color: "var(--purple)" }}>YOU RAN OUT OF TIME</span>}
+            <span style={S.correctAnswerLabel}>Correct Answer:</span>
+            <span style={S.correctAnswerText}>{correctAnswer}</span>
+            {!timedOut && userAnswer && <span style={S.yourAnswerText}>You said: <em>{userAnswer}</em></span>}
+          </div>
+        )}
+
+        <div style={S.nextCategoryPreview}>
+          <div style={S.nextCategoryLabel}>Up next — Category {questionIndex + 2}</div>
+          <div style={S.nextCategoryName} className="popIn">{nextCategory}</div>
+        </div>
+
+        <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={onContinue}>
+          Place Your Wager &#x2192;
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Result phase ─────────────────────────────────────────────────────────────
+function ResultPhase({ results, timedOuts, wagers, questions, finalPoints, streak, totalCorrect, totalPlayed, handleShare, copied, alreadyPlayed }) {
+  const totalWagered = wagers.reduce((sum, w) => sum + (w ?? 0), 0);
+  const correctCount = results.filter(Boolean).length;
+
+  const bannerBg    = correctCount === 3 ? "var(--green)" : correctCount === 0 ? "var(--red)" : "var(--gold)";
+  const bannerLabel = correctCount === 3 ? "PERFECT DAY!" : correctCount === 0 ? "TOUGH ONE" : `${correctCount} OF 3 CORRECT`;
+  const bannerIcon  = correctCount === 3 ? "\u2713" : correctCount === 0 ? "\u2717" : "\u25D0";
+
 
   return (
     <div style={S.card} className="fadeIn">
+      {/* Overall banner */}
       <div style={{ ...S.resultBanner, background: bannerBg }} className="popIn">
         <span style={S.resultEmoji}>{bannerIcon}</span>
         <span style={S.resultLabel}>{bannerLabel}</span>
       </div>
 
-      {result && method && (
-        <div style={{ ...S.matchBadge, background: method.color, border: `1px solid ${method.border}` }}>
-          <span>{method.icon}</span>
-          <span style={S.matchBadgeText}>{method.label}</span>
-        </div>
-      )}
-
-      {!result && (
-        <div style={{ ...S.correctAnswerBox, background: timedOut ? "rgba(139,92,246,0.08)" : "rgba(239,68,68,0.08)", border: `1px solid ${timedOut ? "rgba(139,92,246,0.25)" : "rgba(239,68,68,0.2)"}` }}>
-          {timedOut && <span style={{ ...S.correctAnswerLabel, color: "var(--purple)" }}>YOU RAN OUT OF TIME</span>}
-          <span style={S.correctAnswerLabel}>Correct Answer:</span>
-          <span style={S.correctAnswerText}>{correctAnswer}</span>
-          {!timedOut && userAnswer && <span style={S.yourAnswerText}>You said: <em>{userAnswer}</em></span>}
-        </div>
-      )}
-
-      <div style={S.statsGrid}>
-        <Stat label="Wagered"       value={`${formatPoints(wagerLocked)} pts`} />
-        <Stat label="Points Change" value={delta} accent={accent} />
-        <Stat label="New Total"     value={`${formatPoints(points)} pts`} big />
-        <Stat label="Streak"        value={`${streak} days \uD83D\uDD25`} />
-        <Stat label="Accuracy"      value={totalPlayed ? `${Math.round((totalCorrect / totalPlayed) * 100)}%` : "\u2014"} />
-        <Stat label="Games"         value={totalPlayed} />
+      {/* Per-question breakdown */}
+      <div style={S.questionBreakdown}>
+        {questions.map((q, i) => {
+          const correct  = results[i];
+          const timeout  = timedOuts[i];
+          const accent   = correct ? "var(--green)" : timeout ? "var(--purple)" : "var(--red)";
+          const icon     = correct ? "\u2713" : timeout ? "\u23F1" : "\u2717";
+          return (
+            <div key={i} style={{ ...S.breakdownRow, borderLeft: `3px solid ${accent}` }}>
+              <div style={{ ...S.breakdownIcon, color: accent }}>{icon}</div>
+              <div style={S.breakdownContent}>
+                <div style={S.breakdownCategory}>{q.category}</div>
+                {!correct && (
+                  <div style={S.breakdownAnswer}>
+                    <span style={{ color: "var(--muted)", fontSize: 11 }}>Answer: </span>
+                    <span style={{ fontWeight: 600, color: "var(--text)" }}>{q.answer}</span>
+                  </div>
+                )}
+              </div>
+              <div style={{ ...S.breakdownWager, color: correct ? "var(--green)" : "var(--red)" }}>
+                {correct ? "+" : "-"}{formatPoints(wagers[i] ?? 0)}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      <div style={S.streakMessage}>{streakMsg}</div>
+      {/* Summary stats */}
+      <div style={S.statsGrid}>
+        <Stat label="Total Wagered"  value={`${formatPoints(totalWagered)} pts`} />
+        <Stat label="Questions Right" value={`${correctCount} / 3`} />
+        <Stat label="New Total"      value={`${formatPoints(finalPoints)} pts`} big />
+        <Stat label="Streak"         value={`${streak} days \uD83D\uDD25`} />
+        <Stat label="Accuracy"       value={totalPlayed ? `${Math.round((totalCorrect / totalPlayed) * 100)}%` : "\u2014"} />
+      </div>
+
+      <div style={S.streakMessage}>Come back tomorrow to keep your streak and points!</div>
 
       <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={handleShare}>
         {copied ? "\u2713 Copied to clipboard!" : "Share Result"}
@@ -557,7 +739,7 @@ function ResultPhase({ result, wagerLocked, points, streak, totalCorrect, totalP
 
       {alreadyPlayed && (
         <div style={S.alreadyPlayedNotice}>
-          You&apos;ve already played today. Come back tomorrow to keep your streak and points!
+          You&apos;ve already played today. Come back tomorrow!
         </div>
       )}
     </div>
@@ -626,6 +808,9 @@ const S = {
   pointsValue:{ fontFamily:"'Bebas Neue',sans-serif", fontSize:26, color:"var(--gold)", letterSpacing:"0.03em" },
   streakBadge:{ fontSize:13, fontWeight:600, color:"#ff9500", background:"rgba(255,149,0,0.12)", border:"1px solid rgba(255,149,0,0.25)", borderRadius:8, padding:"4px 12px" },
 
+  progressDots:{ display:"flex", justifyContent:"center", gap:10 },
+  progressDot: { width:12, height:12, borderRadius:"50%", transition:"background 0.3s ease" },
+
   missedDayBanner:{ display:"flex", alignItems:"flex-start", gap:12, background:"rgba(139,92,246,0.1)", border:"1px solid rgba(139,92,246,0.25)", borderRadius:12, padding:"14px 16px" },
   missedDayIcon:  { fontSize:22, lineHeight:1.2, flexShrink:0 },
   missedDayTitle: { fontSize:13, fontWeight:700, color:"var(--purple)", marginBottom:3 },
@@ -645,7 +830,10 @@ const S = {
 
   categoryReveal:{ textAlign:"center", padding:"8px 0" },
   categoryLabel: { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
-  categoryName:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:64, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 40px rgba(245,197,24,0.4)" },
+  categoryName:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:60, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 40px rgba(245,197,24,0.4)" },
+  budgetRow:     { display:"flex", justifyContent:"space-between", alignItems:"center", background:"var(--surface2)", borderRadius:8, padding:"8px 14px" },
+  budgetLabel:   { fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
+  budgetValue:   { fontSize:13, fontWeight:700, color:"var(--text)" },
   wagerSection:  { display:"flex", flexDirection:"column", gap:14 },
   wagerRow:      { display:"flex", justifyContent:"center" },
   wagerInputWrap:{ display:"flex", alignItems:"center", gap:8, background:"var(--surface2)", border:"2px solid var(--gold)", borderRadius:12, padding:"8px 16px", width:"100%", maxWidth:260 },
@@ -673,15 +861,28 @@ const S = {
   answerSection:   { display:"flex", flexDirection:"column", gap:12 },
   answerInput:     { background:"var(--surface2)", border:"2px solid var(--border)", borderRadius:12, color:"var(--text)", padding:"12px 16px", fontSize:16, fontFamily:"'DM Sans',sans-serif", outline:"none", width:"100%" },
 
+  interPhaseTag:       { fontSize:10, fontWeight:700, letterSpacing:"0.15em", color:"var(--muted)", textTransform:"uppercase" },
+  nextCategoryPreview: { textAlign:"center", padding:"4px 0" },
+  nextCategoryLabel:   { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
+  nextCategoryName:    { fontFamily:"'Bebas Neue',sans-serif", fontSize:48, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 30px rgba(245,197,24,0.4)" },
+
   resultBanner:    { borderRadius:12, padding:"16px 20px", display:"flex", alignItems:"center", gap:12 },
   resultEmoji:     { fontSize:28, fontWeight:700, color:"#fff" },
   resultLabel:     { fontFamily:"'Bebas Neue',sans-serif", fontSize:32, color:"#fff", letterSpacing:"0.08em" },
-  matchBadge:      { display:"flex", alignItems:"center", gap:8, borderRadius:8, padding:"8px 12px" },
-  matchBadgeText:  { fontSize:11, fontWeight:600, letterSpacing:"0.08em", textTransform:"uppercase", color:"var(--muted)" },
-  correctAnswerBox:{ borderRadius:10, padding:"12px 16px", display:"flex", flexDirection:"column", gap:4 },
+
+  correctAnswerBox:  { borderRadius:10, padding:"12px 16px", display:"flex", flexDirection:"column", gap:4 },
   correctAnswerLabel:{ fontSize:10, color:"var(--red)", textTransform:"uppercase", letterSpacing:"0.1em", fontWeight:700 },
   correctAnswerText: { fontSize:16, fontWeight:600, color:"var(--text)" },
   yourAnswerText:    { fontSize:12, color:"var(--muted)" },
+
+  questionBreakdown: { display:"flex", flexDirection:"column", gap:8 },
+  breakdownRow:      { display:"flex", alignItems:"center", gap:12, background:"var(--surface2)", borderRadius:10, padding:"10px 14px" },
+  breakdownIcon:     { fontSize:16, fontWeight:700, width:20, textAlign:"center", flexShrink:0 },
+  breakdownContent:  { flex:1, display:"flex", flexDirection:"column", gap:2 },
+  breakdownCategory: { fontSize:11, fontWeight:700, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
+  breakdownAnswer:   { fontSize:13 },
+  breakdownWager:    { fontSize:13, fontWeight:700, flexShrink:0 },
+
   statsGrid:      { display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 },
   statCard:       { background:"var(--surface2)", borderRadius:10, padding:"12px 14px", display:"flex", flexDirection:"column", gap:4 },
   statCardBig:    { gridColumn:"span 2", background:"rgba(245,197,24,0.06)", border:"1px solid rgba(245,197,24,0.2)" },
