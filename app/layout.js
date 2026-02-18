@@ -12,8 +12,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://yousureaboutthat.app"),
   title: "You Sure About That?",
   description: "Daily trivia game — wager your points, answer the question, and build your streak. One question a day. Don't miss it.",
+  openGraph: {
+    title: "You Sure About That?",
+    description: "Daily trivia game — wager your points, answer the question, and build your streak. One question a day. Don't miss it.",
+    url: "https://yousureaboutthat.app",
+    siteName: "You Sure About That?",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "You Sure About That?",
+    description: "Daily trivia game — wager your points, answer the question, and build your streak. One question a day. Don't miss it.",
+  },
 };
 
 export default function RootLayout({ children }) {
