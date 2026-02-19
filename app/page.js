@@ -323,6 +323,7 @@ export default function App() {
     const next = questionIndex + 1;
     setQuestionIndex(next);
     setAnswer("");
+    setWager("");
     setPhase(PHASES.WAGER);
   };
 
@@ -522,8 +523,8 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
   const remaining = dayBudget - allocatedSoFar;
 
   const presets = [
-    { label: "Safe",   val: Math.floor(maxWager * 0.1) },
-    { label: "Half",   val: Math.floor(maxWager * 0.5) },
+    { label: "Safe",   val: Math.max(1, Math.floor(maxWager * 0.1)) },
+    { label: "Half",   val: Math.max(1, Math.floor(maxWager * 0.5)) },
     { label: "All In", val: maxWager },
   ];
   return (
