@@ -5,7 +5,7 @@ import questions from "../../questions.json";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD in UTC
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }); // YYYY-MM-DD in Pacific time
 
   // Only return the question whose date matches today.
   // This implicitly prevents future questions from ever being returned.

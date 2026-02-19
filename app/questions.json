@@ -111,22 +111,22 @@
     "date": "2026-02-20",
     "questions": [
       {
-        "category": "MUSIC",
-        "question": "Known as 'The King of Pop,' this artist's 1982 album 'Thriller' remains the best-selling album of all time, with estimated sales of over 66 million copies worldwide.",
-        "answer": "Michael Jackson",
-        "alternateAnswers": ["mj", "michael joseph jackson", "jackson", "king of pop"]
-      },
-      {
-        "category": "SPORTS",
-        "question": "This NBA franchise has won 17 championships — the most in league history — and has retired the jerseys of Kareem Abdul-Jabbar, Magic Johnson, and Kobe Bryant, whose numbers 8 and 24 both hang in its rafters.",
-        "answer": "Los Angeles Lakers",
-        "alternateAnswers": ["lakers", "la lakers", "the lakers", "l.a. lakers"]
+        "category": "NAME THAT PRESIDENT",
+        "question": "Democrat; incapacitated by a major stroke while in-office; one of only two U.S. presidents to be a citizen of the Confederate States of America; vice president Thomas R. Marshall; two terms.",
+        "answer": "Woodrow Wilson",
+        "alternateAnswers": ["wilson", "woodrow wilson president", "thomas woodrow wilson"]
       },
       {
         "category": "GEOGRAPHY",
-        "question": "The largest country in South America by both area and population, this Portuguese-speaking nation is home to the Amazon River basin and hosted both the 2014 FIFA World Cup and the 2016 Summer Olympics.",
-        "answer": "Brazil",
-        "alternateAnswers": ["brasil", "federative republic of brazil", "brazil country"]
+        "question": "What is the geographic term for a chain, cluster, or collection of islands?",
+        "answer": "Archipelago",
+        "alternateAnswers": ["an archipelago", "archipelago geography"]
+      },
+      {
+        "category": "ON THIS DAY",
+        "question": "February 20th, 1962. Who flew the Friendship 7 mission, becoming the first American to orbit the Earth?",
+        "answer": "John Glenn",
+        "alternateAnswers": ["john herschel glenn", "glenn", "john h. glenn", "john h glenn"]
       }
     ]
   },

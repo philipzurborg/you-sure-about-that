@@ -525,7 +525,7 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
   const presets = [
     { label: "Safe",   val: Math.max(1, Math.floor(maxWager * 0.1)) },
     { label: "Half",   val: Math.max(1, Math.floor(maxWager * 0.5)) },
-    { label: "All In", val: maxWager },
+    { label: "Max",    val: maxWager },
   ];
   return (
     <div style={S.card} className="fadeIn">
