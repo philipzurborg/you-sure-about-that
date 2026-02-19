@@ -52,22 +52,57 @@
     "date": "2026-02-19",
     "questions": [
       {
-        "category": "SCIENCE",
-        "question": "Making up approximately 78% of Earth's atmosphere, this colorless, odorless gas is essential for all living organisms but cannot be directly used by animals in its atmospheric form.",
-        "answer": "Nitrogen",
-        "alternateAnswers": ["nitrogen gas", "n2", "nitrogen element"]
+        "category": "HOME COOKING",
+        "question": "Mirepoix is the aromatic flavor base made with what three ingredients?",
+        "answer": "Onions, Celery, and Carrots",
+        "alternateAnswers": [
+          "onions, celery, carrots",
+          "onions, carrots, celery",
+          "onions, carrots, and celery",
+          "celery, onions, carrots",
+          "celery, onions, and carrots",
+          "celery, carrots, onions",
+          "celery, carrots, and onions",
+          "carrots, onions, celery",
+          "carrots, onions, and celery",
+          "carrots, celery, onions",
+          "carrots, celery, and onions",
+          "onions celery carrots",
+          "carrots celery onions",
+          "celery onions carrots",
+          "onions, celery, carots",
+          "carots, celery, onions",
+          "carrots celery and onions"
+        ]
       },
       {
-        "category": "HISTORY",
-        "question": "On July 20, 1969, this NASA mission landed astronauts Neil Armstrong and Buzz Aldrin on the lunar surface, fulfilling President Kennedy's promise to reach the Moon before the end of the decade.",
-        "answer": "Apollo 11",
-        "alternateAnswers": ["apollo eleven", "apollo 11 mission", "apollo xi"]
+        "category": "SPORTS MOVIES",
+        "question": "The 2002 film 'The Rookie' sees Dennis Quaid portray real-life pitcher Jim Morris, who at age 35 made his major league debut for what team?",
+        "answer": "Tampa Bay Devil Rays",
+        "alternateAnswers": [
+          "Tampa Bay Rays",
+          "Tampa Bay",
+          "Rays",
+          "Devil Rays",
+          "The Rays",
+          "The Devil Rays",
+          "devil rays",
+          "tampa bay devil rays",
+          "tampa bay rays"
+        ]
       },
       {
-        "category": "MOVIES",
-        "question": "In this 2003 Pixar film, a timid clownfish named Marlin traverses the ocean with a forgetful blue tang named Dory to rescue his son from a dentist's fish tank in Sydney, Australia.",
-        "answer": "Finding Nemo",
-        "alternateAnswers": ["nemo", "finding nemo film", "finding nemo movie"]
+        "category": "RELIGIOUS OBSERVATIONS",
+        "question": "How many days does the Christian period of Lent last?",
+        "answer": "40",
+        "alternateAnswers": [
+          "40 days",
+          "forty",
+          "forty days",
+          "forty (40) days",
+          "40 days of lent",
+          "forty days of lent"
+        ]
       }
     ]
   },
