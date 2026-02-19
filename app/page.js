@@ -108,7 +108,7 @@ function RulesModal({ onClose, isOnboarding }) {
         </div>
 
         <div style={S.modalNote}>
-          A new set of questions drops every day at midnight UTC. Don&apos;t miss a day!
+          A new set of questions drops every day at midnight PST. Don&apos;t miss a day!
         </div>
 
         <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={onClose}>
@@ -508,7 +508,7 @@ export default function App() {
         <footer style={S.footer}>
           {alreadyPlayed
             ? "Come back tomorrow to keep your streak and points!"
-            : "Daily at midnight UTC \u00b7 Don\u2019t miss a day"}
+            : "Daily at midnight PST \u00b7 Don\u2019t miss a day"}
         </footer>
       </div>
     </div>
