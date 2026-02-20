@@ -135,22 +135,22 @@
     "date": "2026-02-21",
     "questions": [
       {
-        "category": "MOVIES",
-        "question": "This 2008 Marvel film, starring Robert Downey Jr. as a billionaire weapons manufacturer who builds a powered suit of armor to escape captivity, launched what became the highest-grossing film franchise in history.",
-        "answer": "Iron Man",
-        "alternateAnswers": ["iron man film", "iron man movie", "ironman"]
+        "category": "TRAINS",
+        "question": "The longest daily-operating train route in the U.S., the California Zephyr departs Emeryville, California en route to what major US city?",
+        "answer": "Chicago",
+        "alternateAnswers": ["chicago illinois", "chicago, il"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This soft Italian cheese, traditionally made from the milk of water buffaloes, is named from the Italian word meaning 'to cut off' and is most recognizable melted atop pizza.",
-        "answer": "Mozzarella",
-        "alternateAnswers": ["mozzarella cheese", "fresh mozzarella", "buffalo mozzarella"]
+        "category": "INTERNET GAMES",
+        "question": "In 2013, Swedish IT consultant Anton Wallén created a hobby project using Google Street View that became a viral global phenomenon and a professional esport. What is this geography-based game called?",
+        "answer": "GeoGuessr",
+        "alternateAnswers": ["geoguessr", "geoguesser", "geoguessing", "geo guessr"]
       },
       {
-        "category": "HISTORY",
-        "question": "This Corsican-born military genius rose to become Emperor of the French in 1804, conquered much of Europe, and introduced a legal code that still influences the laws of dozens of countries today.",
-        "answer": "Napoleon Bonaparte",
-        "alternateAnswers": ["napoleon", "napoleon i", "napoleon the first", "napoleon bonaporte"]
+        "category": "THE PITT",
+        "question": "Three rivers converge in Pittsburgh's downtown: The Allegheny, The Monongahela, and what?",
+        "answer": "The Ohio River",
+        "alternateAnswers": ["ohio", "ohio river", "the ohio"]
       }
     ]
   },
