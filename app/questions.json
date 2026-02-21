@@ -159,22 +159,22 @@
     "date": "2026-02-22",
     "questions": [
       {
-        "category": "SCIENCE",
-        "question": "The chemical symbol 'Au,' derived from the Latin word 'Aurum,' represents this precious metal with atomic number 79, long prized for its resistance to tarnish and its role as a monetary standard.",
-        "answer": "Gold",
-        "alternateAnswers": ["au", "aurum", "gold element", "gold metal"]
+        "category": "FILMMAKING TECHNIQUES",
+        "question": "What is the term for when the camera is purposely tilted to one side, making the horizon line slanted rather than parallel to the frame's bottom. Originating from 1920s German Expressionism and today often associated with JJ Abrams' visual style.",
+        "answer": "Dutch Angles",
+        "alternateAnswers": ["dutch angle", "canted angle", "oblique angle", "dutch tilt"]
       },
       {
-        "category": "TELEVISION",
-        "question": "This HBO drama, which aired from 1999 to 2007, follows Tony Soprano, a New Jersey mob boss who attends weekly therapy sessions while juggling the pressures of organized crime and his suburban family life.",
-        "answer": "The Sopranos",
-        "alternateAnswers": ["sopranos", "the sopranos hbo", "sopranos show"]
+        "category": "CIVICS",
+        "question": "Unlike the other 48 states and the District of Columbia, which award all their electoral votes to the winner of the statewide popular vote, Maine and what other state use a proportional method called the Congressional District Method.",
+        "answer": "Nebraska",
+        "alternateAnswers": ["nebraska state"]
       },
       {
-        "category": "SPORTS",
-        "question": "Nicknamed 'Air,' this Chicago Bulls shooting guard won six NBA championships in the 1990s, five regular-season MVP awards, and was named the greatest North American athlete of the 20th century by ESPN.",
-        "answer": "Michael Jordan",
-        "alternateAnswers": ["jordan", "mj", "michael jeffrey jordan", "air jordan"]
+        "category": "WILDLIFE",
+        "question": "In the 1960s and '70s, a group of chimpanzees astonished the world by learning what?",
+        "answer": "ASL",
+        "alternateAnswers": ["sign language", "american sign language", "signs"]
       }
     ]
   },
