@@ -759,7 +759,7 @@ const css = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap');
   :root {
     --bg:#0d0d0f; --surface:#16161a; --surface2:#1e1e24;
-    --border:rgba(255,255,255,0.07); --gold:#f5c518; --gold2:#ffdd6e;
+    --border:rgba(255,255,255,0.07); --gold:#FD5A1E; --gold2:#FF8A50;
     --green:#22c55e; --red:#ef4444; --purple:#8b5cf6;
     --text:#f0ede8; --muted:rgba(240,237,232,0.45);
   }
@@ -773,7 +773,7 @@ const css = `
   @keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(0.97)}to{opacity:1;transform:none}}
   .timerUrgent{animation:pulse 0.6s ease-in-out infinite;}
   @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  .mainBtn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,197,24,0.35)!important;}
+  .mainBtn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(253,90,30,0.35)!important;}
   .mainBtn:active{transform:translateY(0);}
   .infoBtn:hover{background:var(--surface2)!important;border-color:var(--gold)!important;color:var(--gold)!important;}
   .presetBtn:hover{background:var(--surface2)!important;border-color:var(--gold)!important;color:var(--gold)!important;}
@@ -829,7 +829,7 @@ const S = {
 
   categoryReveal:{ textAlign:"center", padding:"8px 0" },
   categoryLabel: { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
-  categoryName:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:60, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 40px rgba(245,197,24,0.4)" },
+  categoryName:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:60, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 40px rgba(253,90,30,0.4)" },
   budgetRow:     { display:"flex", justifyContent:"space-between", alignItems:"center", background:"var(--surface2)", borderRadius:8, padding:"8px 14px" },
   budgetLabel:   { fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
   budgetValue:   { fontSize:13, fontWeight:700, color:"var(--text)" },
@@ -863,7 +863,7 @@ const S = {
   interPhaseTag:       { fontSize:10, fontWeight:700, letterSpacing:"0.15em", color:"var(--muted)", textTransform:"uppercase" },
   nextCategoryPreview: { textAlign:"center", padding:"4px 0" },
   nextCategoryLabel:   { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
-  nextCategoryName:    { fontFamily:"'Bebas Neue',sans-serif", fontSize:48, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 30px rgba(245,197,24,0.4)" },
+  nextCategoryName:    { fontFamily:"'Bebas Neue',sans-serif", fontSize:48, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 30px rgba(253,90,30,0.4)" },
 
   resultBanner:    { borderRadius:12, padding:"16px 20px", display:"flex", alignItems:"center", gap:12 },
   resultEmoji:     { fontSize:28, fontWeight:700, color:"#fff" },
@@ -884,7 +884,7 @@ const S = {
 
   statsGrid:      { display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 },
   statCard:       { background:"var(--surface2)", borderRadius:10, padding:"12px 14px", display:"flex", flexDirection:"column", gap:4 },
-  statCardBig:    { gridColumn:"span 2", background:"rgba(245,197,24,0.06)", border:"1px solid rgba(245,197,24,0.2)" },
+  statCardBig:    { gridColumn:"span 2", background:"rgba(253,90,30,0.06)", border:"1px solid rgba(253,90,30,0.2)" },
   statLabel:      { fontSize:10, color:"var(--muted)", textTransform:"uppercase", letterSpacing:"0.1em", fontWeight:600 },
   statValue:      { fontSize:16, fontWeight:600, color:"var(--text)" },
   statValueBig:   { fontSize:28, fontFamily:"'Bebas Neue',sans-serif", color:"var(--gold)", letterSpacing:"0.04em" },
@@ -899,7 +899,7 @@ const S = {
   modalClose:   { background:"var(--surface2)", border:"1px solid var(--border)", color:"var(--muted)", borderRadius:"50%", width:32, height:32, cursor:"pointer", fontSize:13, fontFamily:"'DM Sans',sans-serif", flexShrink:0, transition:"all 0.15s", display:"flex", alignItems:"center", justifyContent:"center" },
   modalRules:   { display:"flex", flexDirection:"column", gap:16 },
   ruleRow:      { display:"flex", gap:14, alignItems:"flex-start" },
-  ruleIcon:     { width:36, height:36, borderRadius:10, background:"rgba(245,197,24,0.12)", border:"1px solid rgba(245,197,24,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, flexShrink:0 },
+  ruleIcon:     { width:36, height:36, borderRadius:10, background:"rgba(253,90,30,0.12)", border:"1px solid rgba(253,90,30,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, flexShrink:0 },
   ruleHeading:  { fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:3 },
   ruleBody:     { fontSize:12, color:"var(--muted)", lineHeight:1.6 },
   modalNote:    { fontSize:12, color:"var(--muted)", background:"var(--surface2)", borderRadius:8, padding:"10px 14px", lineHeight:1.5, textAlign:"center" },

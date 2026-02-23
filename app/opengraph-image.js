@@ -25,7 +25,7 @@ export default function og() {
           style={{
             position: "absolute",
             inset: 24,
-            border: "2px solid rgba(245,197,24,0.3)",
+            border: "2px solid rgba(253,90,30,0.3)",
             borderRadius: 24,
             display: "flex",
           }}
@@ -43,9 +43,9 @@ export default function og() {
             lineHeight: 1,
           }}
         >
-          <span style={{ fontSize: 28, fontWeight: 900, color: "#f5c518", letterSpacing: "-1px" }}>YS</span>
-          <div style={{ width: 28, height: 1, background: "rgba(245,197,24,0.4)", margin: "3px 0", display: "flex" }} />
-          <span style={{ fontSize: 28, fontWeight: 900, color: "#ffdd6e", letterSpacing: "-1px" }}>AT</span>
+          <span style={{ fontSize: 28, fontWeight: 900, color: "#FD5A1E", letterSpacing: "-1px" }}>YS</span>
+          <div style={{ width: 28, height: 1, background: "rgba(253,90,30,0.4)", margin: "3px 0", display: "flex" }} />
+          <span style={{ fontSize: 28, fontWeight: 900, color: "#FF8A50", letterSpacing: "-1px" }}>AT</span>
         </div>
 
         {/* URL — top right */}
@@ -56,7 +56,7 @@ export default function og() {
             right: 60,
             fontSize: 18,
             fontWeight: 700,
-            color: "rgba(245,197,24,0.5)",
+            color: "rgba(253,90,30,0.5)",
             letterSpacing: "0.04em",
             fontFamily: "Arial, sans-serif",
             display: "flex",
@@ -77,11 +77,11 @@ export default function og() {
         >
           <div style={{ display: "flex", gap: 24, alignItems: "baseline" }}>
             <span style={{ fontSize: 112, fontWeight: 900, color: "#f0ede8", letterSpacing: "-2px", lineHeight: 1 }}>YOU</span>
-            <span style={{ fontSize: 112, fontWeight: 900, color: "#f5c518", letterSpacing: "-2px", lineHeight: 1 }}>SURE</span>
+            <span style={{ fontSize: 112, fontWeight: 900, color: "#FD5A1E", letterSpacing: "-2px", lineHeight: 1 }}>SURE</span>
           </div>
           <div style={{ display: "flex", gap: 24, alignItems: "baseline" }}>
             <span style={{ fontSize: 112, fontWeight: 900, color: "#f0ede8", letterSpacing: "-2px", lineHeight: 1 }}>ABOUT</span>
-            <span style={{ fontSize: 112, fontWeight: 900, color: "#ffdd6e", letterSpacing: "-2px", lineHeight: 1 }}>THAT?</span>
+            <span style={{ fontSize: 112, fontWeight: 900, color: "#FF8A50", letterSpacing: "-2px", lineHeight: 1 }}>THAT?</span>
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export default function og() {
           style={{
             width: 80,
             height: 3,
-            background: "#f5c518",
+            background: "#FD5A1E",
             borderRadius: 99,
             marginBottom: 28,
             display: "flex",
