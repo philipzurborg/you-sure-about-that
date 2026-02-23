@@ -183,22 +183,22 @@
     "date": "2026-02-23",
     "questions": [
       {
-        "category": "GEOGRAPHY",
-        "question": "The capital of Japan and the world's most populous metropolitan area with over 37 million residents, this city hosted the Summer Olympics in both 1964 and 2021.",
-        "answer": "Tokyo",
-        "alternateAnswers": ["tokyo japan", "tokyo city", "edo"]
+        "category": "BEER",
+        "question": "Now a top 10 beer brand, what brew originally debuted as \"Gablinger's Diet Beer\"?",
+        "answer": "Miller Lite",
+        "alternateAnswers": ["miller lite beer", "miller light"]
       },
       {
-        "category": "MUSIC",
-        "question": "This British rock band, fronted by Freddie Mercury, released the 1975 song 'Bohemian Rhapsody' — a six-minute operatic rock epic that topped the UK singles chart twice, forty years apart.",
-        "answer": "Queen",
-        "alternateAnswers": ["queen band", "queen rock band", "the band queen"]
+        "category": "OLYMPICS",
+        "question": "Which country hosted the 2004 Summer Olympics?",
+        "answer": "Greece",
+        "alternateAnswers": ["greece country", "athens", "athens greece"]
       },
       {
-        "category": "ANIMALS",
-        "question": "The largest animal ever known to have lived on Earth, this marine mammal can grow up to 100 feet long and weigh 200 tons — its heart alone is roughly the size of a small car.",
-        "answer": "Blue Whale",
-        "alternateAnswers": ["blue whale mammal", "blue whales", "balaenoptera musculus"]
+        "category": "DRIVING TEST",
+        "question": "When parking uphill, are drivers supposed to turn their wheels toward or away from the curb?",
+        "answer": "Away",
+        "alternateAnswers": ["away from the curb", "away from curb"]
       }
     ]
   },
