@@ -207,22 +207,22 @@
     "date": "2026-02-24",
     "questions": [
       {
-        "category": "MOVIES",
-        "question": "Voiced by Mike Myers, the titular hero of this 2001 DreamWorks animated film is a reclusive swamp-dwelling ogre who reluctantly teams with a talking donkey to rescue a princess from a tower guarded by a dragon.",
-        "answer": "Shrek",
-        "alternateAnswers": ["shrek film", "shrek movie", "shrek 2001"]
+        "category": "20TH CENTURY FOOD",
+        "question": "The Caesar Salad turned 100 in 2024. What country is credited with its creation?",
+        "answer": "Mexico",
+        "alternateAnswers": ["mexico country", "mexican"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This Japanese dish of thinly sliced raw protein — typically tuna or salmon — is served without rice and accompanied by soy sauce, wasabi, and pickled ginger, distinguishing it from its close relative sushi.",
-        "answer": "Sashimi",
-        "alternateAnswers": ["sashimi dish", "japanese sashimi"]
+        "category": "20TH CENTURY ART",
+        "question": "Between 1922 and 1953, this artist, married to Frida Kahlo, painted murals in Mexico City, Chapingo, and Cuernavaca in Mexico, and San Francisco, Detroit, and New York City in the United States.",
+        "answer": "Diego Rivera",
+        "alternateAnswers": ["rivera", "diego"]
       },
       {
-        "category": "HISTORY",
-        "question": "This surprise Japanese air attack on December 7, 1941 killed over 2,400 Americans and damaged or destroyed 19 naval vessels, prompting President Roosevelt to call it 'a date which will live in infamy.'",
-        "answer": "Pearl Harbor",
-        "alternateAnswers": ["pearl harbor attack", "attack on pearl harbor", "pearl harbor hawaii"]
+        "category": "20TH CENTURY FOX",
+        "question": "Directed by James Cameron, name this highest grossing film produced under the 20th Century Fox label.",
+        "answer": "Avatar",
+        "alternateAnswers": ["avatar film", "avatar movie", "avatar 2009"]
       }
     ]
   },
