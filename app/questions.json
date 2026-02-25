@@ -231,22 +231,22 @@
     "date": "2026-02-25",
     "questions": [
       {
-        "category": "SCIENCE",
-        "question": "The largest organ of the human body by surface area, this outer covering accounts for roughly 16% of body weight, houses nerve endings that detect temperature and pain, and serves as the body's primary barrier against infection.",
-        "answer": "Skin",
-        "alternateAnswers": ["the skin", "human skin", "skin organ"]
+        "category": "ANIMATED MOVIES",
+        "question": "Martin Scorsese appeared as a pufferfish in this Will Smith starring 2004 animated movie.",
+        "answer": "Shark Tale",
+        "alternateAnswers": ["sharktale", "shark tale movie", "shark tale film"]
       },
       {
-        "category": "MUSIC",
-        "question": "This pop star, born Stefani Germanotta in New York City, became a global phenomenon with her debut single 'Just Dance' in 2008 and later won an Oscar for Best Original Song for 'Shallow' from 'A Star Is Born.'",
-        "answer": "Lady Gaga",
-        "alternateAnswers": ["gaga", "stefani germanotta", "lady gaga singer"]
+        "category": "BASEBALL",
+        "question": "In 2021 Kendall Graveman was the last pitcher to do this in a World Series game until Shohei Ohtani in 2025.",
+        "answer": "Bat",
+        "alternateAnswers": ["hit", "take an at-bat", "at-bat", "batting", "hitting"]
       },
       {
-        "category": "TELEVISION",
-        "question": "The first episode of this CBS reality competition, which has aired since 2000, drew 51 million viewers; contestants are isolated in a remote location and vote each other out one by one until a sole winner remains.",
-        "answer": "Survivor",
-        "alternateAnswers": ["survivor cbs", "survivor show", "survivor tv"]
+        "category": "VOCAB",
+        "question": "Smog and brunch are examples of this — a word formed by blending the sounds and meanings of two or more distinct words to create a new term.",
+        "answer": "Portmanteau",
+        "alternateAnswers": ["portmanteau word", "blend", "blended word"]
       }
     ]
   },
