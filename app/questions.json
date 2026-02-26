@@ -255,22 +255,22 @@
     "date": "2026-02-26",
     "questions": [
       {
-        "category": "SPORTS",
-        "question": "In tennis, a score of zero is called by this name — a term whose fun etymology often traces back to the French word for 'egg,' which visually resembles the numeral zero.",
-        "answer": "Love",
-        "alternateAnswers": ["love score", "love tennis", "tennis love"]
+        "category": "NARNIA",
+        "question": "Portrayed by Liam Neeson in the 2000s films, Meryl Streep is taking over this important role in Greta Gerwig's adaptation of The Magician's Nephew later this year.",
+        "answer": "Aslan",
+        "alternateAnswers": ["aslan the lion", "the lion aslan"]
       },
       {
-        "category": "GEOGRAPHY",
-        "question": "Home to the Great Wall, the Terracotta Army, and the Forbidden City, this East Asian country had the world's largest population until 2023 and remains the second-largest economy on Earth.",
-        "answer": "China",
-        "alternateAnswers": ["china country", "people's republic of china", "prc", "zhongguo"]
+        "category": "TODAY'S THEIR BIRTHDAY",
+        "question": "Happy Birthday to Nate Ruess, who was the front-man of this early 2010s band, also including Jack Antonoff.",
+        "answer": "Fun",
+        "alternateAnswers": ["fun.", "fun band", "fun the band"]
       },
       {
-        "category": "MOVIES",
-        "question": "This 2009 James Cameron film — set on the lush alien moon Pandora — became the highest-grossing movie of all time at the time of its release and features a paraplegic Marine who bonds with a blue-skinned species called the Na'vi.",
-        "answer": "Avatar",
-        "alternateAnswers": ["avatar film", "avatar movie", "avatar 2009"]
+        "category": "FAST FOOD",
+        "question": "Though it started as a viral \"hack\" at Chipotle, this food item name was eventually trademarked by Taco Bell and officially added to the menu nationwide. Hint: It's a portmanteau.",
+        "answer": "Quesarito",
+        "alternateAnswers": ["the quesarito", "quesarito burrito"]
       }
     ]
   },
