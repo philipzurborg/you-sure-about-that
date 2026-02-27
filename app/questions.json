@@ -279,22 +279,22 @@
     "date": "2026-02-27",
     "questions": [
       {
-        "category": "FOOD & DRINK",
-        "question": "This rich emulsion sauce — made from egg yolks, melted butter, and lemon juice — is the hallmark of Eggs Benedict and is counted among the five classical French 'mother sauces.'",
-        "answer": "Hollandaise Sauce",
-        "alternateAnswers": ["hollandaise", "sauce hollandaise"]
+        "category": "MONOPOLY",
+        "question": "Name one of the four railroads found on a standard Monopoly board.",
+        "answer": "Reading Railroad",
+        "alternateAnswers": ["pennsylvania railroad", "b. & o. railroad", "b&o railroad", "baltimore and ohio", "baltimore & ohio", "short line", "short line railroad", "reading", "pennsylvania", "penn", "b&o"]
       },
       {
-        "category": "HISTORY",
-        "question": "Signed on July 4, 1776, this document formally announced the separation of thirteen American colonies from Great Britain and includes the famous line 'We hold these truths to be self-evident, that all men are created equal.'",
-        "answer": "Declaration of Independence",
-        "alternateAnswers": ["the declaration of independence", "declaration of independence 1776", "american declaration"]
+        "category": "COMMUNITY CHEST",
+        "question": "Advance to GO — type GO to collect your wager.",
+        "answer": "GO",
+        "alternateAnswers": ["go"]
       },
       {
-        "category": "SCIENCE",
-        "question": "Plants absorb this greenhouse gas during photosynthesis to produce oxygen and sugars, while its rising concentration in Earth's atmosphere — largely from burning fossil fuels — is the primary driver of modern climate change.",
-        "answer": "Carbon Dioxide",
-        "alternateAnswers": ["co2", "carbon dioxide gas", "co 2"]
+        "category": "CHANCE",
+        "question": "Bow tie, cane, mustache, monocle, top hat — which of these is NOT found on Mr. Monopoly?",
+        "answer": "Monocle",
+        "alternateAnswers": ["the monocle"]
       }
     ]
   },
