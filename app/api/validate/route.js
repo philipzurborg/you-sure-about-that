@@ -41,17 +41,50 @@ function tierNormalized(userAnswer, correctAnswer, alternateAnswers) {
   return null;
 }
 
-function tierKeyword(userAnswer, correctAnswer) {
+function tierKeyword(userAnswer, correctAnswer, alternateAnswers) {
   const uw = normalize(userAnswer).split(" ");
-  const cw = normalize(correctAnswer).split(" ");
-  const last = cw[cw.length - 1];
-  // Last significant word of correct answer found in user's answer
-  if (last.length > 2 && uw.includes(last)) {
-    return { correct: true, method: "keyword" };
+  const allAnswers = [correctAnswer, ...alternateAnswers];
+  for (const answer of allAnswers) {
+    const cw = normalize(answer).split(" ");
+    const last = cw[cw.length - 1];
+    // Last significant word of any answer found in user's answer
+    if (last.length > 2 && uw.includes(last)) {
+      return { correct: true, method: "keyword" };
+    }
+    // Single-word user answer that appears in any answer
+    if (uw.length === 1 && cw.includes(uw[0]) && uw[0].length > 3) {
+      return { correct: true, method: "keyword" };
+    }
   }
-  // Single-word user answer that appears in the correct answer
-  if (uw.length === 1 && cw.includes(uw[0]) && uw[0].length > 3) {
-    return { correct: true, method: "keyword" };
+  return null;
+}
+
+// Levenshtein distance between two strings
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  const dp = Array.from({ length: m + 1 }, (_, i) => [i]);
+  for (let j = 1; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      dp[i][j] = a[i - 1] === b[j - 1]
+        ? dp[i - 1][j - 1]
+        : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+    }
+  }
+  return dp[m][n];
+}
+
+// Accept answers within 1 edit for short words, 2 edits for longer ones
+function tierFuzzy(userAnswer, correctAnswer, alternateAnswers) {
+  const nu = normalize(userAnswer);
+  if (nu.length < 4) return null; // don't fuzzy-match very short answers
+  const candidates = [correctAnswer, ...alternateAnswers].map(normalize);
+  for (const candidate of candidates) {
+    if (!candidate || candidate.length < 4) continue;
+    const threshold = Math.max(nu.length, candidate.length) <= 6 ? 1 : 2;
+    if (levenshtein(nu, candidate) <= threshold) {
+      return { correct: true, method: "fuzzy" };
+    }
   }
   return null;
 }
@@ -87,7 +120,7 @@ async function tierAI(userAnswer, correctAnswer, question, category) {
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 10,
-        system: "You are a strict trivia judge. Reply YES or NO only.",
+        system: "You are a trivia judge. Reply YES or NO only. Accept answers that are correct in meaning even if slightly misspelled. Reject answers that are wrong or meaningfully different.",
         messages: [
           {
             role: "user",
@@ -126,7 +159,8 @@ export async function POST(request) {
   const result =
     tierExact(userAnswer, correctAnswer, alternateAnswers) ||
     tierNormalized(userAnswer, correctAnswer, alternateAnswers) ||
-    tierKeyword(userAnswer, correctAnswer) ||
+    tierKeyword(userAnswer, correctAnswer, alternateAnswers) ||
+    tierFuzzy(userAnswer, correctAnswer, alternateAnswers) ||
     tierWordSet(userAnswer, correctAnswer) ||
     (await tierAI(userAnswer, correctAnswer, question, category));
 

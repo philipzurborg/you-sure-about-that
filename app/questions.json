@@ -303,22 +303,22 @@
     "date": "2026-02-28",
     "questions": [
       {
-        "category": "MUSIC",
-        "question": "This Houston-born singer and performer released the groundbreaking visual album 'Lemonade' in 2016 and has won more Grammy Awards than any other singer in history, cementing her reign as 'Queen Bey.'",
-        "answer": "Beyoncé",
-        "alternateAnswers": ["beyonce", "queen bey", "beyonce knowles", "beyonce knowles-carter"]
+        "category": "AMERICAN MOUNTAINS",
+        "question": "The Boston Mountains are part of this larger mountain region that is the only major highland region between the Appalachians and the Rockies.",
+        "answer": "Ozarks",
+        "alternateAnswers": ["the ozarks", "ozark mountains", "the ozark mountains", "ozark plateau"]
       },
       {
-        "category": "TELEVISION",
-        "question": "This animated Fox sitcom, set in the fictional Rhode Island town of Quahog, follows the Griffin family — including the martini-drinking baby Stewie and the culturally literate talking dog Brian — and has aired since 1999.",
-        "answer": "Family Guy",
-        "alternateAnswers": ["family guy fox", "family guy show", "the family guy"]
+        "category": "SATURDAY NIGHT FEVER",
+        "question": "For over five years Saturday Night Fever's soundtrack held the title of best-selling album of all time. What album beat it?",
+        "answer": "Thriller",
+        "alternateAnswers": ["michael jackson's thriller", "michael jackson thriller", "thriller by michael jackson"]
       },
       {
-        "category": "SPORTS",
-        "question": "This American swimmer from Baltimore won a record 28 Olympic medals — 23 of them gold — over four Games, including a stunning eight gold medals at the 2008 Beijing Olympics, making him the most decorated Olympian in history.",
-        "answer": "Michael Phelps",
-        "alternateAnswers": ["phelps", "michael fred phelps", "the baltimore bullet"]
+        "category": "SPRING TRAINING",
+        "question": "Major League Baseball's Spring Training is divided into two leagues operating out of Arizona and Florida. Name one of them.",
+        "answer": "Cactus League",
+        "alternateAnswers": ["grapefruit league", "the cactus league", "the grapefruit league", "cactus", "grapefruit"]
       }
     ]
   },
