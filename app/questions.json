@@ -327,22 +327,22 @@
     "date": "2026-03-01",
     "questions": [
       {
-        "category": "GEOGRAPHY",
-        "question": "This boot-shaped country in southern Europe holds more UNESCO World Heritage Sites than any other nation and uniquely contains two independent countries — Vatican City and San Marino — entirely within its borders.",
-        "answer": "Italy",
-        "alternateAnswers": ["italy country", "italian republic", "italia"]
+        "category": "NATIONAL PARKS",
+        "question": "Famous for having three entirely different ecosystems — mountains, rainforests, and coastline — this park gets its name from the mountain of Greek mythology that was home to the gods.",
+        "answer": "Olympic",
+        "alternateAnswers": ["olympic national park", "olympic park", "mount olympic"]
       },
       {
-        "category": "MOVIES",
-        "question": "In this 2008 Christopher Nolan film, Heath Ledger's portrayal of the Joker earned a posthumous Oscar for Best Supporting Actor, helping the film become the first superhero movie to gross over $1 billion worldwide.",
-        "answer": "The Dark Knight",
-        "alternateAnswers": ["dark knight", "batman dark knight", "the dark knight film", "dark knight 2008"]
+        "category": "MARCH HOLIDAYS",
+        "question": "International Women's Day is held on what day every March?",
+        "answer": "March 8th",
+        "alternateAnswers": ["8th", "march 8", "8", "the 8th"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This buttery, flaky French breakfast pastry is created through a technique called 'lamination' — repeatedly folding dough with layers of butter — and is baked into a golden, crescent shape.",
-        "answer": "Croissant",
-        "alternateAnswers": ["croissants", "french croissant"]
+        "category": "AWARDS SEASON",
+        "question": "Updated to \"The Actor Awards\" in 2026, what was the original name of the awards show hosted by the actors union?",
+        "answer": "SAG Awards",
+        "alternateAnswers": ["sag", "screen actors guild awards", "screen actors guild"]
       }
     ]
   },
