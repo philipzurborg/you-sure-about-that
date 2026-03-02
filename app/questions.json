@@ -351,22 +351,22 @@
     "date": "2026-03-02",
     "questions": [
       {
-        "category": "HISTORY",
-        "question": "This ancient Roman amphitheater, completed around 80 AD and capable of holding up to 80,000 spectators, was the largest arena of its kind and hosted gladiatorial contests, animal hunts, and public executions.",
-        "answer": "Colosseum",
-        "alternateAnswers": ["the colosseum", "coliseum", "roman colosseum", "colosseo"]
+        "category": "PENGUINS",
+        "question": "Name the largest living species of penguin.",
+        "answer": "Emperor Penguin",
+        "alternateAnswers": ["emperor", "emperor penguins"]
       },
       {
-        "category": "SCIENCE",
-        "question": "On the Fahrenheit scale, water boils at sea level at this temperature — equivalent to 100 degrees Celsius — a key reference point embedded in American kitchens and science classrooms alike.",
-        "answer": "212 Degrees Fahrenheit",
-        "alternateAnswers": ["212", "212 degrees", "212 f", "212°f", "two hundred twelve"]
+        "category": "EUROPE",
+        "question": "Name the tunnel with the longest underwater section of any tunnel in the world.",
+        "answer": "Channel Tunnel",
+        "alternateAnswers": ["the channel tunnel", "chunnel", "the chunnel", "eurotunnel"]
       },
       {
-        "category": "MUSIC",
-        "question": "Formed in Dublin, Ireland in 1976, this rock band became one of the world's best-selling acts with anthems including 'With or Without You,' 'One,' and 'Sunday Bloody Sunday,' fronted by singer Bono.",
-        "answer": "U2",
-        "alternateAnswers": ["u2 band", "u2 rock band", "u 2"]
+        "category": "ON THIS DAY",
+        "question": "March 2nd, 1962: The NBA record for scoring in a single game was set by this player for the Philadelphia Warriors.",
+        "answer": "Wilt Chamberlain",
+        "alternateAnswers": ["wilt chamberlin", "chamberlain", "chamberlin", "wilt", "the stilt"]
       }
     ]
   },
