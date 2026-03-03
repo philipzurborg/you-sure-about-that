@@ -375,22 +375,22 @@
     "date": "2026-03-03",
     "questions": [
       {
-        "category": "TELEVISION",
-        "question": "This NBC mockumentary sitcom, starring Amy Poehler as the relentlessly optimistic deputy parks director Leslie Knope, is set in the fictional Indiana city of Pawnee and aired from 2009 to 2015.",
-        "answer": "Parks and Recreation",
-        "alternateAnswers": ["parks and rec", "parks & recreation", "parks and recreation nbc"]
+        "category": "FINE DINING",
+        "question": "\"Very good\", \"Worth a detour\", and \"Worth a special journey\" are the three distinctions that categorize restaurants on what famous list?",
+        "answer": "The Michelin Guide",
+        "alternateAnswers": ["michelin guide", "guide michelin", "michelin", "michelin stars", "michelin star guide", "Epstein List"]
       },
       {
-        "category": "SPORTS",
-        "question": "Governed globally by FIFA and played by an estimated 250 million people across more than 200 countries, this is the world's most popular sport — known as 'football' nearly everywhere outside the United States.",
-        "answer": "Soccer",
-        "alternateAnswers": ["football", "association football", "soccer sport", "futbol"]
+        "category": "VIDEO GAMES",
+        "question": "In Halo, Spartan 117 is known as Master Chief — but what is his first name?",
+        "answer": "John",
+        "alternateAnswers": ["john 117", "john spartan"]
       },
       {
-        "category": "GEOGRAPHY",
-        "question": "This North African country is home to the Pyramids of Giza, the Great Sphinx, and the Nile River delta, and was the cradle of one of the world's earliest and longest-lasting civilizations.",
-        "answer": "Egypt",
-        "alternateAnswers": ["egypt country", "arab republic of egypt", "kemet"]
+        "category": "FOOTBALL",
+        "question": "List every possible point total that can be scored on a single play in the NFL.",
+        "answer": "1, 2, 3, 6",
+        "alternateAnswers": ["1 2 3 6", "1, 2, 3, and 6", "6, 3, 2, 1", "6 3 2 1", "6, 3, 2, and 1", "1 2 3 and 6", "2 3 6 1", "3 6 2 1", "6, 2, 3, 1", "1, 3, 2, 6"]
       }
     ]
   },
