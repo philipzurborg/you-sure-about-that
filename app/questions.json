@@ -399,22 +399,22 @@
     "date": "2026-03-04",
     "questions": [
       {
+        "category": "SCIENCE",
+        "question": "At what temperature does water boil? (Fahrenheit)",
+        "answer": "212",
+        "alternateAnswers": ["212 degrees", "212 degrees fahrenheit", "212°f", "212 f"]
+      },
+      {
         "category": "MOVIES",
-        "question": "In this 2014 Marvel film, a rag-tag team of cosmic misfits — including a talking raccoon named Rocket and a tree creature who can only say three words — join forces to protect the universe from a powerful villain.",
-        "answer": "Guardians of the Galaxy",
-        "alternateAnswers": ["guardians of the galaxy film", "gotg", "gotg movie", "guardians"]
+        "question": "What 1995 film won Nicolas Cage the Academy Award for Best Actor?",
+        "answer": "Leaving Las Vegas",
+        "alternateAnswers": ["leaving las vegas film", "leaving las vegas movie"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This cured, spiced, and smoked beef — a centerpiece of New York City Jewish deli culture — is most famously served piled high on rye bread at Katz's Delicatessen on the Lower East Side.",
-        "answer": "Pastrami",
-        "alternateAnswers": ["pastrami sandwich", "pastrami beef", "pastrami meat"]
-      },
-      {
-        "category": "HISTORY",
-        "question": "Ratified in August 1920 after decades of activism by figures like Susan B. Anthony, this constitutional amendment guaranteed American women the right to vote — one of the most significant expansions of democracy in U.S. history.",
-        "answer": "19th Amendment",
-        "alternateAnswers": ["the nineteenth amendment", "nineteenth amendment", "amendment 19", "women's suffrage amendment"]
+        "category": "MUSIC HISTORY",
+        "question": "June 15th, 1989: This band releases their first album, Bleach. It cost the band only $606.17 to record.",
+        "answer": "Nirvana",
+        "alternateAnswers": ["nirvana band", "nirvana the band"]
       }
     ]
   },
