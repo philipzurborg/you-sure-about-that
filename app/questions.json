@@ -423,22 +423,22 @@
     "date": "2026-03-05",
     "questions": [
       {
-        "category": "SCIENCE",
-        "question": "This biological process, occurring in the chloroplasts of plant cells, converts sunlight, water, and carbon dioxide into glucose and oxygen, forming the foundation of nearly every food chain on Earth.",
-        "answer": "Photosynthesis",
-        "alternateAnswers": ["photosynthesis process", "plant photosynthesis"]
+        "category": "NAME THE BAND FROM THE LYRIC",
+        "question": "Name the band behind the lyric: \"Roll Away the Dew.\"",
+        "answer": "Grateful Dead",
+        "alternateAnswers": ["the grateful dead", "grateful dead band"]
       },
       {
-        "category": "MUSIC",
-        "question": "This singer-songwriter from Reading, Pennsylvania crossed over from country to pop and became the first artist to simultaneously occupy all top 10 spots on the Billboard Hot 100 with tracks from her 2022 album 'Midnights.'",
-        "answer": "Taylor Swift",
-        "alternateAnswers": ["swift", "taylor alison swift", "t-swift"]
+        "category": "HISTORY 2001",
+        "question": "In January 2001, the Grateful Dead's \"U.S. Blues\" was the first ever audio file sent through an RSS feed. This method of audio sharing would later become known as what?",
+        "answer": "Podcast",
+        "alternateAnswers": ["podcasts", "podcasting"]
       },
       {
-        "category": "TELEVISION",
-        "question": "This HBO anthology series, created by Mike White, follows wealthy guests and overworked staff at luxury resorts — first in Hawaii, then Sicily — and won 10 Emmy Awards for its debut season alone.",
-        "answer": "The White Lotus",
-        "alternateAnswers": ["white lotus", "the white lotus hbo", "white lotus hbo"]
+        "category": "PODCASTS",
+        "question": "President Obama's appearance on what show is considered the moment podcasting crossed the mainstream threshold?",
+        "answer": "WTF with Marc Maron",
+        "alternateAnswers": ["wtf", "wtf podcast", "marc maron", "maron", "wtf with maron", "wtf with marc maron podcast"]
       }
     ]
   },
