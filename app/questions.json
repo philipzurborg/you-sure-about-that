@@ -471,22 +471,22 @@
     "date": "2026-03-07",
     "questions": [
       {
-        "category": "FOOD & DRINK",
-        "question": "One of the most popular cocktails in America, this tequila-based drink is made with lime juice and triple sec or Cointreau, typically served shaken or on the rocks in a glass with a salted rim.",
-        "answer": "Margarita",
-        "alternateAnswers": ["margarita cocktail", "margarita drink", "margaritas"]
+        "category": "SATURDAY MORNING CARTOONS",
+        "question": "What is the name of Fred Flintstone's loveable best friend?",
+        "answer": "Barney Rubble",
+        "alternateAnswers": ["barney", "barney rubble flintstones"]
       },
       {
-        "category": "HISTORY",
-        "question": "Elected in 2008, this Illinois senator became the 44th President of the United States — the first African American to hold the office — and was awarded the Nobel Peace Prize during his first year in power.",
-        "answer": "Barack Obama",
-        "alternateAnswers": ["obama", "barack hussein obama", "president obama"]
+        "category": "SPRING FORWARD",
+        "question": "Believe it or not, this ranged weapon system is a form of simple non-coiled spring.",
+        "answer": "Bow and Arrow",
+        "alternateAnswers": ["bow", "bow & arrow", "a bow and arrow", "bow and arrows"]
       },
       {
-        "category": "SCIENCE",
-        "question": "Measured in hertz, this property of a wave describes the number of complete cycles that occur per second — it determines the pitch of a sound and, in the case of light waves, its color.",
-        "answer": "Frequency",
-        "alternateAnswers": ["frequency hz", "wave frequency", "sound frequency"]
+        "category": "RHYME TIME",
+        "question": "A turncoat restaurant server.",
+        "answer": "Waiter Traitor",
+        "alternateAnswers": ["traitor waiter", "waiter traiter", "traiter waiter", "waitor traitor", "traitor waitor"]
       }
     ]
   },
