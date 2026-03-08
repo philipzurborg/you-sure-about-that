@@ -495,22 +495,22 @@
     "date": "2026-03-08",
     "questions": [
       {
-        "category": "MUSIC",
-        "question": "This rapper from Detroit, born Marshall Mathers, is the best-selling hip-hop artist of all time and won an Academy Award for Best Original Song in 2003 for 'Lose Yourself' from his semi-autobiographical film '8 Mile.'",
-        "answer": "Eminem",
-        "alternateAnswers": ["marshall mathers", "slim shady", "em", "marshall bruce mathers"]
+        "category": "INTERNATIONAL WOMEN'S DAY",
+        "question": "March 8th was declared International Women's Day by what Russian leader in 1922 to honor women's role in the 1917 Russian Revolution?",
+        "answer": "Vladimir Lenin",
+        "alternateAnswers": ["lenin", "vladamir lenin", "vladimir ilyich lenin", "v.i. lenin"]
       },
       {
-        "category": "TELEVISION",
-        "question": "This NBC mockumentary sitcom, adapted from a British series by Ricky Gervais, is set at the Dunder Mifflin paper company in Scranton, Pennsylvania, and starred Steve Carell as the painfully oblivious boss Michael Scott.",
-        "answer": "The Office",
-        "alternateAnswers": ["the office us", "the office nbc", "the office show"]
+        "category": "AMERICAN WOMEN",
+        "question": "In 1881, the American Red Cross was founded by what woman?",
+        "answer": "Clara Barton",
+        "alternateAnswers": ["barton", "clara barton founder"]
       },
       {
-        "category": "SPORTS",
-        "question": "Held annually on the first Saturday in May at Churchill Downs in Louisville, this thoroughbred horse race is the first leg of the Triple Crown and is nicknamed 'The Most Exciting Two Minutes in Sports.'",
-        "answer": "Kentucky Derby",
-        "alternateAnswers": ["the kentucky derby", "derby race", "the derby", "the run for the roses"]
+        "category": "WOMEN IN POLITICS",
+        "question": "Who was the first woman to hold the title of Secretary of State?",
+        "answer": "Madeleine Albright",
+        "alternateAnswers": ["madeline albright", "madeleine korbel albright", "albright"]
       }
     ]
   },
