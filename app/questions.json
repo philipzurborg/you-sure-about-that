@@ -519,22 +519,22 @@
     "date": "2026-03-09",
     "questions": [
       {
-        "category": "GEOGRAPHY",
-        "question": "Spanning eleven time zones and sharing borders with more countries than any other nation, this country is the world's largest by total area and has Moscow as its capital.",
-        "answer": "Russia",
-        "alternateAnswers": ["russia country", "russian federation", "the russian federation"]
+        "category": "VIDEO GAMES",
+        "question": "What video game did developer Bungie unveil at Apple's 1999 MacWorld conference?",
+        "answer": "Halo",
+        "alternateAnswers": ["halo game", "halo combat evolved"]
       },
       {
-        "category": "MOVIES",
-        "question": "In this 1991 thriller, FBI trainee Clarice Starling seeks the help of incarcerated psychiatrist Dr. Hannibal Lecter to catch a serial killer — making it one of only three films in history to win Oscars for all five major categories.",
-        "answer": "The Silence of the Lambs",
-        "alternateAnswers": ["silence of the lambs", "silence of the lambs film", "the silence of the lambs 1991"]
+        "category": "MOVIE CHARACTERS",
+        "question": "Name the character portrayed by Karl Urban in 2012 and Arnold Schwarzenegger in 1995.",
+        "answer": "Judge Dredd",
+        "alternateAnswers": ["dredd", "judge dredd character"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "Made by fermenting soybeans with salt and koji mold, this Japanese paste is the base for one of the country's most beloved soups, traditionally served with tofu, seaweed, and green onions.",
-        "answer": "Miso",
-        "alternateAnswers": ["miso paste", "miso soup base", "miso soup"]
+        "category": "ANIMALS",
+        "question": "What is the name for a baby horse?",
+        "answer": "Foal",
+        "alternateAnswers": ["colt", "filly"]
       }
     ]
   },
