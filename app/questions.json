@@ -567,22 +567,22 @@
     "date": "2026-03-11",
     "questions": [
       {
-        "category": "TELEVISION",
-        "question": "Set on Madison Avenue in 1960s New York City, this AMC drama stars Jon Hamm as the brilliant but mysterious ad executive Don Draper and is celebrated for its meticulous period detail and exploration of the American Dream.",
-        "answer": "Mad Men",
-        "alternateAnswers": ["mad men show", "mad men amc", "madmen"]
+        "category": "PHONE NUMBERS",
+        "question": "In many cities across America, what number provides access to non-emergency municipal services?",
+        "answer": "311",
+        "alternateAnswers": ["three eleven", "three-one-one", "3-1-1"]
       },
       {
-        "category": "SPORTS",
-        "question": "This quarterback played for the New England Patriots and Tampa Bay Buccaneers and won a record seven Super Bowl championships, widely cementing his status as the greatest player in NFL history.",
-        "answer": "Tom Brady",
-        "alternateAnswers": ["brady", "thomas brady", "thomas edward patrick brady", "tb12"]
+        "category": "NAME THE BAND FROM THE LYRIC",
+        "question": "\"Whoa, amber is the color of your energy / Whoa, shades of gold displayed naturally\"",
+        "answer": "311",
+        "alternateAnswers": ["three eleven"]
       },
       {
-        "category": "GEOGRAPHY",
-        "question": "Built across 118 small islands connected by over 400 bridges, this northeastern Italian city is famous for its gondolas, its annual Carnival festival, and the gradual sinking that threatens its long-term survival.",
-        "answer": "Venice",
-        "alternateAnswers": ["venice italy", "venezia", "venice city", "la serenissima"]
+        "category": "ON THIS DAY 3/11",
+        "question": "2020: COVID-19 is declared a pandemic by WHO; 1918: The first case of this disease is detected in Fort Riley, Kansas.",
+        "answer": "Spanish Flu",
+        "alternateAnswers": ["the spanish flu", "influenza", "1918 flu", "1918 influenza pandemic"]
       }
     ]
   },
