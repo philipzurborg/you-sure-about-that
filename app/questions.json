@@ -543,22 +543,22 @@
     "date": "2026-03-10",
     "questions": [
       {
-        "category": "HISTORY",
-        "question": "Held in August 1969 on Max Yasgur's dairy farm in upstate New York, this three-day music festival attracted roughly 400,000 attendees and featured performances by Jimi Hendrix, Janis Joplin, and The Who.",
-        "answer": "Woodstock",
-        "alternateAnswers": ["woodstock festival", "woodstock music festival", "woodstock 1969"]
+        "category": "ON THIS DAY",
+        "question": "March 10th, 1876: \"Mr. Watson, come here—I want to see you.\" was the first message delivered by what type of communication?",
+        "answer": "Telephone",
+        "alternateAnswers": ["phone", "the telephone", "the phone"]
       },
       {
-        "category": "SCIENCE",
-        "question": "Unlike fission, which splits atoms apart, this process combines two light atomic nuclei to form a heavier one, releasing enormous amounts of energy — the same reaction that powers the sun and every other star.",
-        "answer": "Nuclear Fusion",
-        "alternateAnswers": ["fusion", "nuclear fusion reaction", "thermonuclear fusion"]
+        "category": "FAST FOOD MASCOTS",
+        "question": "This character was originally introduced as evil with four arms who stole milkshakes. Later, he was rebranded as a clumsy, lovable protagonist.",
+        "answer": "Grimace",
+        "alternateAnswers": ["grimace shake", "the grimace"]
       },
       {
-        "category": "MUSIC",
-        "question": "This rapper and producer from Compton, California co-founded Death Row Records, launched the careers of Snoop Dogg and Eminem, later founded Beats Electronics, and sold the headphone company to Apple for $3 billion.",
-        "answer": "Dr. Dre",
-        "alternateAnswers": ["dre", "andre romelle young", "dr dre", "doctor dre"]
+        "category": "NAME THAT PRESIDENT",
+        "question": "Though official history says this sitting US president died at the Palace Hotel in San Francisco, it's long been rumored he actually died at a prohibition speakeasy across the street.",
+        "answer": "Warren G. Harding",
+        "alternateAnswers": ["warren harding", "harding", "warren g harding"]
       }
     ]
   },
