@@ -591,22 +591,22 @@
     "date": "2026-03-12",
     "questions": [
       {
-        "category": "MOVIES",
-        "question": "In this 1985 John Hughes film, five high school students from different social cliques — the brain, the athlete, the basket case, the princess, and the criminal — spend a Saturday detention together and break down their social walls.",
-        "answer": "The Breakfast Club",
-        "alternateAnswers": ["breakfast club", "the breakfast club film", "the breakfast club 1985"]
+        "category": "2000S TECH",
+        "question": "To compete with Amazon's Kindle, Barnes & Noble released this device in Fall 2009.",
+        "answer": "Nook",
+        "alternateAnswers": ["the nook", "nook reader", "the nook reader", "barnes and noble nook"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This deep-fried dough pastry, generously dusted with powdered sugar, is the signature treat of New Orleans and is traditionally served alongside café au lait at the historic Café Du Monde.",
-        "answer": "Beignet",
-        "alternateAnswers": ["beignets", "beignet pastry", "new orleans beignet", "new orleans beignets"]
+        "category": "SPORTS",
+        "question": "This international baseball tournament is running through March 17th.",
+        "answer": "World Baseball Classic",
+        "alternateAnswers": ["the world baseball classic", "wbc", "the wbc"]
       },
       {
-        "category": "HISTORY",
-        "question": "On December 1, 1955, this Montgomery, Alabama seamstress refused to give up her bus seat to a white passenger, an act of quiet defiance that ignited the Montgomery Bus Boycott and galvanized the American civil rights movement.",
-        "answer": "Rosa Parks",
-        "alternateAnswers": ["parks", "rosa louise parks", "rosa mccauley parks"]
+        "category": "WWII",
+        "question": "Operation Dynamo evacuated more than 338,000 Allied soldiers from what town in France?",
+        "answer": "Dunkirk",
+        "alternateAnswers": ["dunkerque", "dunkirk france"]
       }
     ]
   },
