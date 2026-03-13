@@ -591,7 +591,7 @@
     "date": "2026-03-12",
     "questions": [
       {
-        "category": "2000S TECH",
+        "category": "2000s TECH",
         "question": "To compete with Amazon's Kindle, Barnes & Noble released this device in Fall 2009.",
         "answer": "Nook",
         "alternateAnswers": ["the nook", "nook reader", "the nook reader", "barnes and noble nook"]
@@ -615,22 +615,22 @@
     "date": "2026-03-13",
     "questions": [
       {
-        "category": "VIDEO GAMES",
-        "question": "Launched by Epic Games in 2017, this free-to-play battle royale game drops up to 100 players onto a shrinking island where they scavenge for weapons and build structures to be the last one standing.",
-        "answer": "Fortnite",
-        "alternateAnswers": ["fortnite game", "fortnite battle royale", "fortnite epic games"]
+        "category": "30 FOR 30",
+        "question": "Nicknamed \"The Thrill\", what San Francisco Giants superstar was born on this day?",
+        "answer": "Will Clark",
+        "alternateAnswers": ["will the thrill", "will the thrill clark", "will \"the thrill\" clark", "clark"]
       },
       {
-        "category": "MUSIC",
-        "question": "This English singer-songwriter's second album '21,' released in 2011 and featuring the worldwide hit 'Rolling in the Deep,' became one of the best-selling albums in UK and US chart history.",
-        "answer": "Adele",
-        "alternateAnswers": ["adele adkins", "adele singer", "adele laurie blue adkins"]
+        "category": "MOVIES",
+        "question": "In a major tone shift, Andy Serkis followed up his iconic role as \"Gollum\" in Lord of the Rings by playing Jennifer Garner's boss in what 2004 film?",
+        "answer": "13 Going on 30",
+        "alternateAnswers": ["thirteen going on thirty", "13 going on 30 movie"]
       },
       {
-        "category": "SPORTS",
-        "question": "This San Francisco Giants outfielder holds the all-time MLB career home run record with 762, surpassing Hank Aaron's mark of 755 in 2007, though his legacy remains clouded by performance-enhancing drug allegations.",
-        "answer": "Barry Bonds",
-        "alternateAnswers": ["bonds", "barry lamar bonds", "barry bonds giants"]
+        "category": "MOVIES: THE SEQUEL",
+        "question": "This movie focuses on a character who was thought to have drowned as a boy at Camp Crystal Lake due to the negligence of the camp staff.",
+        "answer": "Friday the 13th",
+        "alternateAnswers": ["friday the 13th movie", "friday the thirteenth"]
       }
     ]
   },
@@ -639,22 +639,22 @@
     "date": "2026-03-14",
     "questions": [
       {
-        "category": "GEOGRAPHY",
-        "question": "Located on the northwestern shore of Lake Ontario, this Canadian city is the country's largest, home to the CN Tower and the Hockey Hall of Fame, and is frequently called one of the most multicultural cities in the world.",
-        "answer": "Toronto",
-        "alternateAnswers": ["toronto canada", "toronto ontario", "toronto city"]
+        "category": "SUPER BOWL HALFTIME PERFORMERS",
+        "question": "2010 Super Bowl halftime show: the first song performed was \"Pinball Wizard\".",
+        "answer": "The Who",
+        "alternateAnswers": ["the who band", "who"]
       },
       {
-        "category": "MOVIES",
-        "question": "Starring the late Chadwick Boseman as the king of the fictional African nation of Wakanda, this 2018 Marvel film was the first superhero movie ever nominated for the Academy Award for Best Picture.",
-        "answer": "Black Panther",
-        "alternateAnswers": ["black panther film", "black panther movie", "black panther 2018"]
+        "category": "GAME SHOWS",
+        "question": "In September 2002, who succeeded Regis Philbin as host of Who Wants To Be a Millionaire?",
+        "answer": "Meredith Vieira",
+        "alternateAnswers": ["vieira", "meredith"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "Introduced by McDonald's in 1968, this burger stacks two beef patties with special sauce, lettuce, cheese, pickles, and onions on a three-part sesame-seed bun, and has become one of the most recognized foods on the planet.",
-        "answer": "Big Mac",
-        "alternateAnswers": ["the big mac", "big mac burger", "mcdonald's big mac", "mcdonalds big mac"]
+        "category": "NAME THE AGENCY FROM THE ABBREVIATION",
+        "question": "OSHA",
+        "answer": "Occupational Safety and Health Administration",
+        "alternateAnswers": ["occupational safety and health admin", "occupational safety health administration"]
       }
     ]
   },
@@ -663,22 +663,22 @@
     "date": "2026-03-15",
     "questions": [
       {
-        "category": "HISTORY",
-        "question": "This English naturalist, who sailed on the HMS Beagle in the 1830s and observed wildlife on the Galápagos Islands, published 'On the Origin of Species' in 1859 and transformed humanity's understanding of life on Earth.",
-        "answer": "Charles Darwin",
-        "alternateAnswers": ["darwin", "charles robert darwin", "c. darwin"]
-      },
-      {
-        "category": "SCIENCE",
-        "question": "Known as the 'universal recipient,' this blood type can receive red blood cells from donors of any ABO and Rh blood group, making it the most flexible type to match for transfusions.",
-        "answer": "AB Positive",
-        "alternateAnswers": ["ab+", "ab positive blood type", "blood type ab positive", "ab pos"]
-      },
-      {
         "category": "MUSIC",
-        "question": "Born Benito Antonio Martínez Ocasio in Puerto Rico, this Latin trap and reggaeton artist became the most-streamed artist on Spotify globally in 2020, 2021, and 2022 — three consecutive years.",
-        "answer": "Bad Bunny",
-        "alternateAnswers": ["bad bunny singer", "benito ocasio", "benito martinez"]
+        "question": "What artist holds the record for the most streams on Spotify?",
+        "answer": "Drake",
+        "alternateAnswers": ["aubrey drake graham", "drizzy", "drizzy drake"]
+      },
+      {
+        "category": "DRAFT DAY",
+        "question": "What is the age cutoff for eligibility in the United States' military draft?",
+        "answer": "26",
+        "alternateAnswers": ["twenty-six", "twenty six", "age 26"]
+      },
+      {
+        "category": "FAST FOOD RESTAURANTS BY SLOGAN",
+        "question": "\"Freaky fast, freaky fresh\"",
+        "answer": "Jimmy John's",
+        "alternateAnswers": ["jimmy johns", "jimmy john's subs", "jimmy johns subs"]
       }
     ]
   },
@@ -687,22 +687,22 @@
     "date": "2026-03-16",
     "questions": [
       {
-        "category": "TELEVISION",
-        "question": "Released on Netflix in 2015, this true-crime documentary series sparked worldwide debate about the American justice system through the intertwined cases of Steven Avery and his nephew Brendan Dassey.",
-        "answer": "Making a Murderer",
-        "alternateAnswers": ["making a murderer documentary", "making a murderer netflix", "making a murderer series"]
+        "category": "CHILDREN'S TV",
+        "question": "In a season 2 episode of Spongebob Squarepants, the yellow sponge sketched an evil doppelgänger named what?",
+        "answer": "DoodleBob",
+        "alternateAnswers": ["doodle bob", "doodlebob spongebob"]
       },
       {
-        "category": "SPORTS",
-        "question": "This British Formula One driver won seven World Championship titles between 2008 and 2020, and holds all-time records for the most race wins and the most pole positions in F1 history.",
-        "answer": "Lewis Hamilton",
-        "alternateAnswers": ["hamilton", "lewis", "sir lewis hamilton", "l. hamilton"]
+        "category": "SPORTS CONTESTS",
+        "question": "Which is older: the NBA Dunk Contest or the MLB's Home Run Derby?",
+        "answer": "NBA Dunk Contest",
+        "alternateAnswers": ["nba", "dunk contest", "dunk", "the dunk contest"]
       },
       {
-        "category": "GEOGRAPHY",
-        "question": "Completely encircled by Italy and covering just 61 square kilometers, this tiny republic on the slopes of Mount Titano claims to be the world's oldest constitutional republic, founded by tradition in 301 AD.",
-        "answer": "San Marino",
-        "alternateAnswers": ["republic of san marino", "san marino country", "most serene republic of san marino"]
+        "category": "PLANES",
+        "question": "This aircraft is the world's largest passenger airliner and the only full-length double-deck jet airliner.",
+        "answer": "Airbus A380",
+        "alternateAnswers": ["a380", "the airbus a380", "airbus a 380"]
       }
     ]
   },
