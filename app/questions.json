@@ -711,22 +711,22 @@
     "date": "2026-03-17",
     "questions": [
       {
-        "category": "MOVIES",
-        "question": "In this 1999 sci-fi film by the Wachowskis, a computer hacker named Neo discovers that the reality everyone perceives is a simulated prison designed by machines, and joins a rebel group fighting to free humanity.",
-        "answer": "The Matrix",
-        "alternateAnswers": ["matrix", "the matrix film", "matrix movie", "the matrix 1999"]
+        "category": "NFL",
+        "question": "Tom Brady started the 2000 NFL season as the fourth-string quarterback, behind what starter?",
+        "answer": "Drew Bledsoe",
+        "alternateAnswers": ["bledsoe", "drew bledsoe patriots"]
       },
       {
-        "category": "FOOD & DRINK",
-        "question": "This sweet Italian liqueur, flavored with almonds and apricot pits, is a key ingredient in the Amaretto Sour and Alabama Slammer cocktails, and is most famously sold under the brand name Disaronno.",
-        "answer": "Amaretto",
-        "alternateAnswers": ["amaretto liqueur", "amaretto di saronno", "disaronno amaretto"]
+        "category": "LIGHTBULBS",
+        "question": "What is the name for the measure of the total amount of visible light emitted by a bulb?",
+        "answer": "Lumen",
+        "alternateAnswers": ["lumens"]
       },
       {
-        "category": "HISTORY",
-        "question": "On November 9th of this year, the Berlin Wall — which had divided East and West Germany for 28 years — fell, symbolizing the collapse of the Iron Curtain and marking the effective end of the Cold War.",
-        "answer": "1989",
-        "alternateAnswers": ["nineteen eighty-nine", "november 1989", "the year 1989"]
+        "category": "MORE FOOTBALL",
+        "question": "Name the play in which the quarterback runs with the ball in the direction of either sideline behind the line of scrimmage.",
+        "answer": "Bootleg",
+        "alternateAnswers": ["bootleg play", "quarterback bootleg"]
       }
     ]
   },
