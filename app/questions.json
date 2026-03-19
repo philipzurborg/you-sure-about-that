@@ -735,22 +735,22 @@
     "date": "2026-03-18",
     "questions": [
       {
-        "category": "SCIENCE",
-        "question": "The most abundant metal in Earth's crust, this lightweight silvery element with the chemical symbol Al is used in everything from soda cans to aircraft fuselages and was once so scarce it was considered more precious than gold.",
-        "answer": "Aluminum",
-        "alternateAnswers": ["aluminium", "al", "aluminum element", "aluminium element"]
+        "category": "NAME THE SONG FROM THE LYRIC",
+        "question": "\"I'm the one that's livin' lavish (I'm the one) / Like I'm playin' for the Mavericks (Ballin')\"",
+        "answer": "March Madness",
+        "alternateAnswers": ["march madness future", "march madness song"]
       },
       {
-        "category": "ANIMALS",
-        "question": "The world's largest and heaviest living bird, this flightless African native can sprint at up to 45 miles per hour and lays the largest eggs of any living bird species, each weighing up to three pounds.",
-        "answer": "Ostrich",
-        "alternateAnswers": ["ostriches", "ostrich bird", "african ostrich"]
+        "category": "MARCH MADNESS",
+        "question": "What team did Arkansas defeat to win the 1994 men's NCAA tournament?",
+        "answer": "Duke",
+        "alternateAnswers": ["duke blue devils", "duke university"]
       },
       {
-        "category": "POP CULTURE",
-        "question": "Created by Stan Lee and Steve Ditko and first appearing in 1962, this Marvel superhero from Queens, New York gained his powers from a radioactive spider bite and lives by the motto 'with great power comes great responsibility.'",
-        "answer": "Spider-Man",
-        "alternateAnswers": ["spiderman", "peter parker", "spider man", "the amazing spider-man"]
+        "category": "DUNE",
+        "question": "What is the title of the fourth book in Frank Herbert's Dune series?",
+        "answer": "God Emperor of Dune",
+        "alternateAnswers": ["god emperor", "the god emperor of dune"]
       }
     ]
   }
