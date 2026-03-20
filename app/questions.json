@@ -753,5 +753,29 @@
         "alternateAnswers": ["god emperor", "the god emperor of dune"]
       }
     ]
+  },
+  {
+    "day": 31,
+    "date": "2026-03-20",
+    "questions": [
+      {
+        "category": "ON THIS DAY",
+        "question": "1916: Albert Einstein unveils this theory that changes how we think about space and time.",
+        "answer": "General Relativity",
+        "alternateAnswers": ["relativity", "theory of relativity", "theory of general relativity", "the theory of relativity"]
+      },
+      {
+        "category": "BORN TODAY",
+        "question": "1957: Director of 'Do The Right Thing'",
+        "answer": "Spike Lee",
+        "alternateAnswers": ["spike", "shelton jackson lee"]
+      },
+      {
+        "category": "CELESTIAL EVENTS",
+        "question": "Today is this event where night and day are fully in sync.",
+        "answer": "Equinox",
+        "alternateAnswers": ["spring equinox", "vernal equinox", "the equinox", "the spring equinox", "the vernal equinox"]
+      }
+    ]
   }
 ]
