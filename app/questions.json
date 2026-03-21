@@ -777,5 +777,29 @@
         "alternateAnswers": ["spring equinox", "vernal equinox", "the equinox", "the spring equinox", "the vernal equinox"]
       }
     ]
+  },
+  {
+    "day": 32,
+    "date": "2026-03-21",
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "Hugh Keays-Byrne played Toecutter in the original Mad Max movie and returned to the franchise in Fury Road as this warlord antagonist.",
+        "answer": "Immortan Joe",
+        "alternateAnswers": ["immortan", "the immortan joe"]
+      },
+      {
+        "category": "INTERNET HISTORY",
+        "question": "Long before AI assistants, this website offered a \"gentleman's personal gentleman\".",
+        "answer": "Ask Jeeves",
+        "alternateAnswers": ["askjeeves", "askjeeves.com", "ask.com", "jeeves"]
+      },
+      {
+        "category": "AUTHOR'S QUOTES",
+        "question": "Gertrude Stein's famous quote \"There's no there there\" was referring to what US city?",
+        "answer": "Oakland",
+        "alternateAnswers": ["oakland ca", "oakland california", "oakland city"]
+      }
+    ]
   }
 ]
