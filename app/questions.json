@@ -801,5 +801,35 @@
         "alternateAnswers": ["oakland ca", "oakland california", "oakland city"]
       }
     ]
+  },
+  {
+    "day": 33,
+    "date": "2026-03-22",
+    "questions": [
+      {
+        "category": "THE CALENDAR",
+        "question": "There are two sets of back-to-back 31-day months. Name all four months.",
+        "answer": "July August December January",
+        "alternateAnswers": [
+          "january july august december",
+          "december january july august",
+          "july august january december",
+          "august july december january",
+          "january december july august"
+        ]
+      },
+      {
+        "category": "NAME THE MAJOR LEAGUE ORG OF THE MINOR LEAGUE TEAM",
+        "question": "AAA: The Salt Lake Bees",
+        "answer": "Angels",
+        "alternateAnswers": ["la angels", "los angeles angels", "anaheim angels", "california angels"]
+      },
+      {
+        "category": "SPACE",
+        "question": "NASA Artemis Missions are designed to take humans where in space?",
+        "answer": "The Moon",
+        "alternateAnswers": ["moon", "lunar surface", "luna"]
+      }
+    ]
   }
 ]
