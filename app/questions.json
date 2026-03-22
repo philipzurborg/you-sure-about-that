@@ -811,11 +811,29 @@
         "question": "There are two sets of back-to-back 31-day months. Name all four months.",
         "answer": "July August December January",
         "alternateAnswers": [
-          "january july august december",
-          "december january july august",
           "july august january december",
+          "july december august january",
+          "july december january august",
+          "july january august december",
+          "july january december august",
           "august july december january",
-          "january december july august"
+          "august july january december",
+          "august december july january",
+          "august december january july",
+          "august january july december",
+          "august january december july",
+          "december july august january",
+          "december july january august",
+          "december august july january",
+          "december august january july",
+          "december january july august",
+          "december january august july",
+          "january july august december",
+          "january july december august",
+          "january august july december",
+          "january august december july",
+          "january december july august",
+          "january december august july"
         ]
       },
       {
