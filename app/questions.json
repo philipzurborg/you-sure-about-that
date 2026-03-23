@@ -849,5 +849,29 @@
         "alternateAnswers": ["moon", "lunar surface", "luna"]
       }
     ]
+  },
+  {
+    "day": 34,
+    "date": "2026-03-23",
+    "questions": [
+      {
+        "category": "ON THIS DAY IN HISTORY",
+        "question": "1775: \"Give Me Liberty, or Give Me Death!\" declares this man at St. John's Episcopal Church in Richmond, Virginia.",
+        "answer": "Patrick Henry",
+        "alternateAnswers": ["henry", "patrick"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Once considered a gimmick, the NBA instituted this in 1979; the NCAA would follow in 1986.",
+        "answer": "Three Point Line",
+        "alternateAnswers": ["the three point line", "three pointers", "threes", "three", "three points", "three line", "the three line", "3 point line", "3-point line"]
+      },
+      {
+        "category": "ART IMITATES LIFE",
+        "question": "In Arrested Development, GOB's abbreviated name is an allusion to which member of the Bush family?",
+        "answer": "Jeb Bush",
+        "alternateAnswers": ["jeb", "john ellis bush"]
+      }
+    ]
   }
 ]
