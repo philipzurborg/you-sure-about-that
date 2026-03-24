@@ -873,5 +873,29 @@
         "alternateAnswers": ["jeb", "john ellis bush"]
       }
     ]
+  },
+  {
+    "day": 35,
+    "date": "2026-03-24",
+    "questions": [
+      {
+        "category": "STATE NICKNAMES",
+        "question": "\"Battle Born\" — referencing the state's admission to the union during the Civil War.",
+        "answer": "Nevada",
+        "alternateAnswers": ["state of nevada", "nevada state"]
+      },
+      {
+        "category": "CASINO TERMS",
+        "question": "What is the term for the action that turns a friendly poker game into an unlicensed casino?",
+        "answer": "Rake",
+        "alternateAnswers": ["a rake", "the rake", "collecting a rake", "taking a rake", "raking"]
+      },
+      {
+        "category": "HIGHWAY GEOGRAPHY",
+        "question": "The Pan-American Highway stretches from Prudhoe Bay, Alaska to a city named Ushuaia in what country?",
+        "answer": "Argentina",
+        "alternateAnswers": ["argentina country", "the argentina"]
+      }
+    ]
   }
 ]
