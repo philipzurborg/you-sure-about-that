@@ -897,5 +897,29 @@
         "alternateAnswers": ["argentina country", "the argentina"]
       }
     ]
+  },
+  {
+    "day": 36,
+    "date": "2026-03-25",
+    "questions": [
+      {
+        "category": "OPENING DAY",
+        "question": "Today marks history: MLB's opening game featuring the NY Yankees and SF Giants will be the first ever streamed through what service?",
+        "answer": "Netflix",
+        "alternateAnswers": ["netflix streaming", "netflix service"]
+      },
+      {
+        "category": "NAME THE PRESIDENT",
+        "question": "A lifelong baseball fan, the 27th President of the United States was the first ever to throw out a first pitch at the 1910 Washington Senators' Opening Day.",
+        "answer": "William Howard Taft",
+        "alternateAnswers": ["taft", "president taft", "william taft", "william h taft", "william h. taft"]
+      },
+      {
+        "category": "BASEBALL UNIONS",
+        "question": "Opening Day might look very different in 2027 if the players union and team owners are unable to come to an agreement, forcing this term for stoppage of all play.",
+        "answer": "Lockout",
+        "alternateAnswers": ["a lockout", "the lockout", "work stoppage"]
+      }
+    ]
   }
 ]
