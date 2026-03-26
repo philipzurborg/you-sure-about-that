@@ -921,5 +921,29 @@
         "alternateAnswers": ["a lockout", "the lockout", "work stoppage"]
       }
     ]
+  },
+  {
+    "day": 37,
+    "date": "2026-03-26",
+    "questions": [
+      {
+        "category": "ON THE PERIODIC TABLE",
+        "question": "What is the symbol for gold on the periodic table?",
+        "answer": "Au",
+        "alternateAnswers": ["au element", "aurum"]
+      },
+      {
+        "category": "ANIMATION HISTORY",
+        "question": "This 2005 film was the first non-Pixar Disney film to be entirely animated in 3D. Hint: It had an aviary theme.",
+        "answer": "Chicken Little",
+        "alternateAnswers": ["chicken little movie", "chicken little 2005", "disney chicken little"]
+      },
+      {
+        "category": "SCIENTIFIC MEASUREMENTS",
+        "question": "What is the unit of measurement for the amount of substance?",
+        "answer": "Mole",
+        "alternateAnswers": ["a mole", "the mole", "mol"]
+      }
+    ]
   }
 ]
