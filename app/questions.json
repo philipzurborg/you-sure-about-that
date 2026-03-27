@@ -945,5 +945,29 @@
         "alternateAnswers": ["a mole", "the mole", "mol"]
       }
     ]
+  },
+  {
+    "day": 38,
+    "date": "2026-03-27",
+    "questions": [
+      {
+        "category": "BATMAN",
+        "question": "What role did Billy Dee Williams play in Tim Burton's 1989 Batman film?",
+        "answer": "Harvey Dent",
+        "alternateAnswers": ["harvey", "dent", "two-face", "two face"]
+      },
+      {
+        "category": "BATMEN",
+        "question": "Who is the voice actor for Lego Batman?",
+        "answer": "Will Arnett",
+        "alternateAnswers": ["will arnet", "arnett", "will arnett actor"]
+      },
+      {
+        "category": "ANIMATION",
+        "question": "Terry McGinnis assumes the role of Batman in what animated series?",
+        "answer": "Batman Beyond",
+        "alternateAnswers": ["batman beyond series", "batman of the future"]
+      }
+    ]
   }
 ]
