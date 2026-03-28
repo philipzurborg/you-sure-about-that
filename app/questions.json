@@ -969,5 +969,29 @@
         "alternateAnswers": ["batman beyond series", "batman of the future"]
       }
     ]
+  },
+  {
+    "day": 39,
+    "date": "2026-03-28",
+    "questions": [
+      {
+        "category": "SATURDAY MORNING CARTOONS",
+        "question": "What 2000s cartoon followed the adventures of a teenage boy who was half-ghost?",
+        "answer": "Danny Phantom",
+        "alternateAnswers": ["danny phantom cartoon", "danny phantom show"]
+      },
+      {
+        "category": "STAR WARS",
+        "question": "Name the planet that the Trade Federation was holding a blockade over in The Phantom Menace.",
+        "answer": "Naboo",
+        "alternateAnswers": ["planet naboo", "naboo planet"]
+      },
+      {
+        "category": "POPE HISTORY",
+        "question": "From 1309–1376, the Papacy moved from Rome to which country?",
+        "answer": "France",
+        "alternateAnswers": ["france country", "avignon france", "avignon"]
+      }
+    ]
   }
 ]
