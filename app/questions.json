@@ -993,5 +993,29 @@
         "alternateAnswers": ["france country", "avignon france", "avignon"]
       }
     ]
+  },
+  {
+    "day": 40,
+    "date": "2026-03-29",
+    "questions": [
+      {
+        "category": "IRISH HISTORY",
+        "question": "Now known as what infamous day, on January 30, 1972 British paratroopers opened fire on unarmed Catholic civilians during a civil rights march in Derry, killing 14 people.",
+        "answer": "Bloody Sunday",
+        "alternateAnswers": ["bloody sunday ireland", "bloody sunday 1972"]
+      },
+      {
+        "category": "MEASUREMENTS",
+        "question": "Because the Earth is a sphere, speed and distance units for maritime navigation are based on the planet's circumference. Speed is measured in nautical miles per hour, also known as this unit.",
+        "answer": "Knots",
+        "alternateAnswers": ["knot", "a knot", "nautical knots"]
+      },
+      {
+        "category": "THEME PARKS AND HISTORY",
+        "question": "Six Flags is named after the six countries that have ruled which US state?",
+        "answer": "Texas",
+        "alternateAnswers": ["state of texas", "texas usa"]
+      }
+    ]
   }
 ]
