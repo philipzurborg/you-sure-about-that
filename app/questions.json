@@ -1017,5 +1017,29 @@
         "alternateAnswers": ["state of texas", "texas usa"]
       }
     ]
+  },
+  {
+    "day": 41,
+    "date": "2026-03-30",
+    "questions": [
+      {
+        "category": "AUTHORS",
+        "question": "He wrote the novels that were adapted into The Martian and Project Hail Mary.",
+        "answer": "Andy Weir",
+        "alternateAnswers": ["weir", "andy weir author"]
+      },
+      {
+        "category": "SUPERHEROES",
+        "question": "Daredevil operates in which New York City neighborhood?",
+        "answer": "Hell's Kitchen",
+        "alternateAnswers": ["hells kitchen", "hell's kitchen nyc", "clinton", "midtown west"]
+      },
+      {
+        "category": "CHEFS",
+        "question": "Anthony Bourdain became a household name after publishing what book?",
+        "answer": "Kitchen Confidential",
+        "alternateAnswers": ["kitchen confidential book", "kitchen confidential adventures in the culinary underbelly"]
+      }
+    ]
   }
 ]
