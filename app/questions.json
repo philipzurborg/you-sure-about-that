@@ -1041,5 +1041,29 @@
         "alternateAnswers": ["kitchen confidential book", "kitchen confidential adventures in the culinary underbelly"]
       }
     ]
+  },
+  {
+    "day": 42,
+    "date": "2026-03-31",
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "The southernmost point under U.S. control is on this island, where Dwayne Johnson's heritage comes from.",
+        "answer": "American Samoa",
+        "alternateAnswers": ["samoa", "american samoa island"]
+      },
+      {
+        "category": "NBA HISTORY",
+        "question": "What was the original name of the most recent NBA team to join the league?",
+        "answer": "Charlotte Bobcats",
+        "alternateAnswers": ["the charlotte bobcats", "bobcats", "the bobcats"]
+      },
+      {
+        "category": "STREAMING TV",
+        "question": "While House of Cards was the first ever true Netflix Original, the first show Netflix had exclusive U.S. distribution rights to was this European dramedy starring Steven Van Zandt.",
+        "answer": "Lilyhammer",
+        "alternateAnswers": ["lillyhammer", "lily hammer", "lilly hammer"]
+      }
+    ]
   }
 ]
