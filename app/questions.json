@@ -1065,5 +1065,29 @@
         "alternateAnswers": ["lillyhammer", "lily hammer", "lilly hammer"]
       }
     ]
+  },
+  {
+    "day": 43,
+    "date": "2026-04-01",
+    "questions": [
+      {
+        "category": "PRESIDENTS",
+        "question": "How many US presidents have served non-consecutive terms in office?",
+        "answer": "2",
+        "alternateAnswers": ["two", "2 presidents", "two presidents"]
+      },
+      {
+        "category": "FOOD SCIENCE",
+        "question": "What is the scale used to measure the heat level of peppers?",
+        "answer": "Scoville",
+        "alternateAnswers": ["scoville scale", "the scoville scale", "scoville units", "scoville level", "scoville levels"]
+      },
+      {
+        "category": "80S MOVIES",
+        "question": "In Big (1988), at what toy store do Tom Hanks and Robert Loggia perform on the big piano?",
+        "answer": "FAO Schwarz",
+        "alternateAnswers": ["fao schwarz", "f.a.o. schwarz", "fao schwartz", "schwarz"]
+      }
+    ]
   }
 ]
