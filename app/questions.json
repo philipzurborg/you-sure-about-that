@@ -1089,5 +1089,29 @@
         "alternateAnswers": ["fao schwarz", "f.a.o. schwarz", "fao schwartz", "schwarz"]
       }
     ]
+  },
+  {
+    "day": 44,
+    "date": "2026-04-02",
+    "questions": [
+      {
+        "category": "RELIGIOUS OBSERVATIONS",
+        "question": "The Last Supper was actually this type of ceremonial Jewish feast held during Passover.",
+        "answer": "Seder",
+        "alternateAnswers": ["a seder", "the seder", "passover seder"]
+      },
+      {
+        "category": "NAME THE ARTIST FROM THE SONG TITLE",
+        "question": "Werewolves of London",
+        "answer": "Warren Zevon",
+        "alternateAnswers": ["warron zevon", "warren zevon"]
+      },
+      {
+        "category": "THE COLD WAR",
+        "question": "After weeks of civil unrest and a mistaken announcement by an East German official, the Berlin Wall came down on November 9th of what year?",
+        "answer": "1989",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
