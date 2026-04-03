@@ -1113,5 +1113,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 45,
+    "date": "2026-04-03",
+    "questions": [
+      {
+        "category": "THE FINAL FRONTIER",
+        "question": "What space shuttle was named after Star Trek's famous spacecraft?",
+        "answer": "Enterprise",
+        "alternateAnswers": ["space shuttle enterprise", "enterprise shuttle", "starship enterprise", "the enterprise", "uss enterprise"]
+      },
+      {
+        "category": "CURRENTISH EVENTS",
+        "question": "Days before committing suicide in a Cybertruck in front of a Las Vegas hotel, Matthew Livelsberger texted his ex-girlfriend the phrase \"I feel like batman or halo\" — what hotel?",
+        "answer": "Trump",
+        "alternateAnswers": ["trump hotel", "trump international hotel", "trump las vegas", "trump international hotel las vegas"]
+      },
+      {
+        "category": "2020 VISION",
+        "question": "The NBA played its 2020 post-season tournament at a locked-down Disney World environment known as what?",
+        "answer": "The Bubble",
+        "alternateAnswers": ["bubble", "nba bubble", "the nba bubble", "orlando bubble"]
+      }
+    ]
   }
 ]
