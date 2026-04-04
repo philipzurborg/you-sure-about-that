@@ -1137,5 +1137,29 @@
         "alternateAnswers": ["bubble", "nba bubble", "the nba bubble", "orlando bubble"]
       }
     ]
+  },
+  {
+    "day": 46,
+    "date": "2026-04-04",
+    "questions": [
+      {
+        "category": "ANIMATED FILMS",
+        "question": "In Despicable Me, Gru sets his Minions on the task of stealing what massive object?",
+        "answer": "The Moon",
+        "alternateAnswers": ["moon", "the moon"]
+      },
+      {
+        "category": "CIVICS",
+        "question": "The Supreme Court is made up of how many judges?",
+        "answer": "9",
+        "alternateAnswers": ["nine", "9 judges", "nine judges"]
+      },
+      {
+        "category": "GRAMMAR AND LANGUAGE",
+        "question": "This word means to give the different forms of a verb in an inflected language as they vary according to voice, mood, tense, number, and person.",
+        "answer": "Conjugate",
+        "alternateAnswers": ["conjugation", "to conjugate"]
+      }
+    ]
   }
 ]
