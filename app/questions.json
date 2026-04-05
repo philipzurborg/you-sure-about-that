@@ -1161,5 +1161,29 @@
         "alternateAnswers": ["conjugation", "to conjugate"]
       }
     ]
+  },
+  {
+    "day": 47,
+    "date": "2026-04-05",
+    "questions": [
+      {
+        "category": "NAME THE STATE FROM THE NICKNAME",
+        "question": "Bluegrass State",
+        "answer": "Kentucky",
+        "alternateAnswers": ["kentucky"]
+      },
+      {
+        "category": "ON THIS DAY",
+        "question": "April 5th, 1974: ABBA wins this singing competition, launching them into international stardom.",
+        "answer": "Eurovision",
+        "alternateAnswers": ["eurovision song contest", "the eurovision song contest", "eurovision contest"]
+      },
+      {
+        "category": "A BURNING QUESTION",
+        "question": "Often referred to as turf, this unique organic fuel source is formed from the partial decomposition of vegetation in waterlogged, acidic conditions called bogs. It's commonly burned for domestic heating in Ireland.",
+        "answer": "Peat",
+        "alternateAnswers": ["peat moss", "turf", "peat turf"]
+      }
+    ]
   }
 ]
