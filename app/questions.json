@@ -1185,5 +1185,29 @@
         "alternateAnswers": ["peat moss", "turf", "peat turf"]
       }
     ]
+  },
+  {
+    "day": 48,
+    "date": "2026-04-06",
+    "questions": [
+      {
+        "category": "THE BIBLE",
+        "question": "While Moses pleaded for the Pharaoh to free the Hebrews, God sent down 10 plagues. What was the 9th?",
+        "answer": "Darkness",
+        "alternateAnswers": ["the darkness", "dark", "plague of darkness"]
+      },
+      {
+        "category": "U.S. CITIES",
+        "question": "This city's altitude and citizens aren't the only things high — it also ranks #1 in the nation in car thefts per capita.",
+        "answer": "Denver",
+        "alternateAnswers": ["denver colorado", "denver co"]
+      },
+      {
+        "category": "ANIMATION HISTORY",
+        "question": "In a rather uncommon move, this series' first episode was actually a Christmas special.",
+        "answer": "The Simpsons",
+        "alternateAnswers": ["simpsons", "the simpsons"]
+      }
+    ]
   }
 ]
