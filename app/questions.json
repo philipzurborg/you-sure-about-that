@@ -1209,5 +1209,29 @@
         "alternateAnswers": ["simpsons", "the simpsons"]
       }
     ]
+  },
+  {
+    "day": 49,
+    "date": "2026-04-07",
+    "questions": [
+      {
+        "category": "BIRTHDAYS",
+        "question": "Happy Birthday to this legendary director of Bram Stoker's Dracula and The Conversation.",
+        "answer": "Francis Ford Coppola",
+        "alternateAnswers": ["coppola", "francis coppola", "francis ford coppola"]
+      },
+      {
+        "category": "SPORTS",
+        "question": "Held just before playoffs, this type of game acts as a \"win and you're in\" matchup.",
+        "answer": "Play-in",
+        "alternateAnswers": ["play in", "play-in game", "play in game"]
+      },
+      {
+        "category": "CIVICS",
+        "question": "First proposed for the original Bill of Rights, the 27th Amendment took until 1992 to ratify. It prohibits Congress from adjusting what until after the next election?",
+        "answer": "Pay",
+        "alternateAnswers": ["salary", "their pay", "their salary", "salaries", "their salaries", "raise", "raises", "congressional pay", "wages"]
+      }
+    ]
   }
 ]
