@@ -1233,5 +1233,29 @@
         "alternateAnswers": ["salary", "their pay", "their salary", "salaries", "their salaries", "raise", "raises", "congressional pay", "wages"]
       }
     ]
+  },
+  {
+    "day": 50,
+    "date": "2026-04-08",
+    "questions": [
+      {
+        "category": "FOOD",
+        "question": "What is the name for a ribeye beef steak specifically cut with at least five inches of the rib bone left intact, resembling a Native American axe?",
+        "answer": "Tomahawk",
+        "alternateAnswers": ["tomahawk steak", "tomahawk ribeye", "tomahawk chop"]
+      },
+      {
+        "category": "AND BEVERAGE",
+        "question": "Name the cocktail: equal parts gin, sweet vermouth, and Campari.",
+        "answer": "Negroni",
+        "alternateAnswers": ["a negroni", "the negroni"]
+      },
+      {
+        "category": "TECHNOLOGY",
+        "question": "Name the simple, wireless telecommunications device that receives and displays alphanumeric messages. While mostly replaced by smartphones, it remains vital in specific industries like healthcare due to its reliability.",
+        "answer": "Pager",
+        "alternateAnswers": ["pagers", "a pager", "beeper", "beepers"]
+      }
+    ]
   }
 ]
