@@ -1257,5 +1257,29 @@
         "alternateAnswers": ["pagers", "a pager", "beeper", "beepers"]
       }
     ]
+  },
+  {
+    "day": 51,
+    "date": "2026-04-09",
+    "questions": [
+      {
+        "category": "TECH HISTORY",
+        "question": "In 2005, Apple transitioned away from this chip maker to Intel.",
+        "answer": "PowerPC",
+        "alternateAnswers": ["power pc", "motorola", "ibm", "ibm powerpc"]
+      },
+      {
+        "category": "VIDEO GAMES",
+        "question": "This series follows Kratos, a Spartan warrior, on a path of vengeance and eventual redemption.",
+        "answer": "God of War",
+        "alternateAnswers": ["god of war series", "god of war game"]
+      },
+      {
+        "category": "ORGANIZED CRIME",
+        "question": "He was the leader of the Winter Hill Gang in Somerville, Massachusetts from the 1970s into the early '90s.",
+        "answer": "Whitey Bulger",
+        "alternateAnswers": ["bulger", "james bulger", "james whitey bulger"]
+      }
+    ]
   }
 ]
