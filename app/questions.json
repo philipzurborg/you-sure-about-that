@@ -1281,5 +1281,29 @@
         "alternateAnswers": ["bulger", "james bulger", "james whitey bulger"]
       }
     ]
+  },
+  {
+    "day": 52,
+    "date": "2026-04-10",
+    "questions": [
+      {
+        "category": "SODAS",
+        "question": "Dr. Pepper advertises how many flavors combine to craft its signature taste?",
+        "answer": "23",
+        "alternateAnswers": ["twenty three", "twenty-three"]
+      },
+      {
+        "category": "HOUSE PLANTS",
+        "question": "This word describes the process of creating new plants from an existing one — using a piece of a \"parent\" plant to grow a genetic clone instead of starting from a seed.",
+        "answer": "Propagation",
+        "alternateAnswers": ["propagating", "propagate", "plant propagation"]
+      },
+      {
+        "category": "THE PRESIDENTS",
+        "question": "What does the W in George W. Bush stand for?",
+        "answer": "Walker",
+        "alternateAnswers": ["george walker bush", "walker bush"]
+      }
+    ]
   }
 ]
