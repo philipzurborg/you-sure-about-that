@@ -1305,5 +1305,29 @@
         "alternateAnswers": ["george walker bush", "walker bush"]
       }
     ]
+  },
+  {
+    "day": 53,
+    "date": "2026-04-11",
+    "questions": [
+      {
+        "category": "ACTORS",
+        "question": "He played Harvey Dent in The Dark Knight and also starred in Thank You for Smoking, Sully, and Battle: LA.",
+        "answer": "Aaron Eckhart",
+        "alternateAnswers": ["eckhart", "aaron eckhart"]
+      },
+      {
+        "category": "TECHNOLOGY FLOPS",
+        "question": "This service was Apple's failed precursor to iCloud.",
+        "answer": "MobileMe",
+        "alternateAnswers": ["mobile me", "mobileme"]
+      },
+      {
+        "category": "ANIMALS",
+        "question": "This animal is America's only native marsupial.",
+        "answer": "Opossum",
+        "alternateAnswers": ["possum", "virginia opossum", "virginia possum", "the opossum"]
+      }
+    ]
   }
 ]
