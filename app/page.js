@@ -1,6 +1,22 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import questions from "./questions.json";
+
+// Dates that have questions — used to avoid breaking streaks on question-less days
+const questionDates = new Set(questions.map((q) => q.date));
+
+// Returns the number of days with questions that were skipped between lastPlayedDate and today
+function missedQuestionDays(lastPlayedDate) {
+  const today = new Date(todayStr());
+  const last  = new Date(lastPlayedDate);
+  let count = 0;
+  for (let d = new Date(last); d < today; d.setDate(d.getDate() + 1)) {
+    const s = d.toISOString().slice(0, 10);
+    if (s !== lastPlayedDate && questionDates.has(s)) count++;
+  }
+  return count;
+}
 
 const formatPoints = (n) => {
   if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(2).replace(/\.00$/, "") + "B";
@@ -46,7 +62,7 @@ const loadStats = () => {
     let saved = migrateStats(JSON.parse(raw));
     if (saved.lastPlayedDate) {
       const daysDiff = Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000);
-      if (daysDiff > 1) return { ...saved, points: 0, streak: 0, dayStartPoints: null, dayStartedDay: null };
+      if (daysDiff > 1 && missedQuestionDays(saved.lastPlayedDate) > 0) return { ...saved, points: 0, streak: 0, dayStartPoints: null, dayStartedDay: null };
     }
     return saved;
   } catch { return defaultStats(); }
@@ -200,7 +216,8 @@ export default function App() {
       if (!raw) return false;
       const saved = JSON.parse(raw);
       if (!saved.lastPlayedDate || !saved.streak) return false;
-      return Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000) > 1;
+      const daysDiff = Math.round((new Date(todayStr()) - new Date(saved.lastPlayedDate)) / 86400000);
+      return daysDiff > 1 && missedQuestionDays(saved.lastPlayedDate) > 0;
     } catch { return false; }
   })();
 
