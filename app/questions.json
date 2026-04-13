@@ -1329,5 +1329,29 @@
         "alternateAnswers": ["possum", "virginia opossum", "virginia possum", "the opossum"]
       }
     ]
+  },
+  {
+    "day": 54,
+    "date": "2026-04-13",
+    "questions": [
+      {
+        "category": "NAME THAT PRESIDENT",
+        "question": "He was the 39th US President, hailing from Georgia.",
+        "answer": "Jimmy Carter",
+        "alternateAnswers": ["carter", "james carter", "james earl carter"]
+      },
+      {
+        "category": "NEWSCASTERS",
+        "question": "This anchor was fired after it was discovered he falsely claimed repeatedly that a military helicopter he was traveling in during the 2003 invasion was \"forced down after being hit by an RPG.\"",
+        "answer": "Brian Williams",
+        "alternateAnswers": ["williams", "brian williams"]
+      },
+      {
+        "category": "CARTOONS",
+        "question": "\"Faster Than the Speed of Love\" and \"Wish It, Want It, Do It\" are fictional book titles written by this Family Guy character.",
+        "answer": "Brian Griffin",
+        "alternateAnswers": ["brian", "the dog", "family guy dog"]
+      }
+    ]
   }
 ]
