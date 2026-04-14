@@ -1353,5 +1353,29 @@
         "alternateAnswers": ["brian", "the dog", "family guy dog"]
       }
     ]
+  },
+  {
+    "day": 55,
+    "date": "2026-04-14",
+    "questions": [
+      {
+        "category": "SPINOFFS",
+        "question": "This character from Friends got a short-lived spinoff where they moved to California.",
+        "answer": "Joey",
+        "alternateAnswers": ["joey tribbiani", "joey tribiani"]
+      },
+      {
+        "category": "ANIMALS",
+        "question": "Weighing over 400 pounds, this species of mammal holds the record for the largest heart.",
+        "answer": "Blue Whale",
+        "alternateAnswers": ["blue whale", "the blue whale", "a blue whale"]
+      },
+      {
+        "category": "MUSICIANS",
+        "question": "This Nobel Prize-winning artist holds the record for most song credits in film, spanning well over 100.",
+        "answer": "Bob Dylan",
+        "alternateAnswers": ["dylan", "robert dylan", "robert zimmerman"]
+      }
+    ]
   }
 ]
