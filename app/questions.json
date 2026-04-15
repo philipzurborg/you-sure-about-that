@@ -1377,5 +1377,29 @@
         "alternateAnswers": ["dylan", "robert dylan", "robert zimmerman"]
       }
     ]
+  },
+  {
+    "day": 56,
+    "date": "2026-04-15",
+    "questions": [
+      {
+        "category": "INSECTS",
+        "question": "Moth caterpillars usually spin a silk cocoon, whereas butterfly caterpillars form what?",
+        "answer": "Chrysalis",
+        "alternateAnswers": ["a chrysalis", "the chrysalis", "pupa", "chrysalid"]
+      },
+      {
+        "category": "SCIENCE",
+        "question": "More energy efficient than incandescent bulbs, what does LED stand for?",
+        "answer": "Light Emitting Diode",
+        "alternateAnswers": ["light-emitting diode", "light emitting diodes"]
+      },
+      {
+        "category": "US HISTORY",
+        "question": "Founded in 1607, Jamestown was located in the area that would become what US state?",
+        "answer": "Virginia",
+        "alternateAnswers": ["virginia colony", "commonwealth of virginia"]
+      }
+    ]
   }
 ]
