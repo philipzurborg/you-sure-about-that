@@ -1401,5 +1401,29 @@
         "alternateAnswers": ["virginia colony", "commonwealth of virginia"]
       }
     ]
+  },
+  {
+    "day": 57,
+    "date": "2026-04-16",
+    "questions": [
+      {
+        "category": "THE LORD OF THE RINGS",
+        "question": "When Frodo meets Aragorn in Fellowship of the Ring, he has been going by what alias?",
+        "answer": "Strider",
+        "alternateAnswers": ["aragorn", "the strider"]
+      },
+      {
+        "category": "NAME THE ACTOR FROM THE CHARACTER NAME",
+        "question": "Henry Hill",
+        "answer": "Ray Liotta",
+        "alternateAnswers": ["liotta", "ray liota"]
+      },
+      {
+        "category": "SPACE",
+        "question": "Modern astronomers use what name to distinguish our specific star from the billions of others in the galaxy?",
+        "answer": "Sol",
+        "alternateAnswers": ["the sun", "sun"]
+      }
+    ]
   }
 ]
