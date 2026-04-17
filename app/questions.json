@@ -1425,5 +1425,29 @@
         "alternateAnswers": ["the sun", "sun"]
       }
     ]
+  },
+  {
+    "day": 58,
+    "date": "2026-04-17",
+    "questions": [
+      {
+        "category": "RELIGIOUS HOLIDAYS",
+        "question": "This is the Indian \"Festival of Lights\" celebrated by Hindus, Jains, Sikhs, and some Buddhists, typically lasting five days.",
+        "answer": "Diwali",
+        "alternateAnswers": ["deepawali", "deepavali", "divali"]
+      },
+      {
+        "category": "CLASSIC TV SHOWS",
+        "question": "Before there was Austin Powers, Mel Brooks created this classic spy parody franchise that spoofs the James Bond-style secret agent genre.",
+        "answer": "Get Smart",
+        "alternateAnswers": ["get smart!"]
+      },
+      {
+        "category": "US GEOGRAPHY",
+        "question": "What is the easternmost Great Lake?",
+        "answer": "Ontario",
+        "alternateAnswers": ["lake ontario", "lake ontario"]
+      }
+    ]
   }
 ]
