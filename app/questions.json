@@ -1449,5 +1449,29 @@
         "alternateAnswers": ["lake ontario", "lake ontario"]
       }
     ]
+  },
+  {
+    "day": 59,
+    "date": "2026-04-18",
+    "questions": [
+      {
+        "category": "LIGHT RAIL",
+        "question": "What is the common name of Boston's municipal rail line?",
+        "answer": "The T",
+        "alternateAnswers": ["t", "t train", "the t train", "mbta", "boston t"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "Where is the largest active volcano in the world located?",
+        "answer": "Hawaii",
+        "alternateAnswers": ["the big island", "big island", "big island hawaii", "mauna loa", "hawaii usa"]
+      },
+      {
+        "category": "FILM INDUSTRY",
+        "question": "This film festival started by Robert Redford was named after a famous role of his.",
+        "answer": "Sundance",
+        "alternateAnswers": ["sundance film festival", "the sundance film festival", "sundance festival"]
+      }
+    ]
   }
 ]
