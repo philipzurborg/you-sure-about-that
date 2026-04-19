@@ -1473,5 +1473,29 @@
         "alternateAnswers": ["sundance film festival", "the sundance film festival", "sundance festival"]
       }
     ]
+  },
+  {
+    "day": 60,
+    "date": "2026-04-19",
+    "questions": [
+      {
+        "category": "ON THIS DAY",
+        "question": "1993: The Branch Davidian compound in what Texas town ended in a fire that killed 76 people?",
+        "answer": "Waco",
+        "alternateAnswers": ["waco texas", "waco tx"]
+      },
+      {
+        "category": "NAME THAT FILM",
+        "question": "Director: Christopher Nolan; Star: Al Pacino",
+        "answer": "Insomnia",
+        "alternateAnswers": ["insomnia 2002"]
+      },
+      {
+        "category": "RELIGIOUS TITLES",
+        "question": "This is the more common name for the Bishop of Rome.",
+        "answer": "Pope",
+        "alternateAnswers": ["the pope", "pontiff", "the pontiff"]
+      }
+    ]
   }
 ]
