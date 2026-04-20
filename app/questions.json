@@ -1497,5 +1497,29 @@
         "alternateAnswers": ["the pope", "pontiff", "the pontiff"]
       }
     ]
+  },
+  {
+    "day": 61,
+    "date": "2026-04-20",
+    "questions": [
+      {
+        "category": "HIGH TIMES",
+        "question": "In 1971, students at San Rafael High School invented this stoner ritual that would become a holiday.",
+        "answer": "420",
+        "alternateAnswers": ["4:20", "4/20", "four twenty"]
+      },
+      {
+        "category": "BAD HIGHS",
+        "question": "Synthetic weed goes by Spice or this name that it shares with a mountain.",
+        "answer": "K2",
+        "alternateAnswers": ["k-2", "spice"]
+      },
+      {
+        "category": "ACTORS",
+        "question": "In 2009, this Harold & Kumar actor paused his career in Hollywood to join the Obama Administration.",
+        "answer": "Kal Penn",
+        "alternateAnswers": ["penn", "kalpen modi", "kal penn modi"]
+      }
+    ]
   }
 ]
