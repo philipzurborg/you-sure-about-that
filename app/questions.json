@@ -1521,5 +1521,29 @@
         "alternateAnswers": ["penn", "kalpen modi", "kal penn modi"]
       }
     ]
+  },
+  {
+    "day": 62,
+    "date": "2026-04-21",
+    "questions": [
+      {
+        "category": "ARTISTS",
+        "question": "A major figure in the abstract expressionist movement, he was widely known for his \"drip technique\" of pouring or splashing liquid household paint onto a horizontal surface.",
+        "answer": "Jackson Pollock",
+        "alternateAnswers": ["pollock", "jackson pollack", "pollack"]
+      },
+      {
+        "category": "INTERNET HISTORY",
+        "question": "The first YouTube video was shot at what location?",
+        "answer": "San Diego Zoo",
+        "alternateAnswers": ["san diego", "the san diego zoo"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "What was the title of the Beatles' debut album?",
+        "answer": "Please Please Me",
+        "alternateAnswers": ["please please me album"]
+      }
+    ]
   }
 ]
