@@ -1545,5 +1545,29 @@
         "alternateAnswers": ["please please me album"]
       }
     ]
+  },
+  {
+    "day": 63,
+    "date": "2026-04-22",
+    "questions": [
+      {
+        "category": "THE CALENDAR",
+        "question": "What day is the summer solstice each year?",
+        "answer": "June 21st",
+        "alternateAnswers": ["june 21", "june 20th", "june 20", "june 20 or 21", "june 21 or 22"]
+      },
+      {
+        "category": "JAM BANDS",
+        "question": "What was the title of Phish's 13-night residency at Madison Square Garden?",
+        "answer": "Baker's Dozen",
+        "alternateAnswers": ["the baker's dozen", "bakers dozen", "the bakers dozen"]
+      },
+      {
+        "category": "COLLEGE SPORTS",
+        "question": "Which two schools did Baker Mayfield play for in college?",
+        "answer": "Texas Tech and Oklahoma",
+        "alternateAnswers": ["oklahoma and texas tech", "texas tech oklahoma", "oklahoma texas tech"]
+      }
+    ]
   }
 ]
