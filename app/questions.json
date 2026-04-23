@@ -1569,5 +1569,29 @@
         "alternateAnswers": ["oklahoma and texas tech", "texas tech oklahoma", "oklahoma texas tech"]
       }
     ]
+  },
+  {
+    "day": 64,
+    "date": "2026-04-23",
+    "questions": [
+      {
+        "category": "MOVIES",
+        "question": "Sam Raimi debuted this cult classic horror movie in 1981, which was his debut feature-length film.",
+        "answer": "The Evil Dead",
+        "alternateAnswers": ["evil dead"]
+      },
+      {
+        "category": "NAME THE PRESIDENT",
+        "question": "Which President was photographed with John F. Kennedy while representing his state for the 1963 Boys Nation program?",
+        "answer": "Bill Clinton",
+        "alternateAnswers": ["clinton", "william clinton", "william jefferson clinton"]
+      },
+      {
+        "category": "TRAVEL",
+        "question": "What airport uses the callsign MSP?",
+        "answer": "Minneapolis-Saint Paul International Airport",
+        "alternateAnswers": ["minneapolis", "minneapolis saint paul", "minneapolis-saint paul", "minneapolis st paul"]
+      }
+    ]
   }
 ]
