@@ -1593,5 +1593,29 @@
         "alternateAnswers": ["minneapolis", "minneapolis saint paul", "minneapolis-saint paul", "minneapolis st paul"]
       }
     ]
+  },
+  {
+    "day": 65,
+    "date": "2026-04-24",
+    "questions": [
+      {
+        "category": "THE DRAFT",
+        "question": "Which US war was the first to feature conscripted military service?",
+        "answer": "Civil War",
+        "alternateAnswers": ["the civil war", "american civil war"]
+      },
+      {
+        "category": "THE PICKENS IS IN",
+        "question": "Starting in the rodeo at age 12, Slim Pickens would go on to act in Blazing Saddles and what Stanley Kubrick satire?",
+        "answer": "Dr. Strangelove",
+        "alternateAnswers": ["doctor strangelove", "dr strangelove", "dr. strangelove or how i learned to stop worrying and love the bomb"]
+      },
+      {
+        "category": "THE NFL DRAFT",
+        "question": "The first-ever NFL draft took place in 1936 with the No. 1 pick held by what Bert Bell-owned team? He drafted Jay Berwanger, who never played a single down of NFL football after being unable to reach a deal with the team.",
+        "answer": "Philadelphia Eagles",
+        "alternateAnswers": ["the philadelphia eagles", "eagles", "philly eagles"]
+      }
+    ]
   }
 ]
