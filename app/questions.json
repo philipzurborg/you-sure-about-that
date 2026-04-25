@@ -1617,5 +1617,29 @@
         "alternateAnswers": ["the philadelphia eagles", "eagles", "philly eagles"]
       }
     ]
+  },
+  {
+    "day": 66,
+    "date": "2026-04-25",
+    "questions": [
+      {
+        "category": "ON THIS DAY IN HISTORY",
+        "question": "1859: Ground is broken on this Egyptian waterway.",
+        "answer": "Suez Canal",
+        "alternateAnswers": ["the suez canal"]
+      },
+      {
+        "category": "REGIONAL FOOD",
+        "question": "What is the name for the style of hot dog served in a steamed bun, smothered in a savory, beanless meat sauce and topped with yellow mustard and finely diced white onions?",
+        "answer": "Coney Dog",
+        "alternateAnswers": ["coney", "coney island dog", "coney island hot dog"]
+      },
+      {
+        "category": "CHARACTER ACTORS",
+        "question": "With 72 acting credits on shows like The Knick, Community, and Comedy Bang! Bang!, this character actor is maybe most known for playing \"PC\" in a series of famous Apple ads.",
+        "answer": "John Hodgman",
+        "alternateAnswers": ["hodgman", "jonathan hodgman"]
+      }
+    ]
   }
 ]
