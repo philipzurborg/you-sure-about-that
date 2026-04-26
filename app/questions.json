@@ -1641,5 +1641,29 @@
         "alternateAnswers": ["hodgman", "jonathan hodgman"]
       }
     ]
+  },
+  {
+    "day": 67,
+    "date": "2026-04-26",
+    "questions": [
+      {
+        "category": "CABLE TV",
+        "question": "HBO's first hour-long scripted drama was this show set inside the Oswald Maximum Security Penitentiary, where prisoners struggled for power and survival amidst a social experiment focused on rehabilitation.",
+        "answer": "Oz",
+        "alternateAnswers": ["oz hbo"]
+      },
+      {
+        "category": "STATE CAPITALS",
+        "question": "What is the capital of Missouri?",
+        "answer": "Jefferson City",
+        "alternateAnswers": ["jefferson city missouri"]
+      },
+      {
+        "category": "AUTHORS",
+        "question": "He wrote The Giving Tree and Where the Sidewalk Ends.",
+        "answer": "Shel Silverstein",
+        "alternateAnswers": ["silverstein", "shelby silverstein"]
+      }
+    ]
   }
 ]
