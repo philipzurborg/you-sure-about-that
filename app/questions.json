@@ -1665,5 +1665,29 @@
         "alternateAnswers": ["silverstein", "shelby silverstein"]
       }
     ]
+  },
+  {
+    "day": 68,
+    "date": "2026-04-27",
+    "questions": [
+      {
+        "category": "CONCERTS",
+        "question": "The largest concert of all time was held by this 'Maggie May' singer on the sands of Copacabana Beach in Rio de Janeiro, Brazil, attended by 3.5 million people.",
+        "answer": "Rod Stewart",
+        "alternateAnswers": ["stewart", "roderick stewart"]
+      },
+      {
+        "category": "PRESIDENTIAL HISTORY",
+        "question": "What is the most common job to have been held by presidents immediately before taking office?",
+        "answer": "Vice President",
+        "alternateAnswers": ["vp", "vice presidency"]
+      },
+      {
+        "category": "PHILOSOPHERS",
+        "question": "This thinker was the first person to systematically study and classify living things. He spent years observing marine life and land animals, grouping them by shared characteristics like \"red-blooded\" vs. \"not red-blooded.\"",
+        "answer": "Aristotle",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
