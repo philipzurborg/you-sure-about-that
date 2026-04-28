@@ -1689,5 +1689,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 69,
+    "date": "2026-04-28",
+    "questions": [
+      {
+        "category": "ARTIFICIAL INTELLIGENCE",
+        "question": "This is the term used to describe the set of surrounding information, constraints, and historical data that allows an LLM to interpret the specific meaning of an input and generate a relevant, accurate response.",
+        "answer": "Context Window",
+        "alternateAnswers": ["context", "the context window"]
+      },
+      {
+        "category": "US GEOGRAPHY",
+        "question": "What is the longest river in the US?",
+        "answer": "Missouri River",
+        "alternateAnswers": ["the missouri river", "missouri"]
+      },
+      {
+        "category": "SPACE",
+        "question": "What is the term for the time it takes for Mars to rotate so that the Sun returns to the same position in the sky?",
+        "answer": "Sol",
+        "alternateAnswers": ["a sol", "solar day", "martian day", "mars day"]
+      }
+    ]
   }
 ]
