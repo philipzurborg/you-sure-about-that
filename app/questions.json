@@ -1713,5 +1713,29 @@
         "alternateAnswers": ["a sol", "solar day", "martian day", "mars day"]
       }
     ]
+  },
+  {
+    "day": 70,
+    "date": "2026-04-30",
+    "questions": [
+      {
+        "category": "COMIC BOOKS",
+        "question": "In the X-Men universe, what was the name for the advanced, mutant-hunting robots?",
+        "answer": "Sentinels",
+        "alternateAnswers": ["sentinel"]
+      },
+      {
+        "category": "FOOD AND BEVERAGE",
+        "question": "What is the espresso-to-milk ratio of a cortado?",
+        "answer": "1:1",
+        "alternateAnswers": ["1 to 1", "equal parts", "fifty fifty", "50/50"]
+      },
+      {
+        "category": "ANIMALS",
+        "question": "The Arctic Tern holds the record for the longest migration pattern of any known animal. What type of movement is this called?",
+        "answer": "Migration",
+        "alternateAnswers": ["migratory", "annual migration"]
+      }
+    ]
   }
 ]
