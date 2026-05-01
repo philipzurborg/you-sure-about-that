@@ -18,10 +18,11 @@ const stem = (w) => (w.length >= 5 && w.endsWith("s") ? w.slice(0, -1) : w);
 const STOP_WORDS = new Set(["and", "or", "of", "in", "with"]);
 
 // Produce a stemmed, de-stopworded token array from an answer string
+// Note: allow single-char tokens (digits like "1","2") so numeric list answers work
 const tokenize = (s) =>
   normalize(s)
     .split(" ")
-    .filter((w) => w.length > 1 && !STOP_WORDS.has(w))
+    .filter((w) => w.length >= 1 && !STOP_WORDS.has(w))
     .map(stem);
 
 function tierExact(userAnswer, correctAnswer, alternateAnswers) {
@@ -44,14 +45,20 @@ function tierNormalized(userAnswer, correctAnswer, alternateAnswers) {
 function tierKeyword(userAnswer, correctAnswer, alternateAnswers) {
   const uw = normalize(userAnswer).split(" ");
   const allAnswers = [correctAnswer, ...alternateAnswers];
+
+  // Only attempt keyword matching when the user gave a short answer (1-2 words).
+  // A longer user answer that merely contains a keyword from an alternate is not
+  // a reliable signal and risks false positives (e.g. "parts" matching "equal parts").
+  if (uw.length > 2) return null;
+
   for (const answer of allAnswers) {
     const cw = normalize(answer).split(" ");
     const last = cw[cw.length - 1];
-    // Last significant word of any answer found in user's answer
+    // User's single/double answer matches the last significant word of a candidate
     if (last.length > 2 && uw.includes(last)) {
       return { correct: true, method: "keyword" };
     }
-    // Single-word user answer that appears in any answer
+    // Single-word user answer that appears verbatim in a candidate
     if (uw.length === 1 && cw.includes(uw[0]) && uw[0].length > 3) {
       return { correct: true, method: "keyword" };
     }
@@ -89,18 +96,22 @@ function tierFuzzy(userAnswer, correctAnswer, alternateAnswers) {
   return null;
 }
 
-// Handles multi-ingredient / any-order answers (e.g. mirepoix).
+// Handles multi-ingredient / any-order answers (e.g. mirepoix, state lists).
 // Only activates when the correct answer has 3+ content words.
-// Checks that every stemmed canonical word appears in the user's stemmed word set,
-// regardless of order or singular/plural form.
+// Checks that every stemmed canonical token appears in the user's token set AND
+// the user hasn't introduced extra content tokens (≤1 allowed for natural phrasing).
 function tierWordSet(userAnswer, correctAnswer) {
   const correctTokens = tokenize(correctAnswer);
   if (correctTokens.length < 3) return null;
-  const userTokenSet = new Set(tokenize(userAnswer));
-  if (correctTokens.every((t) => userTokenSet.has(t))) {
-    return { correct: true, method: "word-set" };
-  }
-  return null;
+  const correctTokenSet = new Set(correctTokens);
+  const userTokens = tokenize(userAnswer);
+  const userTokenSet = new Set(userTokens);
+  // All correct tokens must appear in user answer
+  if (!correctTokens.every((t) => userTokenSet.has(t))) return null;
+  // User answer must not introduce more than 1 unrecognized content token
+  const extraTokens = userTokens.filter((t) => !correctTokenSet.has(t));
+  if (extraTokens.length > 1) return null;
+  return { correct: true, method: "word-set" };
 }
 
 async function tierAI(userAnswer, correctAnswer, question, category) {
@@ -120,7 +131,16 @@ async function tierAI(userAnswer, correctAnswer, question, category) {
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 10,
-        system: "You are a trivia judge. Reply YES or NO only. Accept answers that are correct in meaning even if slightly misspelled. Reject answers that are wrong or meaningfully different.",
+        system: `You are a strict trivia judge. Spelling checkers, fuzzy matchers, and synonym checks have already run before you. Your sole job is to catch answers that are factually and semantically equivalent but phrased differently.
+
+Rules you MUST follow:
+- Numbers, ratios, percentages, and measurements must be exact. 1:1 is NOT the same as 100:1. 50% is NOT the same as 25%.
+- For list answers, all required items must be present — order does NOT matter, but nothing can be missing or wrong.
+- Do NOT accept an answer that is merely related to or reminiscent of the correct answer.
+- Do NOT accept partial answers unless the question clearly asks for a partial.
+- When in doubt, say NO.
+
+Reply YES or NO only. Nothing else.`,
         messages: [
           {
             role: "user",

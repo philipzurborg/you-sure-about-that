@@ -1737,5 +1737,29 @@
         "alternateAnswers": ["migratory", "annual migration"]
       }
     ]
+  },
+  {
+    "day": 71,
+    "date": "2026-05-01",
+    "questions": [
+      {
+        "category": "HORSE RACING",
+        "question": "What races make up the horse racing Triple Crown?",
+        "answer": "The Kentucky Derby, The Preakness Stakes, The Belmont Stakes",
+        "alternateAnswers": ["kentucky derby, preakness stakes, belmont stakes", "kentucky derby, preakness, belmont", "derby, preakness, belmont"]
+      },
+      {
+        "category": "COLLEGE SPORTS",
+        "question": "What is the name of Western Kentucky's furry mascot?",
+        "answer": "Big Red",
+        "alternateAnswers": ["big red"]
+      },
+      {
+        "category": "TELEVISION MEMES",
+        "question": "Recently a 2007 Family Guy cutaway centering around a man who goes by this name and refuses to take his sneakers off has gone viral on TikTok as users reinterpret the quick-gag.",
+        "answer": "Sneakers O'Toole",
+        "alternateAnswers": ["sneakers otoole", "sneakers o toole", "o'toole"]
+      }
+    ]
   }
 ]
