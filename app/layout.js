@@ -1,16 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Caveat, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const bebas  = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--display-font" });
+const caveat = Caveat({ weight: ["400", "700"], subsets: ["latin"], variable: "--hand-font" });
+const dmSans = DM_Sans({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--body-font" });
 
 export const metadata = {
   metadataBase: new URL("https://yousureaboutthat.app"),
@@ -33,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${bebas.variable} ${caveat.variable} ${dmSans.variable}`}>
         {children}
         <Analytics />
       </body>

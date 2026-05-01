@@ -48,10 +48,8 @@ const migrateStats = (saved) => {
     saved = { ...saved, schemaVersion: 1 };
   }
   if (version < 2) {
-    // v1 → v2: add day-budget tracking fields
     saved = { ...saved, schemaVersion: 2, dayStartPoints: null, dayStartedDay: null };
   }
-  // Future migrations go here: if (version < 3) { ... }
   return saved;
 };
 
@@ -70,43 +68,43 @@ const loadStats = () => {
 
 const saveStats = (s) => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...s, schemaVersion: SCHEMA_VERSION })); } catch {} };
 
-// ─── Rules modal ──────────────────────────────────────────────────────────────
+// ─── Rules content ────────────────────────────────────────────────────────────
 const RULES = [
-  {
-    icon: "★",
-    heading: "Three questions a day",
-    body: "Each day has three trivia questions across three different categories. You see one category at a time — the next is only revealed after you submit your answer.",
-  },
-  {
-    icon: "$",
-    heading: "Wager your balance",
-    body: "Before each question you place a wager from your previous day's total. You can't bet today's winnings — only the balance you carried in. You must keep at least $1 in reserve for each remaining question.",
-  },
-  {
-    icon: "?",
-    heading: "Answer the question",
-    body: "A trivia clue is revealed. You have 30 seconds to type your answer. Alternate spellings and last-name-only answers are accepted.",
-  },
-  {
-    icon: "\u2713",
-    heading: "Win or lose",
-    body: "Correct: wagered points are added. Incorrect or time's up: wagered points are deducted. You can never go below zero.",
-  },
-  {
-    icon: "\uD83D\uDD25",
-    heading: "Keep your streak",
-    body: "Complete all three questions each day to keep your streak alive. Miss a day entirely and your streak resets to zero.",
-  },
+  { icon: "★", heading: "Three questions a day", body: "Each day has three trivia questions across three different categories. You see one category at a time — the next is only revealed after you submit your answer." },
+  { icon: "$", heading: "Wager your balance", body: "Before each question you place a wager from your previous day's total. You can't bet today's winnings — only the balance you carried in. You must keep at least $1 in reserve for each remaining question." },
+  { icon: "?", heading: "Answer the question", body: "A trivia clue is revealed. You have 30 seconds to type your answer. Alternate spellings and last-name-only answers are accepted." },
+  { icon: "✓", heading: "Win or lose", body: "Correct: wagered points are added. Incorrect or time's up: wagered points are deducted. You can never go below zero." },
+  { icon: "🔥", heading: "Keep your streak", body: "Complete all three questions each day to keep your streak alive. Miss a day entirely and your streak resets to zero." },
 ];
 
+// ─── Wordmark ─────────────────────────────────────────────────────────────────
+function Wordmark({ size = 1 }) {
+  const px = Math.round(size * 96);
+  return (
+    <div style={{ fontSize: px, lineHeight: 1, display: "flex", alignItems: "center", gap: "0.14em", userSelect: "none" }}>
+      <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: "0.42em", letterSpacing: "0.04em", color: "var(--text)" }}>You</span>
+      <span style={{ position: "relative", display: "inline-block" }}>
+        <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: "0.42em", letterSpacing: "0.04em", color: "var(--giants)" }}>Sure</span>
+        <svg aria-hidden="true" style={{ position: "absolute", bottom: "-0.22em", left: "-4%", width: "108%", overflow: "visible", pointerEvents: "none", display: "block" }} viewBox="0 0 64 8" preserveAspectRatio="none">
+          <path d="M2,6 Q16,1 32,5 Q48,9 62,3" stroke="var(--giants-2)" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
+      <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: "0.42em", letterSpacing: "0.04em", color: "var(--text)" }}>About</span>
+      <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: "0.42em", letterSpacing: "0.04em", color: "var(--text)" }}>That</span>
+      <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: "1em", color: "var(--giants)", textShadow: "2px 2px 0 var(--giants-deep), 4px 4px 0 rgba(0,0,0,0.45)", filter: "drop-shadow(0 4px 22px var(--giants-shadow))", display: "inline-block", transform: "rotate(-2deg)", transformOrigin: "50% 80%" }}>?</span>
+    </div>
+  );
+}
+
+// ─── Rules modal ──────────────────────────────────────────────────────────────
 function RulesModal({ onClose, isOnboarding }) {
   return (
     <div style={S.modalOverlay} onClick={onClose}>
       <div style={S.modal} className="modalIn" onClick={e => e.stopPropagation()}>
         <div style={S.modalHeader}>
           <div>
-            <div style={S.modalEyebrow}>{isOnboarding ? "Welcome to" : "How to play"}</div>
-            <div style={S.modalTitle}>You Sure About That?</div>
+            <div style={S.modalEyebrow}>{isOnboarding ? "WELCOME TO" : "HOW TO PLAY"}</div>
+            <Wordmark size={0.38} />
           </div>
           <button style={S.modalClose} onClick={onClose}>&#x2715;</button>
         </div>
@@ -114,7 +112,9 @@ function RulesModal({ onClose, isOnboarding }) {
         <div style={S.modalRules}>
           {RULES.map((r, i) => (
             <div key={i} style={S.ruleRow}>
-              <div style={S.ruleIcon}>{r.icon}</div>
+              <div style={S.ruleIcon}>
+                <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: 18, color: "var(--cream)", lineHeight: 1 }}>{r.icon}</span>
+              </div>
               <div>
                 <div style={S.ruleHeading}>{r.heading}</div>
                 <div style={S.ruleBody}>{r.body}</div>
@@ -127,7 +127,7 @@ function RulesModal({ onClose, isOnboarding }) {
           A new set of questions drops every day at midnight PST. Don&apos;t miss a day!
         </div>
 
-        <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={onClose}>
+        <button style={S.mainBtn} className="mainBtn" onClick={onClose}>
           {isOnboarding ? "Let's Play!" : "Got It"}
         </button>
       </div>
@@ -180,7 +180,6 @@ export default function App() {
         setGameData(data);
 
         if (stats.lastPlayedDay === data.day) {
-          // Already completed today — restore final result screen
           const last = stats.history.at(-1);
           if (last?.questions) {
             setResults(last.questions.map(q => q.correct));
@@ -190,15 +189,12 @@ export default function App() {
           }
           setPhase(PHASES.RESULT);
         } else if (stats.dayStartedDay !== data.day) {
-          // First time seeing today — lock the budget
           setStats(prev => ({
             ...prev,
             dayStartPoints: prev.points,
             dayStartedDay: data.day,
           }));
         }
-        // If dayStartedDay === data.day but not fully played: they refreshed mid-game.
-        // Reset to Q1 wager with locked budget still in stats.
 
         setLoading(false);
       })
@@ -224,7 +220,7 @@ export default function App() {
   // ─── Budget ────────────────────────────────────────────────────────────────
   const dayBudget      = Math.max(stats.dayStartPoints ?? stats.points, 1000);
   const allocatedSoFar = wagers.slice(0, questionIndex).reduce((sum, w) => sum + (w ?? 0), 0);
-  const reserve        = Math.max(0, 2 - questionIndex); // $1 per remaining future question
+  const reserve        = Math.max(0, 2 - questionIndex);
   const maxWager       = Math.max(0, dayBudget - allocatedSoFar - reserve);
 
   useEffect(() => { saveStats(stats); }, [stats]);
@@ -237,7 +233,7 @@ export default function App() {
     setShowOnboarding(false);
   };
 
-  // ─── Game actions ─────────────────────────────────────────────────────────
+  // ─── Game actions ──────────────────────────────────────────────────────────
   const handleWager = () => {
     const w = parseInt(wager, 10);
     if (isNaN(w) || w < 1 || w > maxWager) return;
@@ -372,7 +368,7 @@ export default function App() {
   const renderMain = () => {
     if (loading) {
       return (
-        <div style={S.card} className="fadeIn">
+        <div style={S.card} className="fadeUp">
           <div style={S.loadingWrap}>
             <div style={S.loadingSpinner} className="spinner" />
             <div style={S.loadingText}>Loading today&apos;s questions&hellip;</div>
@@ -383,7 +379,7 @@ export default function App() {
 
     if (fetchError || !gameData) {
       return (
-        <div style={S.card} className="fadeIn">
+        <div style={S.card} className="fadeUp">
           <div style={S.errorWrap}>
             <div style={S.errorIcon}>!</div>
             <div style={S.errorTitle}>No questions today</div>
@@ -391,7 +387,7 @@ export default function App() {
               We couldn&apos;t load today&apos;s questions. Check back later or try refreshing.
             </div>
             <button
-              style={{ ...S.mainBtn, background: "var(--surface2)", color: "var(--text)", border: "1px solid var(--border)" }}
+              style={{ ...S.mainBtn, background: "var(--surface-2)", color: "var(--text)", border: "1px solid var(--border)", boxShadow: "none" }}
               onClick={() => setRetryCount(c => c + 1)}
             >
               Try Again
@@ -467,30 +463,29 @@ export default function App() {
       <div style={S.container}>
         {/* ── Header ── */}
         <header style={S.header}>
-          <div style={S.headerInner}>
+          <div style={S.headerTop}>
             <div style={S.dayBadge}>
-              {gameData ? `#${String(gameData.day).padStart(3, "0")}` : "\u2026"}
+              {gameData ? `\u2116\u00a0${String(gameData.day).padStart(3, "0")}` : "\u2026"}
             </div>
-            <h1 style={S.title}>
-              <span style={S.titleYou}>You</span>
-              <span style={S.titleSure}> Sure </span>
-              <span style={S.titleAbout}>About</span>
-              <span style={S.titleThat}> That?</span>
-            </h1>
+            <Wordmark size={0.62} />
             <button style={S.infoBtn} className="infoBtn" onClick={() => setShowInfo(true)} aria-label="How to play">?</button>
           </div>
           <div style={S.pointsBar}>
             <div style={S.pointsLeft}>
-              <span style={S.pointsLabel}>Your Points</span>
+              <span style={S.pointsLabel}>YOUR POINTS</span>
               <span style={S.pointsValue}>{formatPoints(displayPoints)}</span>
             </div>
-            <div style={S.streakBadge}>&#x1F525; {stats.streak}</div>
+            <div style={S.streakBubble}>
+              <span style={S.streakStar}>&#x2605;</span>
+              <span style={S.streakNum}>{stats.streak}</span>
+              <span style={S.streakWord}>day streak</span>
+            </div>
           </div>
         </header>
 
         {/* ── Missed-day banner ── */}
         {missedDay && phase === PHASES.WAGER && questionIndex === 0 && !loading && (
-          <div style={S.missedDayBanner} className="fadeIn">
+          <div style={S.missedDayBanner} className="fadeUp">
             <span style={S.missedDayIcon}>&#x1F494;</span>
             <div>
               <div style={S.missedDayTitle}>Your streak is over</div>
@@ -502,20 +497,25 @@ export default function App() {
         {/* ── Progress dots ── */}
         {!loading && !fetchError && gameData && phase !== PHASES.RESULT && (
           <div style={S.progressDots}>
-            {[0, 1, 2].map(i => (
-              <div
-                key={i}
-                style={{
-                  ...S.progressDot,
-                  background: i < questionIndex
-                    ? (results[i] ? "var(--green)" : timedOuts[i] ? "var(--purple)" : "var(--red)")
-                    : i === questionIndex
-                      ? "var(--gold)"
-                      : "var(--surface2)",
-                  border: i === questionIndex ? "2px solid var(--gold)" : "2px solid transparent",
-                }}
-              />
-            ))}
+            {[0, 1, 2].map(i => {
+              const isPast    = i < questionIndex;
+              const isCurrent = i === questionIndex;
+              const dotBg = isPast
+                ? (results[i] ? "var(--ink-green)" : timedOuts[i] ? "var(--ink-purple)" : "var(--ink-red)")
+                : isCurrent ? "var(--giants)" : "var(--surface)";
+              const dotBorder = isCurrent
+                ? "2px solid var(--cream)"
+                : isPast ? "2px solid transparent" : "1.5px dashed var(--border-strong)";
+              return (
+                <div
+                  key={i}
+                  style={{ ...S.progressDot, background: dotBg, border: dotBorder, transform: isCurrent ? "scale(1.12)" : "scale(1)" }}
+                  className={isCurrent ? "dotPulse" : ""}
+                >
+                  <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: 14, color: isCurrent || isPast ? "var(--cream)" : "var(--muted)", lineHeight: 1 }}>{i + 1}</span>
+                </div>
+              );
+            })}
           </div>
         )}
 
@@ -540,21 +540,23 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
   const remaining = dayBudget - allocatedSoFar;
 
   const presets = [
-    { label: "Safe",   val: Math.max(1, Math.floor(maxWager * 0.1)) },
-    { label: "Half",   val: Math.max(1, Math.floor(maxWager * 0.5)) },
-    { label: "Max",    val: maxWager },
+    { label: "Safe", val: Math.max(1, Math.floor(maxWager * 0.1)) },
+    { label: "Half", val: Math.max(1, Math.floor(maxWager * 0.5)) },
+    { label: "Max",  val: maxWager },
   ];
+
   return (
-    <div style={S.card} className="fadeIn">
-      <div style={S.phaseTag}>QUESTION {questionIndex + 1} OF 3 &nbsp;·&nbsp; PLACE YOUR WAGER</div>
+    <div style={S.card} className="fadeUp">
+      <div style={S.phaseTag}>&#x2605; QUESTION {questionIndex + 1} OF 3 &mdash; PLACE YOUR WAGER &#x2605;</div>
+
       <div style={S.categoryReveal}>
-        <div style={S.categoryLabel}>Category {questionIndex + 1}</div>
+        <div style={S.categoryLabel}>CATEGORY {questionIndex + 1}</div>
         <div style={S.categoryName} className="popIn">{category}</div>
       </div>
 
       {questionIndex > 0 && (
         <div style={S.budgetRow}>
-          <span style={S.budgetLabel}>Budget remaining</span>
+          <span style={S.budgetLabel}>BUDGET REMAINING</span>
           <span style={S.budgetValue}>{formatPoints(remaining)} pts</span>
         </div>
       )}
@@ -562,26 +564,39 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
       <div style={S.wagerSection}>
         <div style={S.wagerRow}>
           <div style={S.wagerInputWrap}>
-            <span style={S.wagerCurrency}>&#9733;</span>
-            <input type="number" min={1} max={maxWager} value={wager}
+            <span style={S.wagerCurrency}>&#x2605;</span>
+            <input
+              type="number" min={1} max={maxWager} value={wager}
               onChange={e => setWager(e.target.value)} placeholder="1" style={S.wagerInput}
-              onKeyDown={e => e.key === "Enter" && valid && handleWager()} />
+              onKeyDown={e => e.key === "Enter" && valid && handleWager()}
+            />
+            <span style={S.wagerSuffix}>pts</span>
           </div>
         </div>
+
         <div style={S.sliderWrap}>
-          <div style={S.sliderTrack}><div style={{ ...S.sliderFill, width: `${pct}%` }} /></div>
+          <div style={S.sliderTrack}>
+            <div style={{ ...S.sliderFill, width: `${pct}%` }} />
+          </div>
           <div style={S.sliderLabels}><span>0</span><span>{formatPoints(maxWager)}</span></div>
         </div>
+
         <div style={S.presets}>
           {presets.map(p => (
             <button key={p.label} style={S.presetBtn} className="presetBtn" onClick={() => setWager(String(p.val))}>
-              {p.label}<span style={S.presetVal}>{formatPoints(p.val)}</span>
+              <span style={S.presetLabel}>{p.label}</span>
+              <span style={S.presetVal}>{formatPoints(p.val)}</span>
             </button>
           ))}
         </div>
-        <button style={{ ...S.mainBtn, opacity: valid ? 1 : 0.4, cursor: valid ? "pointer" : "not-allowed" }}
-          className={valid ? "mainBtn" : ""} onClick={handleWager} disabled={!valid}>
-          Lock It In &#x2192;
+
+        <button
+          style={{ ...S.mainBtn, opacity: valid ? 1 : 0.45, cursor: valid ? "pointer" : "not-allowed" }}
+          className={valid ? "mainBtn" : ""}
+          onClick={handleWager}
+          disabled={!valid}
+        >
+          Lock it in &#x2192;
         </button>
       </div>
     </div>
@@ -612,23 +627,27 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
     return () => clearInterval(t);
   }, [checking]);
 
-  const stages    = ["Checking", "Normalizing", "Analyzing", "AI verifying"];
-  const pct       = (timeLeft / TIMER_SECONDS) * 100;
-  const isUrgent  = timeLeft <= 10;
-  const timerColor = timeLeft > 10 ? "var(--gold)" : timeLeft > 5 ? "#ff9500" : "var(--red)";
+  const stages     = ["Checking", "Normalizing", "Analyzing", "AI verifying"];
+  const pct        = (timeLeft / TIMER_SECONDS) * 100;
+  const isUrgent   = timeLeft <= 10;
+  const timerColor = timeLeft > 10 ? "var(--giants)" : timeLeft > 5 ? "var(--ink-amber)" : "var(--ink-red)";
 
   return (
-    <div style={S.card} className="fadeIn">
-      <div style={S.phaseTag}>QUESTION {questionIndex + 1} OF 3 &nbsp;·&nbsp; ANSWER THE QUESTION</div>
-      <div style={S.wagerDisplay}>Wagered <strong>{formatPoints(wagerLocked)} pts</strong></div>
+    <div style={S.card} className="fadeUp">
+      <div style={S.phaseTag}>&#x2605; QUESTION {questionIndex + 1} OF 3 &mdash; ANSWER THE QUESTION &#x2605;</div>
+
+      <div style={S.wagerDisplay}>
+        <span style={S.wagerDisplayLabel}>YOU WAGERED</span>
+        <span style={S.wagerDisplayValue}>{formatPoints(wagerLocked)} pts</span>
+      </div>
 
       <div style={S.timerWrap}>
         <div style={S.timerRow}>
           <span style={{ ...S.timerCount, color: timerColor }} className={isUrgent ? "timerUrgent" : ""}>{timeLeft}</span>
-          <span style={S.timerLabel}>seconds</span>
+          <span style={S.timerCaption}>seconds left!</span>
         </div>
         <div style={S.timerTrack}>
-          <div style={{ ...S.timerFill, width: `${pct}%`, background: timerColor, transition: "width 1s linear, background 0.3s ease" }} />
+          <div style={{ ...S.timerFill, width: `${pct}%`, background: timerColor }} />
         </div>
       </div>
 
@@ -638,14 +657,24 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
       </div>
 
       <div style={S.answerSection}>
-        <input ref={inputRef} type="text" value={answer} onChange={e => setAnswer(e.target.value)}
-          placeholder="Your answer..." disabled={checking}
-          style={{ ...S.answerInput, borderColor: isUrgent ? timerColor : "var(--border)", transition: "border-color 0.3s ease" }}
-          onKeyDown={e => e.key === "Enter" && !checking && answer.trim() && checkAnswer(false)} />
-        <button style={{ ...S.mainBtn, opacity: answer.trim() && !checking ? 1 : 0.4 }}
-          className={answer.trim() && !checking ? "mainBtn" : ""} onClick={() => checkAnswer(false)} disabled={!answer.trim() || checking}>
+        <div style={S.answerInputWrap}>
+          <span style={S.answerPrefix}>A.</span>
+          <input
+            ref={inputRef} type="text" value={answer}
+            onChange={e => setAnswer(e.target.value)}
+            placeholder="Your answer\u2026" disabled={checking}
+            style={S.answerInput}
+            onKeyDown={e => e.key === "Enter" && !checking && answer.trim() && checkAnswer(false)}
+          />
+        </div>
+        <button
+          style={{ ...S.mainBtn, opacity: answer.trim() && !checking ? 1 : 0.45 }}
+          className={answer.trim() && !checking ? "mainBtn" : ""}
+          onClick={() => checkAnswer(false)}
+          disabled={!answer.trim() || checking}
+        >
           {checking
-            ? <span className="checking">{stages[checkStage]}<span className="dots">...</span></span>
+            ? <span className="checking">{stages[checkStage]}<span className="dots">&#x2026;</span></span>
             : "Submit Answer \u2192"}
         </button>
       </div>
@@ -655,40 +684,39 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
 
 // ─── Inter-result popup ───────────────────────────────────────────────────────
 function InterResultPhase({ result, timedOut, correctAnswer, userAnswer, nextCategory, questionIndex, onContinue }) {
-  const bannerBg    = result ? "var(--green)" : timedOut ? "var(--purple)" : "var(--red)";
+  const bannerBg    = result ? "var(--ink-green)" : timedOut ? "var(--ink-purple)" : "var(--ink-red)";
   const bannerIcon  = result ? "\u2713" : timedOut ? "\u23F1" : "\u2717";
-  const bannerLabel = result ? "CORRECT!" : timedOut ? "TIME'S UP!" : "INCORRECT";
+  const bannerLabel = result ? "CORRECT" : timedOut ? "TIME EXPIRED" : "INCORRECT";
 
   return (
     <div style={S.modalOverlay}>
-      <div style={{ ...S.modal, gap: 16 }} className="modalIn">
+      <div style={S.modal} className="modalIn">
         <div style={S.interPhaseTag}>QUESTION {questionIndex + 1} RESULT</div>
 
         <div style={{ ...S.resultBanner, background: bannerBg }} className="popIn">
-          <span style={S.resultEmoji}>{bannerIcon}</span>
+          <span style={S.resultIcon}>{bannerIcon}</span>
           <span style={S.resultLabel}>{bannerLabel}</span>
         </div>
 
         {!result && (
-          <div style={{
-            ...S.correctAnswerBox,
-            background: timedOut ? "rgba(139,92,246,0.08)" : "rgba(239,68,68,0.08)",
-            border: `1px solid ${timedOut ? "rgba(139,92,246,0.25)" : "rgba(239,68,68,0.2)"}`,
-          }}>
-            {timedOut && <span style={{ ...S.correctAnswerLabel, color: "var(--purple)" }}>YOU RAN OUT OF TIME</span>}
-            <span style={S.correctAnswerLabel}>Correct Answer:</span>
+          <div style={{ ...S.correctAnswerBox, border: `1.5px dashed ${timedOut ? "rgba(164,127,214,0.5)" : "rgba(229,78,58,0.5)"}` }}>
+            <span style={S.correctAnswerEyebrow}>THE CORRECT ANSWER</span>
             <span style={S.correctAnswerText}>{correctAnswer}</span>
-            {!timedOut && userAnswer && <span style={S.yourAnswerText}>You said: <em>{userAnswer}</em></span>}
+            {!timedOut && userAnswer && (
+              <span style={S.yourAnswerText}>You said: <em>&ldquo;{userAnswer}&rdquo;</em></span>
+            )}
           </div>
         )}
 
-        <div style={S.nextCategoryPreview}>
-          <div style={S.nextCategoryLabel}>Up next — Category {questionIndex + 2}</div>
-          <div style={S.nextCategoryName} className="popIn">{nextCategory}</div>
-        </div>
+        {nextCategory && (
+          <div style={S.nextCategoryPreview}>
+            <div style={S.nextCategoryLabel}>UP NEXT &mdash; CATEGORY {questionIndex + 2}</div>
+            <div style={S.nextCategoryName} className="popIn">{nextCategory}</div>
+          </div>
+        )}
 
-        <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={onContinue}>
-          Place Your Wager &#x2192;
+        <button style={S.mainBtn} className="mainBtn" onClick={onContinue}>
+          Place your wager &#x2192;
         </button>
       </div>
     </div>
@@ -700,38 +728,45 @@ function ResultPhase({ results, timedOuts, wagers, questions, finalPoints, strea
   const totalWagered = wagers.reduce((sum, w) => sum + (w ?? 0), 0);
   const correctCount = results.filter(Boolean).length;
 
-  const bannerBg    = correctCount === 3 ? "var(--green)" : correctCount === 0 ? "var(--red)" : "var(--gold)";
-  const bannerLabel = correctCount === 3 ? "PERFECT DAY!" : correctCount === 0 ? "TOUGH ONE" : `${correctCount} OF 3 CORRECT`;
-  const bannerIcon  = correctCount === 3 ? "\u2713" : correctCount === 0 ? "\u2717" : "\u25D0";
-
+  const bannerBg    = correctCount === 3 ? "var(--ink-green)" : correctCount === 0 ? "var(--ink-red)" : "var(--giants)";
+  const bannerLabel = correctCount === 3 ? "PERFECT DAY" : correctCount === 0 ? "TOUGH ROUND" : `${correctCount} OF 3 CORRECT`;
+  const bannerIcon  = correctCount === 3 ? "\u2605" : correctCount === 0 ? "\u2717" : "\u25D0";
 
   return (
-    <div style={S.card} className="fadeIn">
-      {/* Overall banner */}
+    <div style={S.card} className="fadeUp">
+      <div style={S.phaseTag}>&#x2605; TODAY&apos;S RESULTS &#x2605;</div>
+
       <div style={{ ...S.resultBanner, background: bannerBg }} className="popIn">
-        <span style={S.resultEmoji}>{bannerIcon}</span>
+        <span style={S.resultIcon}>{bannerIcon}</span>
         <span style={S.resultLabel}>{bannerLabel}</span>
       </div>
 
       {/* Per-question breakdown */}
       <div style={S.questionBreakdown}>
         {questions.map((q, i) => {
-          const correct  = results[i];
-          const timeout  = timedOuts[i];
-          const accent   = correct ? "var(--green)" : timeout ? "var(--purple)" : "var(--red)";
-          const icon     = correct ? "\u2713" : timeout ? "\u23F1" : "\u2717";
+          const correct = results[i];
+          const timeout = timedOuts[i];
+          const accent  = correct ? "var(--ink-green)" : timeout ? "var(--ink-purple)" : "var(--ink-red)";
+          const icon    = correct ? "\u2713" : timeout ? "\u23F1" : "\u2717";
           return (
             <div key={i} style={{ ...S.breakdownRow, borderLeft: `3px solid ${accent}` }}>
-              <div style={{ ...S.breakdownIcon, color: accent }}>{icon}</div>
+              <div style={{ ...S.breakdownIconCircle, background: accent }}>
+                <span style={{ fontFamily: "var(--display-font), sans-serif", fontSize: 14, color: "#fff", lineHeight: 1 }}>{icon}</span>
+              </div>
               <div style={S.breakdownContent}>
                 <div style={S.breakdownCategory}>{q.category}</div>
                 <div style={S.breakdownAnswer}>
-                  <span style={{ color: "var(--muted)", fontSize: 11 }}>Answer: </span>
-                  <span style={{ fontWeight: 600, color: "var(--text)" }}>{q.answer}</span>
+                  <span style={S.breakdownAnswerLabel}>Answer: </span>
+                  <span style={S.breakdownAnswerText}>{q.answer}</span>
                 </div>
               </div>
-              <div style={{ ...S.breakdownWager, color: correct ? "var(--green)" : "var(--red)" }}>
-                {correct ? "+" : "-"}{formatPoints(wagers[i] ?? 0)}
+              <div style={{
+                ...S.breakdownWager,
+                color: correct ? "var(--ink-green)" : "var(--ink-red)",
+                background: correct ? "rgba(111,184,79,0.12)" : "rgba(229,78,58,0.12)",
+                border: `1px solid ${correct ? "rgba(111,184,79,0.3)" : "rgba(229,78,58,0.3)"}`,
+              }}>
+                {correct ? "+" : "\u2212"}{formatPoints(wagers[i] ?? 0)}
               </div>
             </div>
           );
@@ -740,17 +775,17 @@ function ResultPhase({ results, timedOuts, wagers, questions, finalPoints, strea
 
       {/* Summary stats */}
       <div style={S.statsGrid}>
-        <Stat label="Total Wagered"  value={`${formatPoints(totalWagered)} pts`} />
-        <Stat label="Questions Right" value={`${correctCount} / 3`} />
-        <Stat label="New Total"      value={`${formatPoints(finalPoints)} pts`} big />
-        <Stat label="Streak"         value={`${streak} days \uD83D\uDD25`} />
-        <Stat label="Accuracy"       value={totalPlayed ? `${Math.round((totalCorrect / totalPlayed) * 100)}%` : "\u2014"} />
+        <Stat label="WAGERED"   value={`${formatPoints(totalWagered)} pts`} />
+        <Stat label="CORRECT"   value={`${correctCount} / 3`} />
+        <Stat label="NEW TOTAL" value={`${formatPoints(finalPoints)} pts`} big />
+        <Stat label="STREAK"    value={`${streak} days \uD83D\uDD25`} />
+        <Stat label="ACCURACY"  value={totalPlayed ? `${Math.round((totalCorrect / totalPlayed) * 100)}%` : "\u2014"} />
       </div>
 
       <div style={S.streakMessage}>Come back tomorrow to keep your streak and points!</div>
 
-      <button style={{ ...S.mainBtn, background: "var(--gold)" }} className="mainBtn" onClick={handleShare}>
-        {copied ? "\u2713 Copied to clipboard!" : "Share Result"}
+      <button style={S.mainBtn} className="mainBtn" onClick={handleShare}>
+        {copied ? "\u2713 Copied to clipboard!" : "Share your result \u2192"}
       </button>
 
       {alreadyPlayed && (
@@ -762,164 +797,260 @@ function ResultPhase({ results, timedOuts, wagers, questions, finalPoints, strea
   );
 }
 
-function Stat({ label, value, accent, big }) {
+function Stat({ label, value, big }) {
   return (
     <div style={{ ...S.statCard, ...(big ? S.statCardBig : {}) }}>
       <div style={S.statLabel}>{label}</div>
-      <div style={{ ...S.statValue, ...(accent ? { color: accent } : {}), ...(big ? S.statValueBig : {}) }}>{value}</div>
+      <div style={{ ...S.statValue, ...(big ? S.statValueBig : {}) }}>{value}</div>
     </div>
   );
 }
 
 // ─── CSS ──────────────────────────────────────────────────────────────────────
 const css = `
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap');
   :root {
-    --bg:#0d0d0f; --surface:#16161a; --surface2:#1e1e24;
-    --border:rgba(255,255,255,0.07); --gold:#FD5A1E; --gold2:#FF8A50;
-    --green:#22c55e; --red:#ef4444; --purple:#8b5cf6;
-    --text:#f0ede8; --muted:rgba(240,237,232,0.45);
+    --giants:        #FD5A1E;
+    --giants-2:      #FF8A50;
+    --giants-deep:   #C73E12;
+    --giants-shadow: rgba(253,90,30,0.4);
+    --bg:            #0d0c0a;
+    --bg-2:          #14110d;
+    --surface:       #1c1813;
+    --surface-2:     #25201a;
+    --border:        rgba(247,231,201,0.10);
+    --border-strong: rgba(247,231,201,0.18);
+    --cream:         #f7e7c9;
+    --cream-2:       #ebd9b6;
+    --cream-deep:    #d8c195;
+    --cream-ink:     #3a2a14;
+    --cream-paper:   #f3e2c1;
+    --text:          #f7e7c9;
+    --text-dim:      rgba(247,231,201,0.62);
+    --muted:         rgba(247,231,201,0.42);
+    --ink-green:     #6fb84f;
+    --ink-red:       #e54e3a;
+    --ink-amber:     #f5a523;
+    --ink-purple:    #a47fd6;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:var(--bg);font-family:'DM Sans',sans-serif;}
-  .fadeIn{animation:fadeIn 0.4s ease forwards;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .popIn{animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;}
-  @keyframes popIn{from{opacity:0;transform:scale(0.7)}to{opacity:1;transform:scale(1)}}
-  .modalIn{animation:modalIn 0.3s cubic-bezier(0.34,1.3,0.64,1) forwards;}
-  @keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(0.97)}to{opacity:1;transform:none}}
-  .timerUrgent{animation:pulse 0.6s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  .mainBtn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(253,90,30,0.35)!important;}
-  .mainBtn:active{transform:translateY(0);}
-  .infoBtn:hover{background:var(--surface2)!important;border-color:var(--gold)!important;color:var(--gold)!important;}
-  .presetBtn:hover{background:var(--surface2)!important;border-color:var(--gold)!important;color:var(--gold)!important;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    font-family: var(--body-font), system-ui, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Entry animations — transform only, opacity never starts at 0 */
+  .fadeUp { animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp {
+    from { opacity: 0.6; transform: translateY(16px); }
+    to   { opacity: 1;   transform: translateY(0); }
+  }
+  .popIn { animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+  @keyframes popIn {
+    from { opacity: 0.6; transform: scale(0.85); }
+    to   { opacity: 1;   transform: scale(1); }
+  }
+  .modalIn { animation: modalIn 0.32s cubic-bezier(0.34,1.4,0.64,1) both; }
+  @keyframes modalIn {
+    from { opacity: 0.6; transform: translateY(28px) scale(0.97); }
+    to   { opacity: 1;   transform: translateY(0) scale(1); }
+  }
+
+  /* Progress dot glow ring */
+  .dotPulse { position: relative; }
+  .dotPulse::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--giants);
+    animation: dotPulse 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes dotPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%       { opacity: 0;   transform: scale(1.7); }
+  }
+
+  /* Timer urgent shake */
+  .timerUrgent { animation: timerShake 0.5s ease-in-out infinite; }
+  @keyframes timerShake {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(3deg); }
+    75%       { transform: rotate(-3deg); }
+  }
+
+  /* Button interactions */
+  .mainBtn:hover  { transform: translateY(-1px); }
+  .mainBtn:active {
+    transform: translateY(5px) !important;
+    box-shadow: inset 4px 4px 0 var(--giants-deep), inset -4px -4px 0 var(--giants-2), 0 1px 0 #000 !important;
+  }
+  .infoBtn:hover  { transform: rotate(8deg) scale(1.08); }
+  .presetBtn:hover { transform: translateY(-1px); }
+  .presetBtn:active {
+    transform: translateY(3px) !important;
+    box-shadow: inset 3px 3px 0 var(--cream-deep), inset -3px -3px 0 #fff, 0 1px 0 #000 !important;
+  }
+
+  /* Input number spinners */
   input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;}
-  input[type=number]{-moz-appearance:textfield;}
-  .checking{display:inline-flex;align-items:center;gap:2px;}
-  .dots{display:inline-block;animation:dots 1s infinite;}
-  @keyframes dots{0%,100%{opacity:0.3}50%{opacity:1}}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .spinner{animation:spin 0.8s linear infinite;}
+  input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  input[type=number] { -moz-appearance: textfield; }
+
+  /* Checking animation */
+  .checking { display: inline-flex; align-items: center; gap: 2px; }
+  .dots { display: inline-block; animation: dots 1s infinite; }
+  @keyframes dots { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+  /* Spinner */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner { animation: spin 0.8s linear infinite; }
 `;
+
+// ─── Style helpers ────────────────────────────────────────────────────────────
+const bevelOrange = {
+  boxShadow: "inset -4px -4px 0 var(--giants-deep), inset 4px 4px 0 var(--giants-2), 0 6px 0 #000, 0 8px 24px rgba(253,90,30,0.25)",
+};
+const bevelCream = {
+  boxShadow: "inset -3px -3px 0 var(--cream-deep), inset 3px 3px 0 #fff, 0 4px 0 #000",
+};
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const S = {
-  root:       { minHeight:"100vh", background:"var(--bg)", display:"flex", alignItems:"flex-start", justifyContent:"center", padding:"24px 16px 48px", color:"var(--text)" },
-  container:  { width:"100%", maxWidth:480, display:"flex", flexDirection:"column", gap:16 },
+  root:      { minHeight: "100vh", background: "var(--bg)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "24px 16px 64px", color: "var(--text)" },
+  container: { width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 16 },
 
-  header:     { display:"flex", flexDirection:"column", gap:8 },
-  headerInner:{ display:"flex", alignItems:"center", justifyContent:"space-between" },
-  title:      { fontFamily:"'Bebas Neue',sans-serif", fontSize:28, letterSpacing:"0.02em", lineHeight:1 },
-  titleYou:   { color:"var(--text)" },
-  titleSure:  { color:"var(--gold)" },
-  titleAbout: { color:"var(--text)" },
-  titleThat:  { color:"var(--gold2)" },
-  dayBadge:   { fontFamily:"'DM Sans',sans-serif", fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.08em", background:"var(--surface)", border:"1px solid var(--border)", borderRadius:6, padding:"3px 8px" },
-  infoBtn:    { width:32, height:32, borderRadius:"50%", border:"1px solid var(--border)", background:"var(--surface)", color:"var(--muted)", fontSize:15, fontWeight:700, cursor:"pointer", fontFamily:"'DM Sans',sans-serif", transition:"all 0.15s ease", display:"flex", alignItems:"center", justifyContent:"center" },
-  pointsBar:  { display:"flex", justifyContent:"space-between", alignItems:"center", background:"var(--surface)", border:"1px solid var(--border)", borderRadius:10, padding:"10px 16px" },
-  pointsLeft: { display:"flex", flexDirection:"column", gap:2 },
-  pointsLabel:{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
-  pointsValue:{ fontFamily:"'Bebas Neue',sans-serif", fontSize:26, color:"var(--gold)", letterSpacing:"0.03em" },
-  streakBadge:{ fontSize:13, fontWeight:600, color:"#ff9500", background:"rgba(255,149,0,0.12)", border:"1px solid rgba(255,149,0,0.25)", borderRadius:8, padding:"4px 12px" },
+  header:    { display: "flex", flexDirection: "column", gap: 12 },
+  headerTop: { display: "flex", alignItems: "center", justifyContent: "space-between" },
 
-  progressDots:{ display:"flex", justifyContent:"center", gap:10 },
-  progressDot: { width:12, height:12, borderRadius:"50%", transition:"background 0.3s ease" },
+  dayBadge:  { fontFamily: "var(--hand-font), cursive", fontSize: 18, fontWeight: 700, letterSpacing: "0.02em", color: "var(--text)", background: "var(--surface)", border: "1.5px dashed var(--border-strong)", borderRadius: 999, padding: "4px 12px", transform: "rotate(-2deg)", display: "inline-block", userSelect: "none" },
+  infoBtn:   { width: 38, height: 38, borderRadius: "50%", border: "2px solid var(--cream-deep)", background: "var(--cream)", color: "var(--cream-ink)", fontSize: 22, fontFamily: "var(--display-font), sans-serif", cursor: "pointer", transition: "transform 0.15s ease", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, ...bevelCream },
 
-  missedDayBanner:{ display:"flex", alignItems:"flex-start", gap:12, background:"rgba(139,92,246,0.1)", border:"1px solid rgba(139,92,246,0.25)", borderRadius:12, padding:"14px 16px" },
-  missedDayIcon:  { fontSize:22, lineHeight:1.2, flexShrink:0 },
-  missedDayTitle: { fontSize:13, fontWeight:700, color:"var(--purple)", marginBottom:3 },
-  missedDayText:  { fontSize:12, color:"var(--muted)", lineHeight:1.5 },
+  pointsBar:  { position: "relative", overflow: "hidden", display: "flex", justifyContent: "space-between", alignItems: "center", background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 14, padding: "12px 18px" },
+  pointsLeft: { display: "flex", flexDirection: "column", gap: 2 },
+  pointsLabel:{ fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.16em", textTransform: "uppercase" },
+  pointsValue:{ fontFamily: "var(--display-font), sans-serif", fontSize: 30, color: "var(--giants)", letterSpacing: "0.01em", lineHeight: 1, textShadow: "1px 1px 0 var(--giants-deep)" },
 
-  card:       { background:"var(--surface)", border:"1px solid var(--border)", borderRadius:16, padding:"24px 20px", display:"flex", flexDirection:"column", gap:20 },
-  phaseTag:   { fontSize:10, fontWeight:700, letterSpacing:"0.15em", color:"var(--gold)", textTransform:"uppercase" },
+  streakBubble:{ display: "flex", alignItems: "center", gap: 4, border: "1.5px dashed var(--giants)", borderRadius: 999, padding: "6px 14px", transform: "rotate(2deg)" },
+  streakStar:  { fontFamily: "var(--hand-font), cursive", fontSize: 16, fontWeight: 700, color: "var(--giants)" },
+  streakNum:   { fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--text)", lineHeight: 1 },
+  streakWord:  { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--text-dim)", letterSpacing: "0.02em" },
 
-  loadingWrap:{ display:"flex", flexDirection:"column", alignItems:"center", gap:16, padding:"40px 0" },
-  loadingSpinner:{ width:32, height:32, borderRadius:"50%", border:"3px solid var(--border)", borderTopColor:"var(--gold)" },
-  loadingText:{ fontSize:14, color:"var(--muted)" },
+  progressDots:{ display: "flex", justifyContent: "center", gap: 14 },
+  progressDot: { width: 30, height: 30, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", transition: "background 0.3s ease, transform 0.3s ease", flexShrink: 0 },
 
-  errorWrap:  { display:"flex", flexDirection:"column", alignItems:"center", gap:12, padding:"32px 0", textAlign:"center" },
-  errorIcon:  { width:48, height:48, borderRadius:"50%", background:"rgba(239,68,68,0.1)", border:"1px solid rgba(239,68,68,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, fontWeight:700, color:"var(--red)" },
-  errorTitle: { fontSize:16, fontWeight:700, color:"var(--text)" },
-  errorText:  { fontSize:13, color:"var(--muted)", lineHeight:1.6, maxWidth:280 },
+  missedDayBanner:{ display: "flex", alignItems: "flex-start", gap: 12, background: "rgba(164,127,214,0.1)", border: "1px solid rgba(164,127,214,0.25)", borderRadius: 12, padding: "14px 16px" },
+  missedDayIcon:  { fontSize: 22, lineHeight: 1.2, flexShrink: 0 },
+  missedDayTitle: { fontSize: 13, fontWeight: 700, color: "var(--ink-purple)", marginBottom: 3 },
+  missedDayText:  { fontSize: 12, color: "var(--muted)", lineHeight: 1.5 },
 
-  categoryReveal:{ textAlign:"center", padding:"8px 0" },
-  categoryLabel: { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
-  categoryName:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:60, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 40px rgba(253,90,30,0.4)" },
-  budgetRow:     { display:"flex", justifyContent:"space-between", alignItems:"center", background:"var(--surface2)", borderRadius:8, padding:"8px 14px" },
-  budgetLabel:   { fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
-  budgetValue:   { fontSize:13, fontWeight:700, color:"var(--text)" },
-  wagerSection:  { display:"flex", flexDirection:"column", gap:14 },
-  wagerRow:      { display:"flex", justifyContent:"center" },
-  wagerInputWrap:{ display:"flex", alignItems:"center", gap:8, background:"var(--surface2)", border:"2px solid var(--gold)", borderRadius:12, padding:"8px 16px", width:"100%", maxWidth:260 },
-  wagerCurrency: { color:"var(--gold)", fontSize:18, fontWeight:700, userSelect:"none" },
-  wagerInput:    { background:"transparent", border:"none", outline:"none", color:"var(--text)", fontSize:28, fontFamily:"'Bebas Neue',sans-serif", letterSpacing:"0.04em", width:"100%", textAlign:"center" },
-  sliderWrap:    { display:"flex", flexDirection:"column", gap:4 },
-  sliderTrack:   { height:4, background:"var(--surface2)", borderRadius:99, overflow:"hidden" },
-  sliderFill:    { height:"100%", background:"var(--gold)", borderRadius:99, transition:"width 0.2s ease" },
-  sliderLabels:  { display:"flex", justifyContent:"space-between", fontSize:10, color:"var(--muted)", letterSpacing:"0.06em" },
-  presets:       { display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8 },
-  presetBtn:     { background:"var(--surface)", border:"1px solid var(--border)", borderRadius:10, color:"var(--text)", padding:"8px 6px", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:2, fontSize:11, fontWeight:600, fontFamily:"'DM Sans',sans-serif", transition:"all 0.15s ease", letterSpacing:"0.04em" },
-  presetVal:     { fontSize:10, color:"var(--muted)", fontWeight:400 },
-  mainBtn:       { background:"var(--gold)", color:"#0d0d0f", border:"none", borderRadius:12, padding:"14px 20px", fontSize:14, fontWeight:700, fontFamily:"'DM Sans',sans-serif", cursor:"pointer", letterSpacing:"0.04em", transition:"all 0.2s ease", width:"100%" },
+  card: { background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 18, padding: "24px 22px", display: "flex", flexDirection: "column", gap: 20 },
 
-  wagerDisplay: { textAlign:"center", fontSize:13, color:"var(--muted)", background:"var(--surface2)", borderRadius:8, padding:"8px 12px" },
-  timerWrap:   { display:"flex", flexDirection:"column", gap:6 },
-  timerRow:    { display:"flex", alignItems:"baseline", gap:6 },
-  timerCount:  { fontFamily:"'Bebas Neue',sans-serif", fontSize:40, lineHeight:1, letterSpacing:"0.02em", display:"inline-block" },
-  timerLabel:  { fontSize:11, color:"var(--muted)", textTransform:"uppercase", letterSpacing:"0.1em", fontWeight:600 },
-  timerTrack:  { height:5, background:"var(--surface2)", borderRadius:99, overflow:"hidden" },
-  timerFill:   { height:"100%", borderRadius:99 },
-  questionBox: { background:"var(--surface2)", border:"1px solid var(--border)", borderRadius:12, padding:20, display:"flex", flexDirection:"column", gap:12 },
-  questionCategory:{ fontFamily:"'Bebas Neue',sans-serif", fontSize:20, color:"var(--gold)", letterSpacing:"0.08em" },
-  questionText:    { fontSize:15, lineHeight:1.6, color:"var(--text)" },
-  answerSection:   { display:"flex", flexDirection:"column", gap:12 },
-  answerInput:     { background:"var(--surface2)", border:"2px solid var(--border)", borderRadius:12, color:"var(--text)", padding:"12px 16px", fontSize:16, fontFamily:"'DM Sans',sans-serif", outline:"none", width:"100%" },
+  phaseTag: { fontFamily: "var(--display-font), sans-serif", fontSize: 13, color: "var(--giants)", letterSpacing: "0.18em", textTransform: "uppercase", borderTop: "1.5px dashed rgba(253,90,30,0.4)", borderBottom: "1.5px dashed rgba(253,90,30,0.4)", padding: "6px 0", textAlign: "center", textShadow: "0 0 12px rgba(253,90,30,0.35)" },
 
-  interPhaseTag:       { fontSize:10, fontWeight:700, letterSpacing:"0.15em", color:"var(--muted)", textTransform:"uppercase" },
-  nextCategoryPreview: { textAlign:"center", padding:"4px 0" },
-  nextCategoryLabel:   { fontSize:11, color:"var(--muted)", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:8 },
-  nextCategoryName:    { fontFamily:"'Bebas Neue',sans-serif", fontSize:48, color:"var(--gold)", lineHeight:1, letterSpacing:"0.04em", textShadow:"0 0 30px rgba(253,90,30,0.4)" },
+  loadingWrap:   { display: "flex", flexDirection: "column", alignItems: "center", gap: 16, padding: "40px 0" },
+  loadingSpinner:{ width: 32, height: 32, borderRadius: "50%", border: "3px solid var(--border)", borderTopColor: "var(--giants)" },
+  loadingText:   { fontFamily: "var(--body-font), sans-serif", fontSize: 14, color: "var(--muted)" },
 
-  resultBanner:    { borderRadius:12, padding:"16px 20px", display:"flex", alignItems:"center", gap:12 },
-  resultEmoji:     { fontSize:28, fontWeight:700, color:"#fff" },
-  resultLabel:     { fontFamily:"'Bebas Neue',sans-serif", fontSize:32, color:"#fff", letterSpacing:"0.08em" },
+  errorWrap:  { display: "flex", flexDirection: "column", alignItems: "center", gap: 12, padding: "32px 0", textAlign: "center" },
+  errorIcon:  { width: 48, height: 48, borderRadius: "50%", background: "rgba(229,78,58,0.1)", border: "1px solid rgba(229,78,58,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 700, color: "var(--ink-red)" },
+  errorTitle: { fontFamily: "var(--body-font), sans-serif", fontSize: 16, fontWeight: 700, color: "var(--text)" },
+  errorText:  { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--muted)", lineHeight: 1.6, maxWidth: 280 },
 
-  correctAnswerBox:  { borderRadius:10, padding:"12px 16px", display:"flex", flexDirection:"column", gap:4 },
-  correctAnswerLabel:{ fontSize:10, color:"var(--red)", textTransform:"uppercase", letterSpacing:"0.1em", fontWeight:700 },
-  correctAnswerText: { fontSize:16, fontWeight:600, color:"var(--text)" },
-  yourAnswerText:    { fontSize:12, color:"var(--muted)" },
+  categoryReveal:{ textAlign: "center", padding: "8px 0" },
+  categoryLabel: { fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 8 },
+  categoryName:  { fontFamily: "var(--display-font), sans-serif", fontSize: 44, color: "var(--giants)", lineHeight: 1, letterSpacing: "0.04em", textTransform: "uppercase" },
 
-  questionBreakdown: { display:"flex", flexDirection:"column", gap:8 },
-  breakdownRow:      { display:"flex", alignItems:"center", gap:12, background:"var(--surface2)", borderRadius:10, padding:"10px 14px" },
-  breakdownIcon:     { fontSize:16, fontWeight:700, width:20, textAlign:"center", flexShrink:0 },
-  breakdownContent:  { flex:1, display:"flex", flexDirection:"column", gap:2 },
-  breakdownCategory: { fontSize:11, fontWeight:700, color:"var(--muted)", letterSpacing:"0.08em", textTransform:"uppercase" },
-  breakdownAnswer:   { fontSize:13 },
-  breakdownWager:    { fontSize:13, fontWeight:700, flexShrink:0 },
+  budgetRow:  { display: "flex", justifyContent: "space-between", alignItems: "center", border: "1.5px dashed var(--border-strong)", borderRadius: 10, padding: "8px 14px" },
+  budgetLabel:{ fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.14em", textTransform: "uppercase" },
+  budgetValue:{ fontFamily: "var(--display-font), sans-serif", fontSize: 20, color: "var(--giants)", letterSpacing: "0.02em" },
 
-  statsGrid:      { display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 },
-  statCard:       { background:"var(--surface2)", borderRadius:10, padding:"12px 14px", display:"flex", flexDirection:"column", gap:4 },
-  statCardBig:    { gridColumn:"span 2", background:"rgba(253,90,30,0.06)", border:"1px solid rgba(253,90,30,0.2)" },
-  statLabel:      { fontSize:10, color:"var(--muted)", textTransform:"uppercase", letterSpacing:"0.1em", fontWeight:600 },
-  statValue:      { fontSize:16, fontWeight:600, color:"var(--text)" },
-  statValueBig:   { fontSize:28, fontFamily:"'Bebas Neue',sans-serif", color:"var(--gold)", letterSpacing:"0.04em" },
-  streakMessage:  { textAlign:"center", fontSize:13, lineHeight:1.6, color:"var(--muted)", fontStyle:"italic", borderTop:"1px solid var(--border)", paddingTop:16 },
-  alreadyPlayedNotice:{ textAlign:"center", fontSize:12, color:"var(--muted)", background:"var(--surface2)", borderRadius:8, padding:"10px 14px", lineHeight:1.5 },
+  wagerSection:  { display: "flex", flexDirection: "column", gap: 14 },
+  wagerRow:      { display: "flex", justifyContent: "center" },
+  wagerInputWrap:{ display: "flex", alignItems: "center", gap: 8, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "10px 18px", width: "100%", maxWidth: 280, ...bevelCream },
+  wagerCurrency: { fontFamily: "var(--display-font), sans-serif", color: "var(--giants-deep)", fontSize: 22, userSelect: "none", flexShrink: 0 },
+  wagerInput:    { background: "transparent", border: "none", outline: "none", color: "var(--giants-deep)", fontSize: 36, fontFamily: "var(--display-font), sans-serif", letterSpacing: "0.04em", width: "100%", textAlign: "center" },
+  wagerSuffix:   { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--cream-ink)", opacity: 0.5, flexShrink: 0 },
 
-  modalOverlay: { position:"fixed", inset:0, background:"rgba(0,0,0,0.72)", backdropFilter:"blur(4px)", display:"flex", alignItems:"flex-end", justifyContent:"center", zIndex:100 },
-  modal:        { background:"var(--surface)", border:"1px solid var(--border)", borderRadius:"20px 20px 0 0", padding:"28px 24px 36px", width:"100%", maxWidth:480, display:"flex", flexDirection:"column", gap:20, maxHeight:"90vh", overflowY:"auto" },
-  modalHeader:  { display:"flex", justifyContent:"space-between", alignItems:"flex-start" },
-  modalEyebrow: { fontSize:11, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:"var(--gold)", marginBottom:4 },
-  modalTitle:   { fontFamily:"'Bebas Neue',sans-serif", fontSize:36, color:"var(--text)", letterSpacing:"0.02em", lineHeight:1 },
-  modalClose:   { background:"var(--surface2)", border:"1px solid var(--border)", color:"var(--muted)", borderRadius:"50%", width:32, height:32, cursor:"pointer", fontSize:13, fontFamily:"'DM Sans',sans-serif", flexShrink:0, transition:"all 0.15s", display:"flex", alignItems:"center", justifyContent:"center" },
-  modalRules:   { display:"flex", flexDirection:"column", gap:16 },
-  ruleRow:      { display:"flex", gap:14, alignItems:"flex-start" },
-  ruleIcon:     { width:36, height:36, borderRadius:10, background:"rgba(253,90,30,0.12)", border:"1px solid rgba(253,90,30,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, flexShrink:0 },
-  ruleHeading:  { fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:3 },
-  ruleBody:     { fontSize:12, color:"var(--muted)", lineHeight:1.6 },
-  modalNote:    { fontSize:12, color:"var(--muted)", background:"var(--surface2)", borderRadius:8, padding:"10px 14px", lineHeight:1.5, textAlign:"center" },
+  sliderWrap:  { display: "flex", flexDirection: "column", gap: 4 },
+  sliderTrack: { height: 8, background: "var(--surface-2)", borderRadius: 99, overflow: "hidden", boxShadow: "inset 0 1px 2px rgba(0,0,0,0.4)" },
+  sliderFill:  { height: "100%", background: "linear-gradient(90deg, var(--giants-deep), var(--giants), var(--giants-2))", borderRadius: 99, transition: "width 0.2s ease", boxShadow: "0 0 8px rgba(253,90,30,0.4)" },
+  sliderLabels:{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "var(--muted)", letterSpacing: "0.06em" },
 
-  footer: { textAlign:"center", fontSize:11, color:"var(--muted)", letterSpacing:"0.05em" },
+  presets:    { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 },
+  presetBtn:  { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 10, color: "var(--cream-ink)", padding: "10px 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, transition: "transform 0.1s ease, box-shadow 0.1s ease", ...bevelCream },
+  presetLabel:{ fontFamily: "var(--display-font), sans-serif", fontSize: 18, color: "var(--giants-deep)", letterSpacing: "0.04em", lineHeight: 1 },
+  presetVal:  { fontFamily: "var(--display-font), sans-serif", fontSize: 14, color: "var(--cream-ink)", letterSpacing: "0.02em" },
+
+  mainBtn: { background: "var(--giants)", color: "var(--cream)", border: "none", borderRadius: 12, padding: "15px 20px", fontFamily: "var(--display-font), sans-serif", fontSize: 22, letterSpacing: "0.04em", cursor: "pointer", transition: "transform 0.1s ease, box-shadow 0.1s ease", width: "100%", ...bevelOrange },
+
+  wagerDisplay:      { display: "flex", flexDirection: "column", alignItems: "center", gap: 2, border: "1.5px dashed var(--border-strong)", borderRadius: 999, padding: "8px 20px", alignSelf: "center", minWidth: 160 },
+  wagerDisplayLabel: { fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.14em", textTransform: "uppercase" },
+  wagerDisplayValue: { fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants)", letterSpacing: "0.02em" },
+
+  timerWrap:    { display: "flex", flexDirection: "column", gap: 6 },
+  timerRow:     { display: "flex", alignItems: "baseline", gap: 8 },
+  timerCount:   { fontFamily: "var(--display-font), sans-serif", fontSize: 56, lineHeight: 1, letterSpacing: "0.02em", display: "inline-block" },
+  timerCaption: { fontFamily: "var(--hand-font), cursive", fontSize: 18, fontWeight: 700, color: "var(--text-dim)" },
+  timerTrack:   { height: 10, background: "var(--surface-2)", borderRadius: 99, overflow: "hidden", boxShadow: "inset 0 1px 2px rgba(0,0,0,0.5)" },
+  timerFill:    { height: "100%", borderRadius: 99, transition: "width 1s linear, background 0.3s ease" },
+
+  questionBox:     { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "18px 20px 20px", display: "flex", flexDirection: "column", gap: 10 },
+  questionCategory:{ fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants-deep)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: 1 },
+  questionText:    { fontFamily: "var(--body-font), sans-serif", fontSize: 17, fontWeight: 500, lineHeight: 1.55, color: "var(--cream-ink)" },
+
+  answerSection:  { display: "flex", flexDirection: "column", gap: 12 },
+  answerInputWrap:{ display: "flex", alignItems: "center", gap: 10, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "10px 16px", ...bevelCream },
+  answerPrefix:   { fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants-deep)", flexShrink: 0, lineHeight: 1 },
+  answerInput:    { background: "transparent", border: "none", outline: "none", color: "var(--cream-ink)", fontSize: 17, fontFamily: "var(--body-font), sans-serif", width: "100%", fontStyle: "italic" },
+
+  interPhaseTag:       { fontFamily: "var(--display-font), sans-serif", fontSize: 13, color: "var(--muted)", letterSpacing: "0.18em", textTransform: "uppercase", textAlign: "center" },
+  nextCategoryPreview: { textAlign: "center", padding: "4px 0" },
+  nextCategoryLabel:   { fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 8 },
+  nextCategoryName:    { fontFamily: "var(--display-font), sans-serif", fontSize: 36, color: "var(--giants)", lineHeight: 1, letterSpacing: "0.04em", textTransform: "uppercase" },
+
+  resultBanner:{ borderRadius: 12, padding: "14px 20px", display: "flex", alignItems: "center", gap: 14, boxShadow: "inset -3px -3px 0 rgba(0,0,0,0.2), inset 3px 3px 0 rgba(255,255,255,0.18), 0 6px 0 rgba(0,0,0,0.3)" },
+  resultIcon:  { fontFamily: "var(--display-font), sans-serif", fontSize: 32, color: "#fff", lineHeight: 1 },
+  resultLabel: { fontFamily: "var(--display-font), sans-serif", fontSize: 26, color: "#fff", letterSpacing: "0.06em" },
+
+  correctAnswerBox:    { borderRadius: 10, padding: "12px 16px", display: "flex", flexDirection: "column", gap: 4, background: "rgba(0,0,0,0.2)" },
+  correctAnswerEyebrow:{ fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.14em", textTransform: "uppercase" },
+  correctAnswerText:   { fontFamily: "var(--body-font), sans-serif", fontSize: 20, fontWeight: 700, color: "var(--cream)", lineHeight: 1.4 },
+  yourAnswerText:      { fontFamily: "var(--body-font), sans-serif", fontSize: 12, color: "var(--muted)" },
+
+  questionBreakdown:{ display: "flex", flexDirection: "column", gap: 8 },
+  breakdownRow:     { display: "flex", alignItems: "center", gap: 12, background: "var(--surface-2)", borderRadius: 10, padding: "10px 14px" },
+  breakdownIconCircle:{ width: 28, height: 28, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
+  breakdownContent: { flex: 1, display: "flex", flexDirection: "column", gap: 2, minWidth: 0 },
+  breakdownCategory:{ fontFamily: "var(--display-font), sans-serif", fontSize: 16, color: "var(--text-dim)", letterSpacing: "0.06em", textTransform: "uppercase" },
+  breakdownAnswer:  { display: "flex", gap: 4, flexWrap: "wrap" },
+  breakdownAnswerLabel:{ fontFamily: "var(--body-font), sans-serif", fontSize: 11, color: "var(--muted)" },
+  breakdownAnswerText: { fontFamily: "var(--body-font), sans-serif", fontWeight: 600, color: "var(--text)", fontSize: 13 },
+  breakdownWager:   { fontFamily: "var(--display-font), sans-serif", fontSize: 14, fontWeight: 700, flexShrink: 0, borderRadius: 6, padding: "2px 8px", letterSpacing: "0.02em" },
+
+  statsGrid:    { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },
+  statCard:     { background: "var(--surface-2)", border: "1.5px dashed var(--border-strong)", borderRadius: 10, padding: "12px 14px", display: "flex", flexDirection: "column", gap: 4 },
+  statCardBig:  { gridColumn: "span 2", background: "rgba(253,90,30,0.06)", border: "1.5px dashed var(--giants)" },
+  statLabel:    { fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.14em" },
+  statValue:    { fontFamily: "var(--body-font), sans-serif", fontSize: 16, fontWeight: 600, color: "var(--text)" },
+  statValueBig: { fontFamily: "var(--display-font), sans-serif", fontSize: 38, color: "var(--giants)", letterSpacing: "0.02em", lineHeight: 1, textShadow: "1px 1px 0 var(--giants-deep)" },
+
+  streakMessage:       { fontFamily: "var(--body-font), sans-serif", textAlign: "center", fontSize: 13, lineHeight: 1.6, color: "var(--muted)", borderTop: "1.5px dashed var(--border-strong)", paddingTop: 16 },
+  alreadyPlayedNotice: { textAlign: "center", fontSize: 12, color: "var(--muted)", background: "var(--surface-2)", borderRadius: 8, padding: "10px 14px", lineHeight: 1.5 },
+
+  modalOverlay:{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.78)", backdropFilter: "blur(4px)", display: "flex", alignItems: "flex-end", justifyContent: "center", zIndex: 100 },
+  modal:       { background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "20px 20px 0 0", padding: "28px 24px 36px", width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 20, maxHeight: "90vh", overflowY: "auto" },
+  modalHeader: { display: "flex", justifyContent: "space-between", alignItems: "flex-start" },
+  modalEyebrow:{ fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--giants)", marginBottom: 8 },
+  modalClose:  { background: "var(--surface-2)", border: "1.5px dashed var(--border-strong)", color: "var(--muted)", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 13, fontFamily: "var(--body-font), sans-serif", flexShrink: 0, transition: "all 0.15s", display: "flex", alignItems: "center", justifyContent: "center" },
+  modalRules:  { display: "flex", flexDirection: "column", gap: 16 },
+  ruleRow:     { display: "flex", gap: 14, alignItems: "flex-start" },
+  ruleIcon:    { width: 36, height: 36, borderRadius: 10, background: "var(--giants)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, ...bevelOrange },
+  ruleHeading: { fontFamily: "var(--display-font), sans-serif", fontSize: 16, color: "var(--text)", marginBottom: 3, letterSpacing: "0.04em" },
+  ruleBody:    { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--muted)", lineHeight: 1.6 },
+  modalNote:   { fontFamily: "var(--body-font), sans-serif", fontSize: 12, color: "var(--muted)", border: "1.5px dashed var(--giants)", borderRadius: 8, padding: "10px 14px", lineHeight: 1.5, textAlign: "center" },
+
+  footer: { fontFamily: "var(--body-font), sans-serif", textAlign: "center", fontSize: 11, fontWeight: 500, color: "var(--muted)", letterSpacing: "0.12em", textTransform: "uppercase" },
 };
