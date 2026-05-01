@@ -919,7 +919,7 @@ const bevelCream = {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const S = {
-  root:      { minHeight: "100vh", background: "var(--bg)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 16px 28px", color: "var(--text)" },
+  root:      { height: "100%", overflowY: "auto", background: "var(--bg)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 16px 28px", color: "var(--text)" },
   container: { width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 12 },
 
   header:    { display: "flex", flexDirection: "column", gap: 8 },

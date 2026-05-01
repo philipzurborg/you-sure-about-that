@@ -6,6 +6,12 @@ const bebas  = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--disp
 const caveat = Caveat({ weight: ["400", "700"], subsets: ["latin"], variable: "--hand-font" });
 const dmSans = DM_Sans({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--body-font" });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  interactiveWidget: "resizes-visual",
+};
+
 export const metadata = {
   metadataBase: new URL("https://yousureaboutthat.app"),
   title: "You Sure About That?",
