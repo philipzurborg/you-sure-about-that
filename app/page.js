@@ -662,7 +662,7 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
           <input
             ref={inputRef} type="text" value={answer}
             onChange={e => setAnswer(e.target.value)}
-            placeholder="Your answer\u2026" disabled={checking}
+            placeholder="Your answer…" disabled={checking}
             style={S.answerInput}
             onKeyDown={e => e.key === "Enter" && !checking && answer.trim() && checkAnswer(false)}
           />
