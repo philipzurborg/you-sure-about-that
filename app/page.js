@@ -919,16 +919,16 @@ const bevelCream = {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const S = {
-  root:      { minHeight: "100vh", background: "var(--bg)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "24px 16px 64px", color: "var(--text)" },
-  container: { width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 16 },
+  root:      { minHeight: "100vh", background: "var(--bg)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 16px 28px", color: "var(--text)" },
+  container: { width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 12 },
 
-  header:    { display: "flex", flexDirection: "column", gap: 12 },
+  header:    { display: "flex", flexDirection: "column", gap: 8 },
   headerTop: { display: "flex", alignItems: "center", justifyContent: "space-between" },
 
   dayBadge:  { fontFamily: "var(--hand-font), cursive", fontSize: 18, fontWeight: 700, letterSpacing: "0.02em", color: "var(--text)", background: "var(--surface)", border: "1.5px dashed var(--border-strong)", borderRadius: 999, padding: "4px 12px", transform: "rotate(-2deg)", display: "inline-block", userSelect: "none" },
   infoBtn:   { width: 38, height: 38, borderRadius: "50%", border: "2px solid var(--cream-deep)", background: "var(--cream)", color: "var(--cream-ink)", fontSize: 22, fontFamily: "var(--display-font), sans-serif", cursor: "pointer", transition: "transform 0.15s ease", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, ...bevelCream },
 
-  pointsBar:  { position: "relative", overflow: "hidden", display: "flex", justifyContent: "space-between", alignItems: "center", background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 14, padding: "12px 18px" },
+  pointsBar:  { position: "relative", overflow: "hidden", display: "flex", justifyContent: "space-between", alignItems: "center", background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 14, padding: "8px 16px" },
   pointsLeft: { display: "flex", flexDirection: "column", gap: 2 },
   pointsLabel:{ fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.16em", textTransform: "uppercase" },
   pointsValue:{ fontFamily: "var(--display-font), sans-serif", fontSize: 30, color: "var(--giants)", letterSpacing: "0.01em", lineHeight: 1, textShadow: "1px 1px 0 var(--giants-deep)" },
@@ -946,9 +946,9 @@ const S = {
   missedDayTitle: { fontSize: 13, fontWeight: 700, color: "var(--ink-purple)", marginBottom: 3 },
   missedDayText:  { fontSize: 12, color: "var(--muted)", lineHeight: 1.5 },
 
-  card: { background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 18, padding: "24px 22px", display: "flex", flexDirection: "column", gap: 20 },
+  card: { background: "linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%)", border: "1px solid var(--border)", borderRadius: 18, padding: "18px 20px", display: "flex", flexDirection: "column", gap: 14 },
 
-  phaseTag: { fontFamily: "var(--display-font), sans-serif", fontSize: 13, color: "var(--giants)", letterSpacing: "0.18em", textTransform: "uppercase", borderTop: "1.5px dashed rgba(253,90,30,0.4)", borderBottom: "1.5px dashed rgba(253,90,30,0.4)", padding: "6px 0", textAlign: "center", textShadow: "0 0 12px rgba(253,90,30,0.35)" },
+  phaseTag: { fontFamily: "var(--display-font), sans-serif", fontSize: 13, color: "var(--giants)", letterSpacing: "0.18em", textTransform: "uppercase", borderTop: "1.5px dashed rgba(253,90,30,0.4)", borderBottom: "1.5px dashed rgba(253,90,30,0.4)", padding: "4px 0", textAlign: "center", textShadow: "0 0 12px rgba(253,90,30,0.35)" },
 
   loadingWrap:   { display: "flex", flexDirection: "column", alignItems: "center", gap: 16, padding: "40px 0" },
   loadingSpinner:{ width: 32, height: 32, borderRadius: "50%", border: "3px solid var(--border)", borderTopColor: "var(--giants)" },
@@ -959,17 +959,17 @@ const S = {
   errorTitle: { fontFamily: "var(--body-font), sans-serif", fontSize: 16, fontWeight: 700, color: "var(--text)" },
   errorText:  { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--muted)", lineHeight: 1.6, maxWidth: 280 },
 
-  categoryReveal:{ textAlign: "center", padding: "8px 0" },
+  categoryReveal:{ textAlign: "center", padding: "4px 0" },
   categoryLabel: { fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 8 },
-  categoryName:  { fontFamily: "var(--display-font), sans-serif", fontSize: 44, color: "var(--giants)", lineHeight: 1, letterSpacing: "0.04em", textTransform: "uppercase" },
+  categoryName:  { fontFamily: "var(--display-font), sans-serif", fontSize: 38, color: "var(--giants)", lineHeight: 1, letterSpacing: "0.04em", textTransform: "uppercase" },
 
   budgetRow:  { display: "flex", justifyContent: "space-between", alignItems: "center", border: "1.5px dashed var(--border-strong)", borderRadius: 10, padding: "8px 14px" },
   budgetLabel:{ fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.14em", textTransform: "uppercase" },
   budgetValue:{ fontFamily: "var(--display-font), sans-serif", fontSize: 20, color: "var(--giants)", letterSpacing: "0.02em" },
 
-  wagerSection:  { display: "flex", flexDirection: "column", gap: 14 },
+  wagerSection:  { display: "flex", flexDirection: "column", gap: 10 },
   wagerRow:      { display: "flex", justifyContent: "center" },
-  wagerInputWrap:{ display: "flex", alignItems: "center", gap: 8, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "10px 18px", width: "100%", maxWidth: 280, ...bevelCream },
+  wagerInputWrap:{ display: "flex", alignItems: "center", gap: 8, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "8px 16px", width: "100%", maxWidth: 280, ...bevelCream },
   wagerCurrency: { fontFamily: "var(--display-font), sans-serif", color: "var(--giants-deep)", fontSize: 22, userSelect: "none", flexShrink: 0 },
   wagerInput:    { background: "transparent", border: "none", outline: "none", color: "var(--giants-deep)", fontSize: 36, fontFamily: "var(--display-font), sans-serif", letterSpacing: "0.04em", width: "100%", textAlign: "center" },
   wagerSuffix:   { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--cream-ink)", opacity: 0.5, flexShrink: 0 },
@@ -979,30 +979,30 @@ const S = {
   sliderFill:  { height: "100%", background: "linear-gradient(90deg, var(--giants-deep), var(--giants), var(--giants-2))", borderRadius: 99, transition: "width 0.2s ease", boxShadow: "0 0 8px rgba(253,90,30,0.4)" },
   sliderLabels:{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "var(--muted)", letterSpacing: "0.06em" },
 
-  presets:    { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 },
-  presetBtn:  { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 10, color: "var(--cream-ink)", padding: "10px 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, transition: "transform 0.1s ease, box-shadow 0.1s ease", ...bevelCream },
+  presets:    { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 },
+  presetBtn:  { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 10, color: "var(--cream-ink)", padding: "8px 6px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, transition: "transform 0.1s ease, box-shadow 0.1s ease", ...bevelCream },
   presetLabel:{ fontFamily: "var(--display-font), sans-serif", fontSize: 18, color: "var(--giants-deep)", letterSpacing: "0.04em", lineHeight: 1 },
   presetVal:  { fontFamily: "var(--display-font), sans-serif", fontSize: 14, color: "var(--cream-ink)", letterSpacing: "0.02em" },
 
-  mainBtn: { background: "var(--giants)", color: "var(--cream)", border: "none", borderRadius: 12, padding: "15px 20px", fontFamily: "var(--display-font), sans-serif", fontSize: 22, letterSpacing: "0.04em", cursor: "pointer", transition: "transform 0.1s ease, box-shadow 0.1s ease", width: "100%", ...bevelOrange },
+  mainBtn: { background: "var(--giants)", color: "var(--cream)", border: "none", borderRadius: 12, padding: "12px 20px", fontFamily: "var(--display-font), sans-serif", fontSize: 22, letterSpacing: "0.04em", cursor: "pointer", transition: "transform 0.1s ease, box-shadow 0.1s ease", width: "100%", ...bevelOrange },
 
-  wagerDisplay:      { display: "flex", flexDirection: "column", alignItems: "center", gap: 2, border: "1.5px dashed var(--border-strong)", borderRadius: 999, padding: "8px 20px", alignSelf: "center", minWidth: 160 },
+  wagerDisplay:      { display: "flex", flexDirection: "column", alignItems: "center", gap: 2, border: "1.5px dashed var(--border-strong)", borderRadius: 999, padding: "5px 16px", alignSelf: "center", minWidth: 160 },
   wagerDisplayLabel: { fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--text-dim)", letterSpacing: "0.14em", textTransform: "uppercase" },
   wagerDisplayValue: { fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants)", letterSpacing: "0.02em" },
 
-  timerWrap:    { display: "flex", flexDirection: "column", gap: 6 },
+  timerWrap:    { display: "flex", flexDirection: "column", gap: 4 },
   timerRow:     { display: "flex", alignItems: "baseline", gap: 8 },
-  timerCount:   { fontFamily: "var(--display-font), sans-serif", fontSize: 56, lineHeight: 1, letterSpacing: "0.02em", display: "inline-block" },
+  timerCount:   { fontFamily: "var(--display-font), sans-serif", fontSize: 46, lineHeight: 1, letterSpacing: "0.02em", display: "inline-block" },
   timerCaption: { fontFamily: "var(--hand-font), cursive", fontSize: 18, fontWeight: 700, color: "var(--text-dim)" },
   timerTrack:   { height: 10, background: "var(--surface-2)", borderRadius: 99, overflow: "hidden", boxShadow: "inset 0 1px 2px rgba(0,0,0,0.5)" },
   timerFill:    { height: "100%", borderRadius: 99, transition: "width 1s linear, background 0.3s ease" },
 
-  questionBox:     { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "18px 20px 20px", display: "flex", flexDirection: "column", gap: 10 },
+  questionBox:     { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "14px 16px 16px", display: "flex", flexDirection: "column", gap: 8 },
   questionCategory:{ fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants-deep)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: 1 },
   questionText:    { fontFamily: "var(--body-font), sans-serif", fontSize: 17, fontWeight: 500, lineHeight: 1.55, color: "var(--cream-ink)" },
 
-  answerSection:  { display: "flex", flexDirection: "column", gap: 12 },
-  answerInputWrap:{ display: "flex", alignItems: "center", gap: 10, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "10px 16px", ...bevelCream },
+  answerSection:  { display: "flex", flexDirection: "column", gap: 8 },
+  answerInputWrap:{ display: "flex", alignItems: "center", gap: 10, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "8px 14px", ...bevelCream },
   answerPrefix:   { fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants-deep)", flexShrink: 0, lineHeight: 1 },
   answerInput:    { background: "transparent", border: "none", outline: "none", color: "var(--cream-ink)", fontSize: 17, fontFamily: "var(--body-font), sans-serif", width: "100%", fontStyle: "italic" },
 
@@ -1030,23 +1030,23 @@ const S = {
   breakdownAnswerText: { fontFamily: "var(--body-font), sans-serif", fontWeight: 600, color: "var(--text)", fontSize: 13 },
   breakdownWager:   { fontFamily: "var(--display-font), sans-serif", fontSize: 14, fontWeight: 700, flexShrink: 0, borderRadius: 6, padding: "2px 8px", letterSpacing: "0.02em" },
 
-  statsGrid:    { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 },
-  statCard:     { background: "var(--surface-2)", border: "1.5px dashed var(--border-strong)", borderRadius: 10, padding: "12px 14px", display: "flex", flexDirection: "column", gap: 4 },
+  statsGrid:    { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 },
+  statCard:     { background: "var(--surface-2)", border: "1.5px dashed var(--border-strong)", borderRadius: 10, padding: "10px 12px", display: "flex", flexDirection: "column", gap: 3 },
   statCardBig:  { gridColumn: "span 2", background: "rgba(253,90,30,0.06)", border: "1.5px dashed var(--giants)" },
   statLabel:    { fontFamily: "var(--body-font), sans-serif", fontSize: 10, fontWeight: 600, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.14em" },
   statValue:    { fontFamily: "var(--body-font), sans-serif", fontSize: 16, fontWeight: 600, color: "var(--text)" },
   statValueBig: { fontFamily: "var(--display-font), sans-serif", fontSize: 38, color: "var(--giants)", letterSpacing: "0.02em", lineHeight: 1, textShadow: "1px 1px 0 var(--giants-deep)" },
 
-  streakMessage:       { fontFamily: "var(--body-font), sans-serif", textAlign: "center", fontSize: 13, lineHeight: 1.6, color: "var(--muted)", borderTop: "1.5px dashed var(--border-strong)", paddingTop: 16 },
+  streakMessage:       { fontFamily: "var(--body-font), sans-serif", textAlign: "center", fontSize: 13, lineHeight: 1.6, color: "var(--muted)", borderTop: "1.5px dashed var(--border-strong)", paddingTop: 12 },
   alreadyPlayedNotice: { textAlign: "center", fontSize: 12, color: "var(--muted)", background: "var(--surface-2)", borderRadius: 8, padding: "10px 14px", lineHeight: 1.5 },
 
   modalOverlay:{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.78)", backdropFilter: "blur(4px)", display: "flex", alignItems: "flex-end", justifyContent: "center", zIndex: 100 },
-  modal:       { background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "20px 20px 0 0", padding: "28px 24px 36px", width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 20, maxHeight: "90vh", overflowY: "auto" },
+  modal:       { background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "20px 20px 0 0", padding: "20px 20px 28px", width: "100%", maxWidth: 480, display: "flex", flexDirection: "column", gap: 14, maxHeight: "90vh", overflowY: "auto" },
   modalHeader: { display: "flex", justifyContent: "space-between", alignItems: "flex-start" },
   modalEyebrow:{ fontFamily: "var(--body-font), sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--giants)", marginBottom: 8 },
   modalClose:  { background: "var(--surface-2)", border: "1.5px dashed var(--border-strong)", color: "var(--muted)", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 13, fontFamily: "var(--body-font), sans-serif", flexShrink: 0, transition: "all 0.15s", display: "flex", alignItems: "center", justifyContent: "center" },
-  modalRules:  { display: "flex", flexDirection: "column", gap: 16 },
-  ruleRow:     { display: "flex", gap: 14, alignItems: "flex-start" },
+  modalRules:  { display: "flex", flexDirection: "column", gap: 12 },
+  ruleRow:     { display: "flex", gap: 12, alignItems: "flex-start" },
   ruleIcon:    { width: 36, height: 36, borderRadius: 10, background: "var(--giants)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, ...bevelOrange },
   ruleHeading: { fontFamily: "var(--display-font), sans-serif", fontSize: 16, color: "var(--text)", marginBottom: 3, letterSpacing: "0.04em" },
   ruleBody:    { fontFamily: "var(--body-font), sans-serif", fontSize: 13, color: "var(--muted)", lineHeight: 1.6 },
