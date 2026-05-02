@@ -1761,5 +1761,29 @@
         "alternateAnswers": ["sneakers otoole", "sneakers o toole", "o'toole"]
       }
     ]
+  },
+  {
+    "day": 72,
+    "date": "2026-05-02",
+    "questions": [
+      {
+        "category": "TRADE TALKS",
+        "question": "What country is the largest exporter of coffee beans?",
+        "answer": "Brazil",
+        "alternateAnswers": ["brazil coffee"]
+      },
+      {
+        "category": "PLAYOFF SEASON",
+        "question": "In the 2025 Stanley Cup Finals, the Florida Panthers defeated which team to claim the title?",
+        "answer": "The Edmonton Oilers",
+        "alternateAnswers": ["edmonton oilers", "edmonton", "oilers"]
+      },
+      {
+        "category": "GEOGRAPHY",
+        "question": "Which US state has the longest border?",
+        "answer": "Alaska",
+        "alternateAnswers": ["alaska state"]
+      }
+    ]
   }
 ]
