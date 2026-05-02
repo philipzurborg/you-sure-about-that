@@ -97,21 +97,26 @@ function tierFuzzy(userAnswer, correctAnswer, alternateAnswers) {
 }
 
 // Handles multi-ingredient / any-order answers (e.g. mirepoix, state lists).
-// Only activates when the correct answer has 3+ content words.
+// Only activates when the correct answer (or an alternate) has 3+ content words.
 // Checks that every stemmed canonical token appears in the user's token set AND
 // the user hasn't introduced extra content tokens (≤1 allowed for natural phrasing).
-function tierWordSet(userAnswer, correctAnswer) {
-  const correctTokens = tokenize(correctAnswer);
-  if (correctTokens.length < 3) return null;
-  const correctTokenSet = new Set(correctTokens);
+function tierWordSet(userAnswer, correctAnswer, alternateAnswers = []) {
+  const allAnswers = [correctAnswer, ...alternateAnswers];
   const userTokens = tokenize(userAnswer);
   const userTokenSet = new Set(userTokens);
-  // All correct tokens must appear in user answer
-  if (!correctTokens.every((t) => userTokenSet.has(t))) return null;
-  // User answer must not introduce more than 1 unrecognized content token
-  const extraTokens = userTokens.filter((t) => !correctTokenSet.has(t));
-  if (extraTokens.length > 1) return null;
-  return { correct: true, method: "word-set" };
+
+  for (const answer of allAnswers) {
+    const correctTokens = tokenize(answer);
+    if (correctTokens.length < 3) continue;
+    const correctTokenSet = new Set(correctTokens);
+    // All correct tokens must appear in user answer
+    if (!correctTokens.every((t) => userTokenSet.has(t))) continue;
+    // User answer must not introduce more than 1 unrecognized content token
+    const extraTokens = userTokens.filter((t) => !correctTokenSet.has(t));
+    if (extraTokens.length > 1) continue;
+    return { correct: true, method: "word-set" };
+  }
+  return null;
 }
 
 async function tierAI(userAnswer, correctAnswer, question, category) {
@@ -181,7 +186,7 @@ export async function POST(request) {
     tierNormalized(userAnswer, correctAnswer, alternateAnswers) ||
     tierKeyword(userAnswer, correctAnswer, alternateAnswers) ||
     tierFuzzy(userAnswer, correctAnswer, alternateAnswers) ||
-    tierWordSet(userAnswer, correctAnswer) ||
+    tierWordSet(userAnswer, correctAnswer, alternateAnswers) ||
     (await tierAI(userAnswer, correctAnswer, question, category));
 
   return NextResponse.json(result);
