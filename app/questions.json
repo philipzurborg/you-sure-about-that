@@ -1785,5 +1785,29 @@
         "alternateAnswers": ["alaska state"]
       }
     ]
+  },
+  {
+    "day": 73,
+    "date": "2026-05-03",
+    "questions": [
+      {
+        "category": "HOMONYMS",
+        "question": "A brief break or a small space set back from a main area.",
+        "answer": "Recess",
+        "alternateAnswers": ["a recess"]
+      },
+      {
+        "category": "US HISTORY",
+        "question": "What state was the 47th to be admitted to the United States?",
+        "answer": "New Mexico",
+        "alternateAnswers": ["new mexico state"]
+      },
+      {
+        "category": "HOCKEY",
+        "question": "What was the first US team to join the NHL?",
+        "answer": "The Boston Bruins",
+        "alternateAnswers": ["bruins", "boston bruins"]
+      }
+    ]
   }
 ]
