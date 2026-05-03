@@ -1809,5 +1809,29 @@
         "alternateAnswers": ["bruins", "boston bruins"]
       }
     ]
+  },
+  {
+    "day": 74,
+    "date": "2026-05-04",
+    "questions": [
+      {
+        "category": "US PRESIDENTS",
+        "question": "In 1983 Ronald Reagan announced the Strategic Defense Initiative, popularly known as what program? The proposed program would serve as a missile defense system intended to protect the United States from attack by strategic nuclear ballistic missiles.",
+        "answer": "Star Wars",
+        "alternateAnswers": ["star wars program", "strategic defense initiative", "sdi"]
+      },
+      {
+        "category": "STAR WARS",
+        "question": "The character of Ben Quadinaros appears in which Star Wars movie?",
+        "answer": "Episode 1",
+        "alternateAnswers": ["the phantom menace", "star wars episode 1", "star wars the phantom menace", "phantom menace", "star wars episode 1 the phantom menace", "episode i", "episode one"]
+      },
+      {
+        "category": "AT THE BOX OFFICE",
+        "question": "In 1977 Star Wars overtook Jaws as the highest grossing film of all time. It held this record until it was later surpassed by what film?",
+        "answer": "E.T. the Extra-Terrestrial",
+        "alternateAnswers": ["et", "e.t.", "e.t. the extra terrestrial", "et the extra terrestrial", "extra terrestrial"]
+      }
+    ]
   }
 ]
