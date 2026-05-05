@@ -1833,5 +1833,29 @@
         "alternateAnswers": ["et", "e.t.", "e.t. the extra terrestrial", "et the extra terrestrial", "extra terrestrial"]
       }
     ]
+  },
+  {
+    "day": 75,
+    "date": "2026-05-05",
+    "questions": [
+      {
+        "category": "HISTORY AND HOLIDAYS",
+        "question": "This holiday commemorates the 1862 victory of the Battle of Puebla.",
+        "answer": "Cinco De Mayo",
+        "alternateAnswers": ["cinco mayo", "cinco de mayo holiday"]
+      },
+      {
+        "category": "FOOD AND BEV",
+        "question": "What type of Coca-Cola comes in a gold can?",
+        "answer": "Caffeine Free",
+        "alternateAnswers": ["caffeine free coca cola", "caffeine free coke", "caffeine-free", "caffeine free coca-cola"]
+      },
+      {
+        "category": "NETWORKING",
+        "question": "If your internet speed is 80 Megabits per second, how many Megabytes can you theoretically download in one second?",
+        "answer": "10",
+        "alternateAnswers": ["10 megabytes", "10mb", "10 mb", "10 megabyte"]
+      }
+    ]
   }
 ]
