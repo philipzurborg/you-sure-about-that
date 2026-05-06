@@ -1857,5 +1857,29 @@
         "alternateAnswers": ["10 megabytes", "10mb", "10 mb", "10 megabyte"]
       }
     ]
+  },
+  {
+    "day": 76,
+    "date": "2026-05-06",
+    "questions": [
+      {
+        "category": "HIP HOP",
+        "question": "This group was founded by DJ Paul, Lord Infamous, and Juicy J.",
+        "answer": "Three 6 Mafia",
+        "alternateAnswers": ["3 6 mafia", "36 mafia", "three six mafia", "3 six mafia"]
+      },
+      {
+        "category": "HISTORY",
+        "question": "The Gregorian calendar replaced what previous calendar?",
+        "answer": "The Julian Calendar",
+        "alternateAnswers": ["julian", "julian calendar"]
+      },
+      {
+        "category": "ANIMATION",
+        "question": "What instrument does Lisa Simpson play?",
+        "answer": "Saxophone",
+        "alternateAnswers": ["the saxophone", "alto saxophone", "sax"]
+      }
+    ]
   }
 ]
