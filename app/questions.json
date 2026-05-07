@@ -1881,5 +1881,29 @@
         "alternateAnswers": ["the saxophone", "alto saxophone", "sax"]
       }
     ]
+  },
+  {
+    "day": 77,
+    "date": "2026-05-07",
+    "questions": [
+      {
+        "category": "US PRESIDENTS",
+        "question": "What year was George Washington elected president?",
+        "answer": "1788",
+        "alternateAnswers": ["1789"]
+      },
+      {
+        "category": "FOOD AND BEV",
+        "question": "What is the term for the culinary process where large cuts of beef are stored in a highly controlled environment, without protective packaging for several weeks or months before being trimmed and portioned into steaks?",
+        "answer": "Dry aging",
+        "alternateAnswers": ["dry-aged", "dry aged", "dry-aging", "dry age"]
+      },
+      {
+        "category": "TRAVEL",
+        "question": "Where is the eastern terminus of Route 66?",
+        "answer": "Chicago, Illinois",
+        "alternateAnswers": ["chicago", "chicago il", "chicago illinois"]
+      }
+    ]
   }
 ]
