@@ -1905,5 +1905,29 @@
         "alternateAnswers": ["chicago", "chicago il", "chicago illinois"]
       }
     ]
+  },
+  {
+    "day": 78,
+    "date": "2026-05-08",
+    "questions": [
+      {
+        "category": "NAME THAT BASEBALL PLAYER",
+        "question": "St. Louis Cardinals' everyday shortstop.",
+        "answer": "Masyn Winn",
+        "alternateAnswers": ["winn", "masyn"]
+      },
+      {
+        "category": "THE ACADEMY AWARDS",
+        "question": "How many movies are nominated for Best Picture at the Oscars?",
+        "answer": "10",
+        "alternateAnswers": ["ten"]
+      },
+      {
+        "category": "THEME PARKS",
+        "question": "What is the name of Disney's second theme park across from Disneyland?",
+        "answer": "Disney California Adventure",
+        "alternateAnswers": ["california adventure", "dca"]
+      }
+    ]
   }
 ]
