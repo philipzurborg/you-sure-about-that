@@ -1929,5 +1929,29 @@
         "alternateAnswers": ["california adventure", "dca"]
       }
     ]
+  },
+  {
+    "day": 79,
+    "date": "2026-05-09",
+    "questions": [
+      {
+        "category": "GEOGRAPHY",
+        "question": "What US state borders the most other states? We'll accept either of the two answers.",
+        "answer": "Tennessee",
+        "alternateAnswers": ["missouri"]
+      },
+      {
+        "category": "MOVIES",
+        "question": "What was the title of Christopher Nolan's debut film?",
+        "answer": "Following",
+        "alternateAnswers": ["following 1998"]
+      },
+      {
+        "category": "THE CALENDAR",
+        "question": "When is the next leap year?",
+        "answer": "2028",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
