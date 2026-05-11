@@ -1953,5 +1953,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 81,
+    "date": "2026-05-11",
+    "questions": [
+      {
+        "category": "CIVICS",
+        "question": "How many senators sat in the 1st US Congress?",
+        "answer": "26",
+        "alternateAnswers": ["twenty six", "twenty-six"]
+      },
+      {
+        "category": "FILM HISTORY",
+        "question": "1917's The Gulf Between was notable for being the first film to use what process that would define the look of the golden age of Hollywood?",
+        "answer": "Technicolor",
+        "alternateAnswers": ["technicolor process"]
+      },
+      {
+        "category": "ASTRONOMY",
+        "question": "A star's life begins as a giant molecular cloud known as what?",
+        "answer": "Protostar",
+        "alternateAnswers": ["a protostar", "nebula", "a nebula"]
+      }
+    ]
   }
 ]
