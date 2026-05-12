@@ -1977,5 +1977,29 @@
         "alternateAnswers": ["a protostar", "nebula", "a nebula"]
       }
     ]
+  },
+  {
+    "day": 82,
+    "date": "2026-05-12",
+    "questions": [
+      {
+        "category": "HOW'S YOUR FRENCH?",
+        "question": "What does S'il vous plaît mean in English?",
+        "answer": "Please",
+        "alternateAnswers": ["if you please"]
+      },
+      {
+        "category": "POPTIMISM",
+        "question": "What was the highest charting song from Sabrina Carpenter's latest album 'Man's Best Friend'?",
+        "answer": "Manchild",
+        "alternateAnswers": ["man child"]
+      },
+      {
+        "category": "TODAY IN HISTORY",
+        "question": "2008: What kind of natural disaster struck the Sichuan province of China, resulting in one of the deadliest events in recent history?",
+        "answer": "Earthquake",
+        "alternateAnswers": ["an earthquake", "sichuan earthquake", "earthquake disaster"]
+      }
+    ]
   }
 ]
