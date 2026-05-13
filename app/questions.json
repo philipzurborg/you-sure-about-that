@@ -2001,5 +2001,29 @@
         "alternateAnswers": ["an earthquake", "sichuan earthquake", "earthquake disaster"]
       }
     ]
+  },
+  {
+    "day": 83,
+    "date": "2026-05-13",
+    "questions": [
+      {
+        "category": "A LOT TO CHEW ON",
+        "question": "What is the name for the eight teeth located at the very front of your mouth, primarily designed for shearing and cutting food into smaller, manageable pieces?",
+        "answer": "Incisors",
+        "alternateAnswers": ["incisor", "the incisors", "incisor teeth"]
+      },
+      {
+        "category": "HIP HOP",
+        "question": "YoungBoy Never Broke Again changed his name largely due to legal and trademark issues with what association?",
+        "answer": "The NBA",
+        "alternateAnswers": ["nba", "national basketball association", "the national basketball association"]
+      },
+      {
+        "category": "HEISTS",
+        "question": "The most cash stolen in a single robbery occurred on March 31, 2024 when thieves broke through the roof of a GardaWorld facility and cracked the vault without triggering any alarms. It's now known as the what holiday heist?",
+        "answer": "Easter",
+        "alternateAnswers": ["easter heist", "easter holiday heist", "easter sunday"]
+      }
+    ]
   }
 ]
