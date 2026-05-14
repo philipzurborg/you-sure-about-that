@@ -2025,5 +2025,29 @@
         "alternateAnswers": ["easter heist", "easter holiday heist", "easter sunday"]
       }
     ]
+  },
+  {
+    "day": 84,
+    "date": "2026-05-14",
+    "questions": [
+      {
+        "category": "TRAINS",
+        "question": "What city has the busiest subway system in the world?",
+        "answer": "Tokyo",
+        "alternateAnswers": ["tokyo japan", "tokyo, japan"]
+      },
+      {
+        "category": "EVERY FOUR YEARS",
+        "question": "What country will host the 2032 Summer Olympics?",
+        "answer": "Australia",
+        "alternateAnswers": []
+      },
+      {
+        "category": "COOKING",
+        "question": "When cooking, what is the term for a mixture of two liquids that would normally resist staying together?",
+        "answer": "Emulsion",
+        "alternateAnswers": ["an emulsion"]
+      }
+    ]
   }
 ]
