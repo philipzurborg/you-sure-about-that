@@ -2049,5 +2049,29 @@
         "alternateAnswers": ["an emulsion"]
       }
     ]
+  },
+  {
+    "day": 85,
+    "date": "2026-05-15",
+    "questions": [
+      {
+        "category": "LET'S BE FRANK",
+        "question": "In 2018, this man — mostly known for TV — acquired the entire Frank Sinatra music archive. Who is he?",
+        "answer": "Seth MacFarlane",
+        "alternateAnswers": ["seth macfarlane", "seth mc farlane", "macfarlane"]
+      },
+      {
+        "category": "ANIMATION",
+        "question": "The Minions movies follow which three protagonist Minions?",
+        "answer": "Stuart, Kevin, and Bob",
+        "alternateAnswers": ["stuart kevin bob", "kevin stuart bob", "bob kevin stuart", "bob stuart kevin", "kevin bob stuart", "stuart bob kevin", "stuart kevin and bob", "kevin stuart and bob"]
+      },
+      {
+        "category": "BEST SELLERS",
+        "question": "In 2010 she wrote, directed, and starred in an acclaimed micro-budget film called Tiny Furniture. In 2026, her memoir is all over the best seller charts. Who is she?",
+        "answer": "Lena Dunham",
+        "alternateAnswers": ["dunham"]
+      }
+    ]
   }
 ]
