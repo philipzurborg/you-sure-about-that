@@ -2073,5 +2073,29 @@
         "alternateAnswers": ["dunham"]
       }
     ]
+  },
+  {
+    "day": 86,
+    "date": "2026-05-16",
+    "questions": [
+      {
+        "category": "AMERICAN CITIES",
+        "question": "For what major event were LA's iconic palm trees planted?",
+        "answer": "The Olympics",
+        "alternateAnswers": ["olympics", "the 1932 olympics", "1932 olympics", "the summer olympics", "summer olympics"]
+      },
+      {
+        "category": "AMERICAN STATES",
+        "question": "What is the flattest state in the US?",
+        "answer": "Florida",
+        "alternateAnswers": []
+      },
+      {
+        "category": "AMERICAN TERRITORIES",
+        "question": "What is the southernmost US territory?",
+        "answer": "American Samoa",
+        "alternateAnswers": ["samoa"]
+      }
+    ]
   }
 ]
