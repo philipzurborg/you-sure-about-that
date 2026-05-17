@@ -2097,5 +2097,29 @@
         "alternateAnswers": ["samoa"]
       }
     ]
+  },
+  {
+    "day": 87,
+    "date": "2026-05-17",
+    "questions": [
+      {
+        "category": "COLLEGE CORNER",
+        "question": "This pattern became synonymous with the University of Alabama in honor of Bear Bryant's iconic fedora. What is it?",
+        "answer": "Houndstooth",
+        "alternateAnswers": ["hounds tooth", "hound's tooth", "houndstooth pattern"]
+      },
+      {
+        "category": "STATE CAPITALS",
+        "question": "What is the capital of Delaware?",
+        "answer": "Dover",
+        "alternateAnswers": []
+      },
+      {
+        "category": "UNUSUAL MEASUREMENTS",
+        "question": "How many items are in a score?",
+        "answer": "20",
+        "alternateAnswers": ["twenty"]
+      }
+    ]
   }
 ]
