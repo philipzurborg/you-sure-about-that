@@ -2121,5 +2121,29 @@
         "alternateAnswers": ["twenty"]
       }
     ]
+  },
+  {
+    "day": 88,
+    "date": "2026-05-18",
+    "questions": [
+      {
+        "category": "GOOD BONES",
+        "question": "The temporal bone houses the organs for what sense?",
+        "answer": "Hearing",
+        "alternateAnswers": ["sound", "hearing and balance", "balance and hearing"]
+      },
+      {
+        "category": "ON THIS DAY IN HISTORY",
+        "question": "1969: This mission launched on this day, serving as the last dress rehearsal before the moon landing. What was it called?",
+        "answer": "Apollo 10",
+        "alternateAnswers": ["apollo ten"]
+      },
+      {
+        "category": "FILM FRANCHISES",
+        "question": "How many films have there been in the Planet of the Apes franchise?",
+        "answer": "10",
+        "alternateAnswers": ["ten"]
+      }
+    ]
   }
 ]
