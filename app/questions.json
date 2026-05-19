@@ -2145,5 +2145,29 @@
         "alternateAnswers": ["ten"]
       }
     ]
+  },
+  {
+    "day": 89,
+    "date": "2026-05-19",
+    "questions": [
+      {
+        "category": "US HISTORY",
+        "question": "The Pony Express ran from California to what state?",
+        "answer": "Missouri",
+        "alternateAnswers": ["st. joseph missouri", "saint joseph missouri", "st joseph missouri"]
+      },
+      {
+        "category": "CITY NICKNAMES",
+        "question": "This city was originally founded as Gastown. What is it called today?",
+        "answer": "Vancouver",
+        "alternateAnswers": ["vancouver canada", "vancouver bc", "vancouver british columbia"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "Bill Monroe, a mandolinist, singer, and songwriter, is widely considered the father of what musical genre that took off in Appalachia?",
+        "answer": "Bluegrass",
+        "alternateAnswers": ["bluegrass music"]
+      }
+    ]
   }
 ]
