@@ -2169,5 +2169,29 @@
         "alternateAnswers": ["bluegrass music"]
       }
     ]
+  },
+  {
+    "day": 90,
+    "date": "2026-05-20",
+    "questions": [
+      {
+        "category": "OFF THE FIELD",
+        "question": "This former Minnesota Vikings' Purple People Eater went on to serve on the Minnesota Supreme Court. Who is he?",
+        "answer": "Alan Page",
+        "alternateAnswers": ["page"]
+      },
+      {
+        "category": "US HISTORY",
+        "question": "On April 30th, 1789, George Washington took his oath of office in what city, which served as the United States capital at the time?",
+        "answer": "New York City",
+        "alternateAnswers": ["new york", "new york new york", "nyc", "new york ny"]
+      },
+      {
+        "category": "MUSIC",
+        "question": "Idlewild South was the second album from this band, named for the ranch in Georgia where they hung out and rehearsed. Who are they?",
+        "answer": "The Allman Brothers Band",
+        "alternateAnswers": ["allman brothers band", "the allman brothers", "allman brothers"]
+      }
+    ]
   }
 ]
