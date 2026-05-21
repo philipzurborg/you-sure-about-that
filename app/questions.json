@@ -2193,5 +2193,29 @@
         "alternateAnswers": ["allman brothers band", "the allman brothers", "allman brothers"]
       }
     ]
+  },
+  {
+    "day": 91,
+    "date": "2026-05-21",
+    "questions": [
+      {
+        "category": "SMALL TALK",
+        "question": "Let's talk about the weather: what is the name for a sustained, high-speed wind that officially clocks in between 39 and 46 mph?",
+        "answer": "Gale",
+        "alternateAnswers": ["gale force", "gale force wind", "a gale"]
+      },
+      {
+        "category": "DID YOU EAT YOUR VEGETABLES?",
+        "question": "Translating to \"big root\" in Japanese, this large winter radish is native to East Asia and commonly used in Japanese, Vietnamese, and Chinese cooking. What is it?",
+        "answer": "Daikon",
+        "alternateAnswers": ["daikon radish", "a daikon"]
+      },
+      {
+        "category": "CIVICS",
+        "question": "What is the term length for each official federal Congress?",
+        "answer": "2 years",
+        "alternateAnswers": ["two years", "2", "two"]
+      }
+    ]
   }
 ]
