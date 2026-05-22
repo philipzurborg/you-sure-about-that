@@ -2217,5 +2217,29 @@
         "alternateAnswers": ["two years", "2", "two"]
       }
     ]
+  },
+  {
+    "day": 92,
+    "date": "2026-05-22",
+    "questions": [
+      {
+        "category": "CHANGE YOUR TOON",
+        "question": "This anime follows the adventures of Monkey D. Luffy. What is it called?",
+        "answer": "One Piece",
+        "alternateAnswers": ["one-piece"]
+      },
+      {
+        "category": "DEBUT FEATURES",
+        "question": "Wes Anderson and Owen Wilson co-wrote Anderson's debut feature film. What was it titled?",
+        "answer": "Bottle Rocket",
+        "alternateAnswers": ["bottle rocket 1996"]
+      },
+      {
+        "category": "ON THIS DAY IN HISTORY",
+        "question": "1804: The Corps of Discovery officially departed from St. Charles, Missouri. Who led the expedition?",
+        "answer": "Lewis and Clark",
+        "alternateAnswers": ["meriwether lewis and william clark", "william clark and meriwether lewis", "clark and lewis"]
+      }
+    ]
   }
 ]
