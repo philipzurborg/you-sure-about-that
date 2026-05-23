@@ -2241,5 +2241,29 @@
         "alternateAnswers": ["meriwether lewis and william clark", "william clark and meriwether lewis", "clark and lewis"]
       }
     ]
+  },
+  {
+    "day": 93,
+    "date": "2026-05-23",
+    "questions": [
+      {
+        "category": "HOLY COW",
+        "question": "How many chambers are in a cow's stomach?",
+        "answer": "4",
+        "alternateAnswers": ["four"]
+      },
+      {
+        "category": "SEINFELD",
+        "question": "What was the name of Jerry's dentist, portrayed by Bryan Cranston?",
+        "answer": "Tim Whatley",
+        "alternateAnswers": ["whatley", "dr whatley", "dr. whatley", "timothy whatley"]
+      },
+      {
+        "category": "NAME THE BAND FROM THE SONG",
+        "question": "What band recorded the song \"Save It for Later\"?",
+        "answer": "The English Beat",
+        "alternateAnswers": ["english beat", "the beat"]
+      }
+    ]
   }
 ]
