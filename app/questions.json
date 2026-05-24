@@ -2265,5 +2265,29 @@
         "alternateAnswers": ["english beat", "the beat"]
       }
     ]
+  },
+  {
+    "day": 94,
+    "date": "2026-05-24",
+    "questions": [
+      {
+        "category": "MAY FLOWERS",
+        "question": "What is the name for the rare botanical phenomenon where an unusually high concentration of wildflowers all germinate and blossom at the same time?",
+        "answer": "Superbloom",
+        "alternateAnswers": ["super bloom", "a superbloom", "a super bloom"]
+      },
+      {
+        "category": "PODCASTING HISTORY",
+        "question": "Serial was the first blockbuster podcast. Who hosted the first season?",
+        "answer": "Sarah Koenig",
+        "alternateAnswers": ["koenig"]
+      },
+      {
+        "category": "VIDEO GAMES",
+        "question": "In the Halo series, what is the title of the killstreak award for 10 consecutive kills?",
+        "answer": "Killing Frenzy",
+        "alternateAnswers": ["a killing frenzy"]
+      }
+    ]
   }
 ]
