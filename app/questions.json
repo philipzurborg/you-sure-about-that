@@ -2289,5 +2289,29 @@
         "alternateAnswers": ["a killing frenzy"]
       }
     ]
+  },
+  {
+    "day": 95,
+    "date": "2026-05-25",
+    "questions": [
+      {
+        "category": "TOPOGRAPHY",
+        "question": "What is the name for a partially enclosed coastal body of water where freshwater from rivers and streams mixes with salty ocean water?",
+        "answer": "Estuary",
+        "alternateAnswers": ["an estuary", "estuaries"]
+      },
+      {
+        "category": "NAME THE BAND FROM THE MEMBER",
+        "question": "David Gilmour is a member of what band?",
+        "answer": "Pink Floyd",
+        "alternateAnswers": []
+      },
+      {
+        "category": "TYCOONS",
+        "question": "John D. Rockefeller made his fortune working with what product?",
+        "answer": "Oil",
+        "alternateAnswers": ["petroleum", "crude oil"]
+      }
+    ]
   }
 ]
