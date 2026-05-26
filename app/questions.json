@@ -2313,5 +2313,29 @@
         "alternateAnswers": ["petroleum", "crude oil"]
       }
     ]
+  },
+  {
+    "day": 96,
+    "date": "2026-05-26",
+    "questions": [
+      {
+        "category": "CHILDREN'S BOOKS",
+        "question": "Who authored Where the Wild Things Are?",
+        "answer": "Maurice Sendak",
+        "alternateAnswers": ["sendak"]
+      },
+      {
+        "category": "ON THIS DAY",
+        "question": "1868: The U.S. Senate fell just one vote short of the two-thirds majority required to convict what President on impeachment charges, acquitting him of violating the Tenure of Office Act?",
+        "answer": "Andrew Johnson",
+        "alternateAnswers": ["johnson"]
+      },
+      {
+        "category": "GRAMMAR",
+        "question": "What is the plural of Attorney General?",
+        "answer": "Attorneys General",
+        "alternateAnswers": ["attorneys general"]
+      }
+    ]
   }
 ]
