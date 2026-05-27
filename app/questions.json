@@ -2337,5 +2337,29 @@
         "alternateAnswers": ["attorneys general"]
       }
     ]
+  },
+  {
+    "day": 97,
+    "date": "2026-05-27",
+    "questions": [
+      {
+        "category": "BODIES OF WATER",
+        "question": "What is the largest freshwater lake in the world?",
+        "answer": "Lake Superior",
+        "alternateAnswers": ["superior"]
+      },
+      {
+        "category": "PRESIDENTIAL FAMILIES",
+        "question": "Name the only president since Truman to have an only child.",
+        "answer": "Bill Clinton",
+        "alternateAnswers": ["clinton", "william clinton"]
+      },
+      {
+        "category": "HARRY POTTER",
+        "question": "He portrayed Nearly Headless Nick in the first two films.",
+        "answer": "John Cleese",
+        "alternateAnswers": ["cleese"]
+      }
+    ]
   }
 ]
