@@ -2361,5 +2361,29 @@
         "alternateAnswers": ["cleese"]
       }
     ]
+  },
+  {
+    "day": 98,
+    "date": "2026-05-28",
+    "questions": [
+      {
+        "category": "BONDS",
+        "question": "What was the title of the first James Bond film?",
+        "answer": "Dr. No",
+        "alternateAnswers": ["dr no", "doctor no"]
+      },
+      {
+        "category": "KEEPING SCORES",
+        "question": "What band performed the title song for Live and Let Die?",
+        "answer": "Wings",
+        "alternateAnswers": []
+      },
+      {
+        "category": "BOOK INSPIRATIONS",
+        "question": "This iconic actor and late-in-life heavy metal artist's time in the British secret service is rumored to have served as Ian Fleming's inspiration for the character of James Bond.",
+        "answer": "Christopher Lee",
+        "alternateAnswers": ["lee"]
+      }
+    ]
   }
 ]
