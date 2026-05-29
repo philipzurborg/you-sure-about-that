@@ -2385,5 +2385,29 @@
         "alternateAnswers": ["lee"]
       }
     ]
+  },
+  {
+    "day": 99,
+    "date": "2026-05-29",
+    "questions": [
+      {
+        "category": "GRATEFUL DEAD",
+        "question": "This midwestern keyboardist joined as a temporary member of the Dead in the '90s after the death of Brent Mydland.",
+        "answer": "Bruce Hornsby",
+        "alternateAnswers": ["hornsby"]
+      },
+      {
+        "category": "THE STUDIO SYSTEM",
+        "question": "This studio served as the distributor for Iron Man (2008), Thor (2011), and Captain America (2011).",
+        "answer": "Paramount",
+        "alternateAnswers": ["paramount pictures"]
+      },
+      {
+        "category": "ENGLISH SPORTS",
+        "question": "How many defensive players does a team have on the field during a cricket match?",
+        "answer": "11",
+        "alternateAnswers": ["eleven"]
+      }
+    ]
   }
 ]
