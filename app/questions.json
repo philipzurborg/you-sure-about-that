@@ -2409,5 +2409,29 @@
         "alternateAnswers": ["eleven"]
       }
     ]
+  },
+  {
+    "day": 100,
+    "date": "2026-05-30",
+    "questions": [
+      {
+        "category": "GAME SHOWS",
+        "question": "This American game show hosted by Bob Saget was adapted into an interactive live video game on Xbox Live.",
+        "answer": "1 vs 100",
+        "alternateAnswers": ["1 vs. 100", "one vs 100", "one vs. one hundred", "1 versus 100"]
+      },
+      {
+        "category": "GETTING OLD",
+        "question": "What is the nickname for someone who turns 100 years old?",
+        "answer": "Centenarian",
+        "alternateAnswers": []
+      },
+      {
+        "category": "2020S MUSIC",
+        "question": "This band is a hyper-pop collaboration between Dylan Brady and Laura Les.",
+        "answer": "100 Gecs",
+        "alternateAnswers": ["gecs"]
+      }
+    ]
   }
 ]
