@@ -2433,5 +2433,29 @@
         "alternateAnswers": ["gecs"]
       }
     ]
+  },
+  {
+    "day": 101,
+    "date": "2026-05-31",
+    "questions": [
+      {
+        "category": "IT'S THE 90S!",
+        "question": "This phrase was a staple of VHS rental etiquette.",
+        "answer": "Be Kind, Please Rewind",
+        "alternateAnswers": ["be kind rewind", "be kind please rewind", "please rewind", "rewind"]
+      },
+      {
+        "category": "SPACE FLIGHT DISASTERS",
+        "question": "Which two space shuttles exploded during their missions?",
+        "answer": "Challenger and Columbia",
+        "alternateAnswers": ["columbia and challenger", "challenger columbia", "columbia challenger"]
+      },
+      {
+        "category": "POKEMON!",
+        "question": "What is the name of Poliwag's final evolution?",
+        "answer": "Poliwrath",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
