@@ -2457,5 +2457,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 102,
+    "date": "2026-06-01",
+    "questions": [
+      {
+        "category": "IN THE NEWS",
+        "question": "On May 20th, New York City mayor Zohran Mamdani unveiled the beginning of his plan to put a public, nonprofit one of these in all five boroughs.",
+        "answer": "Grocery store",
+        "alternateAnswers": ["supermarket", "grocery", "grocer", "grocery stores"]
+      },
+      {
+        "category": "REGIONALS",
+        "question": "What is the largest regional grocery store chain?",
+        "answer": "Publix",
+        "alternateAnswers": []
+      },
+      {
+        "category": "THE FROZEN AISLE",
+        "question": "In 1957 the Celentano Brothers of Newark, New Jersey were the first to put this easy dinner staple on shelves in grocery stores.",
+        "answer": "Frozen Pizza",
+        "alternateAnswers": ["pizza"]
+      }
+    ]
   }
 ]
