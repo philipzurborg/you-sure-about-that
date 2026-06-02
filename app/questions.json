@@ -2481,5 +2481,29 @@
         "alternateAnswers": ["pizza"]
       }
     ]
+  },
+  {
+    "day": 103,
+    "date": "2026-06-02",
+    "questions": [
+      {
+        "category": "US CITIES",
+        "question": "What is the northernmost major US city? (500,000+ population)",
+        "answer": "Seattle",
+        "alternateAnswers": []
+      },
+      {
+        "category": "MOVIES",
+        "question": "This was the first movie where Al Pacino and Robert De Niro shared a scene.",
+        "answer": "Heat",
+        "alternateAnswers": []
+      },
+      {
+        "category": "BARK AT THE MOON",
+        "question": "What is the nickname for June's full moon?",
+        "answer": "Strawberry Moon",
+        "alternateAnswers": ["strawberry", "honey moon", "honey", "rose moon", "rose", "hot moon", "hot", "planting moon", "planting"]
+      }
+    ]
   }
 ]
