@@ -2505,5 +2505,29 @@
         "alternateAnswers": ["strawberry", "honey moon", "honey", "rose moon", "rose", "hot moon", "hot", "planting moon", "planting"]
       }
     ]
+  },
+  {
+    "day": 104,
+    "date": "2026-06-03",
+    "questions": [
+      {
+        "category": "TOY STORY",
+        "question": "He's the man behind \"You've Got a Friend in Me\".",
+        "answer": "Randy Newman",
+        "alternateAnswers": ["newman"]
+      },
+      {
+        "category": "TV ACTORS",
+        "question": "He's the actor behind Jerry's neighbor Newman.",
+        "answer": "Wayne Knight",
+        "alternateAnswers": ["knight"]
+      },
+      {
+        "category": "NAME THE AIRPORT FROM ITS CODE",
+        "question": "MDW",
+        "answer": "Chicago Midway",
+        "alternateAnswers": ["midway", "midway airport", "chicago midway airport", "midway international"]
+      }
+    ]
   }
 ]
