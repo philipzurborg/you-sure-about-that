@@ -2529,5 +2529,29 @@
         "alternateAnswers": ["midway", "midway airport", "chicago midway airport", "midway international"]
       }
     ]
+  },
+  {
+    "day": 105,
+    "date": "2026-06-04",
+    "questions": [
+      {
+        "category": "GOOD COOKS",
+        "question": "With 31, this late French chef still holds the record for most Michelin stars awarded in his lifetime, with a 10-star lead.",
+        "answer": "Joël Robuchon",
+        "alternateAnswers": ["joel robuchon", "robuchon"]
+      },
+      {
+        "category": "FAST CAR",
+        "question": "In NASCAR, how many slots are there each race for non-chartered race teams?",
+        "answer": "4",
+        "alternateAnswers": ["four"]
+      },
+      {
+        "category": "CAMERA WORK",
+        "question": "What component of a camera controls depth of field?",
+        "answer": "Aperture",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
