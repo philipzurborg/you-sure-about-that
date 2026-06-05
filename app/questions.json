@@ -2553,5 +2553,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 106,
+    "date": "2026-06-05",
+    "questions": [
+      {
+        "category": "GAME SHOWS",
+        "question": "Rob Lowe hosts what trivia game show on Fox?",
+        "answer": "The Floor",
+        "alternateAnswers": []
+      },
+      {
+        "category": "HOW'S YOUR MATH?",
+        "question": "x is 4 less than y. y is twice as much as z. z is 10. What is (x/4) + (y*z)?",
+        "answer": "204",
+        "alternateAnswers": ["two hundred four", "two hundred and four"]
+      },
+      {
+        "category": "SUMMERTIME",
+        "question": "What day is the summer solstice in Argentina?",
+        "answer": "December 21st",
+        "alternateAnswers": ["december 21", "12/21", "dec 21st", "dec 21", "december 21st"]
+      }
+    ]
   }
 ]
