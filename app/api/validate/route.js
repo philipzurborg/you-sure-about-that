@@ -165,6 +165,51 @@ Reply YES or NO only. Nothing else.`,
   }
 }
 
+// ─── Bank-type question validation ───────────────────────────────────────────
+
+// Returns true if a single submitted item matches a bank entry (no AI fallback)
+function matchesBankEntry(item, entry) {
+  return !!(
+    tierExact(item, entry, []) ||
+    tierNormalized(item, entry, []) ||
+    tierKeyword(item, entry, []) ||
+    tierFuzzy(item, entry, []) ||
+    tierWordSet(item, entry, [])
+  );
+}
+
+// Validates a comma-separated user answer against an answer bank.
+// Rules:
+//   - Fewer than requiredCount valid matches → incorrect
+//   - More than requiredCount items submitted AND any are wrong → incorrect (spam prevention)
+//   - Otherwise → correct
+function validateBank(userAnswer, answerBank, requiredCount) {
+  const items = userAnswer.split(/[,;|\n]+/).map(s => s.trim()).filter(Boolean);
+
+  // Track which bank entries have been claimed (deduplication)
+  const claimedIndices = new Set();
+  let unmatchedCount = 0;
+
+  for (const item of items) {
+    let matched = false;
+    for (let i = 0; i < answerBank.length; i++) {
+      if (claimedIndices.has(i)) continue;
+      if (matchesBankEntry(item, answerBank[i])) {
+        claimedIndices.add(i);
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) unmatchedCount++;
+  }
+
+  const validCount = claimedIndices.size;
+
+  if (validCount < requiredCount) return { correct: false, method: "bank" };
+  if (items.length > requiredCount && unmatchedCount > 0) return { correct: false, method: "bank" };
+  return { correct: true, method: "bank" };
+}
+
 // ─── Route handler ────────────────────────────────────────────────────────────
 
 export async function POST(request) {
@@ -175,10 +220,14 @@ export async function POST(request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { userAnswer, correctAnswer, alternateAnswers, question, category } = body;
+  const { userAnswer, correctAnswer, alternateAnswers, question, category, type, answerBank, requiredCount } = body;
 
   if (!userAnswer || !correctAnswer || !Array.isArray(alternateAnswers)) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  if (type === "bank" && Array.isArray(answerBank) && requiredCount) {
+    return NextResponse.json(validateBank(userAnswer, answerBank, requiredCount));
   }
 
   const result =

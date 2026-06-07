@@ -2601,5 +2601,32 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 108,
+    "date": "2026-06-07",
+    "questions": [
+      {
+        "category": "ACROSS AMERICA",
+        "question": "Between 1876 and 1984, 12 cities hosted the World's Fair. Name 5.",
+        "type": "bank",
+        "answerBank": ["Philadelphia", "Chicago", "St. Louis", "Portland", "Seattle", "San Francisco", "San Diego", "New York", "San Antonio", "Spokane", "Knoxville", "New Orleans"],
+        "requiredCount": 5,
+        "answer": "Philadelphia · Chicago · St. Louis · Portland · Seattle · San Francisco · San Diego · New York · San Antonio · Spokane · Knoxville · New Orleans",
+        "alternateAnswers": []
+      },
+      {
+        "category": "BRAND SAFE",
+        "question": "Aspirin, Escalator, and Dumpster lost this, becoming product names rather than specific brands.",
+        "answer": "Trademark",
+        "alternateAnswers": ["their trademark", "trademark status", "trademark protection"]
+      },
+      {
+        "category": "US HISTORY",
+        "question": "What was the 14th state to join the union?",
+        "answer": "Vermont",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]

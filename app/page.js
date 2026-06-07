@@ -312,16 +312,22 @@ export default function App() {
 
     try {
       const q = gameData.questions[questionIndex];
+      const payload = {
+        userAnswer: answer.trim(),
+        correctAnswer: q.answer,
+        alternateAnswers: q.alternateAnswers,
+        question: q.question,
+        category: q.category,
+      };
+      if (q.type === "bank") {
+        payload.type = "bank";
+        payload.answerBank = q.answerBank;
+        payload.requiredCount = q.requiredCount;
+      }
       const res = await fetch("/api/validate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          userAnswer: answer.trim(),
-          correctAnswer: q.answer,
-          alternateAnswers: q.alternateAnswers,
-          question: q.question,
-          category: q.category,
-        }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       finalize(data.correct, false, data.method);
@@ -417,6 +423,7 @@ export default function App() {
             category={q.category}
             question={q.question}
             questionIndex={questionIndex}
+            bankHint={q.type === "bank" ? `Name ${q.requiredCount}, separated by commas` : null}
           />
         )}
         {phase === PHASES.INTER_RESULT && (
@@ -604,7 +611,7 @@ function WagerPhase({ wager, setWager, maxWager, handleWager, category, question
 }
 
 // ─── Question phase ───────────────────────────────────────────────────────────
-function QuestionPhase({ category, question, answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef, questionIndex }) {
+function QuestionPhase({ category, question, answer, setAnswer, checking, checkAnswer, wagerLocked, inputRef, questionIndex, bankHint }) {
   const [timeLeft, setTimeLeft]     = useState(TIMER_SECONDS);
   const [checkStage, setCheckStage] = useState(0);
   const timerRef = useRef(null);
@@ -655,6 +662,8 @@ function QuestionPhase({ category, question, answer, setAnswer, checking, checkA
         <div style={S.questionCategory}>{category}</div>
         <p style={S.questionText}>{question}</p>
       </div>
+
+      {bankHint && <div style={S.bankHint}>{bankHint}</div>}
 
       <div style={S.answerSection}>
         <div style={S.answerInputWrap}>
@@ -1000,6 +1009,8 @@ const S = {
   questionBox:     { background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "14px 16px 16px", display: "flex", flexDirection: "column", gap: 8 },
   questionCategory:{ fontFamily: "var(--display-font), sans-serif", fontSize: 22, color: "var(--giants-deep)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: 1 },
   questionText:    { fontFamily: "var(--body-font), sans-serif", fontSize: 17, fontWeight: 500, lineHeight: 1.55, color: "var(--cream-ink)" },
+
+  bankHint: { fontFamily: "var(--body-font), sans-serif", fontSize: 12, color: "var(--muted)", fontStyle: "italic", textAlign: "center" },
 
   answerSection:  { display: "flex", flexDirection: "column", gap: 8 },
   answerInputWrap:{ display: "flex", alignItems: "center", gap: 10, background: "var(--cream)", border: "2px solid var(--cream-2)", borderRadius: 14, padding: "8px 14px", ...bevelCream },
