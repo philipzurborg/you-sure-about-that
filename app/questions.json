@@ -2628,5 +2628,41 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 109,
+    "date": "2026-06-08",
+    "questions": [
+      {
+        "category": "US PRESIDENTS",
+        "question": "Since 1900 there have been eight presidents who went by First Name, Middle Initial, Last Name. Name 6 of them. (last names accepted)",
+        "type": "bank",
+        "answerBank": [
+          "Warren G. Harding",
+          "Franklin D. Roosevelt",
+          "Harry S. Truman",
+          "Dwight D. Eisenhower",
+          "John F. Kennedy",
+          "Lyndon B. Johnson",
+          "George W. Bush",
+          "Donald J. Trump"
+        ],
+        "requiredCount": 6,
+        "answer": "Harding · Roosevelt · Truman · Eisenhower · Kennedy · Johnson · Bush · Trump (any 6)",
+        "alternateAnswers": []
+      },
+      {
+        "category": "CHILDREN'S LITERATURE",
+        "question": "Published in 1961, this novel by Wilson Rawls follows a young boy named Billy who forges an inseparable bond with two dogs, Old Dan and Little Ann.",
+        "answer": "Where the Red Fern Grows",
+        "alternateAnswers": ["red fern grows", "where the red fern grows", "red fern"]
+      },
+      {
+        "category": "END OF AN ERA",
+        "question": "In 1979, the leader of Iran known as this title was overthrown, ending a dynasty of continuous monarchical rule that lasted for thousands of years.",
+        "answer": "Shah",
+        "alternateAnswers": ["the shah"]
+      }
+    ]
   }
 ]
