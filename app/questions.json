@@ -2635,7 +2635,7 @@
     "questions": [
       {
         "category": "US PRESIDENTS",
-        "question": "Since 1900 there have been eight presidents who went by First Name, Middle Initial, Last Name. Name 6 of them. (last names accepted)",
+        "question": "Since 1900 there have been eight presidents who went by First Name, Middle Initial, Last Name on their ballot. Name 6 of them. (last names accepted)",
         "type": "bank",
         "answerBank": [
           "Warren G. Harding",
