@@ -2664,5 +2664,29 @@
         "alternateAnswers": ["the shah"]
       }
     ]
+  },
+  {
+    "day": 110,
+    "date": "2026-06-09",
+    "questions": [
+      {
+        "category": "SAME SAME BUT DIFFERENT",
+        "question": "It's the unit of measure you'll find at Chuck E. Cheese and Anthropic.",
+        "answer": "Token",
+        "alternateAnswers": ["tokens"]
+      },
+      {
+        "category": "NAME THE ACTOR FROM THEIR CREDITS",
+        "question": "Game Night, The Post, The Master, Killers of the Flower Moon",
+        "answer": "Jesse Plemons",
+        "alternateAnswers": ["plemons"]
+      },
+      {
+        "category": "AV CLUB",
+        "question": "In a 5.1 audio system, the \"1\" notes the quantity of this type of speaker in the system.",
+        "answer": "Subwoofer",
+        "alternateAnswers": ["subwoofers"]
+      }
+    ]
   }
 ]
