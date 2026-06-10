@@ -2688,5 +2688,41 @@
         "alternateAnswers": ["subwoofers"]
       }
     ]
+  },
+  {
+    "day": 111,
+    "date": "2026-06-10",
+    "questions": [
+      {
+        "category": "AROUND THE LEAGUE",
+        "question": "Name four NFL teams whose name does not include a city.",
+        "type": "bank",
+        "answerBank": [
+          "Arizona Cardinals",
+          "Carolina Panthers",
+          "Minnesota Vikings",
+          "New England Patriots",
+          "New England",
+          "Tampa Bay Buccaneers",
+          "Tampa Bay",
+          "Tennessee Titans"
+        ],
+        "requiredCount": 4,
+        "answer": "Arizona Cardinals · Carolina Panthers · Minnesota Vikings · New England Patriots · Tampa Bay Buccaneers · Tennessee Titans (any 4)",
+        "alternateAnswers": []
+      },
+      {
+        "category": "IS THE POPE CATHOLIC?",
+        "question": "Name the longest-lived person to have been Pope, at 95 years old.",
+        "answer": "Benedict XVI",
+        "alternateAnswers": ["benedict", "pope benedict", "pope benedict xvi", "benedict 16"]
+      },
+      {
+        "category": "ROMAN NUMERALS",
+        "question": "This Roman numeral could refer to a Colts–Jets Super Bowl or The Search for Spock.",
+        "answer": "III",
+        "alternateAnswers": ["3", "three"]
+      }
+    ]
   }
 ]
