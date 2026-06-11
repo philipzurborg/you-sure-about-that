@@ -2724,5 +2724,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 112,
+    "date": "2026-06-11",
+    "questions": [
+      {
+        "category": "WORLD CAPITALS",
+        "question": "The first ever FIFA World Cup was held in Montevideo, capital of this country, in 1930.",
+        "answer": "Uruguay",
+        "alternateAnswers": []
+      },
+      {
+        "category": "WORLD CUP",
+        "question": "Which country holds the most World Cup championships?",
+        "answer": "Brazil",
+        "alternateAnswers": []
+      },
+      {
+        "category": "NFL STADIUMS",
+        "question": "MetLife Stadium, home to the New York Giants and Jets, will host the World Cup final. The old Giants Stadium has long been associated with a myth that who was buried underneath?",
+        "answer": "Jimmy Hoffa",
+        "alternateAnswers": ["hoffa"]
+      }
+    ]
   }
 ]
