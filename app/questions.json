@@ -2748,5 +2748,29 @@
         "alternateAnswers": ["hoffa"]
       }
     ]
+  },
+  {
+    "day": 113,
+    "date": "2026-06-12",
+    "questions": [
+      {
+        "category": "PASTA",
+        "question": "Commonly called \"bowtie\" pasta, these are squares pinched tightly in the middle. The center remains slightly firmer than the edges, creating a great texture for cold pasta salads or light cream sauces with peas and ham.",
+        "answer": "Farfalle",
+        "alternateAnswers": ["farfalle pasta", "bow tie pasta", "bowtie pasta", "bow tie", "bowtie"]
+      },
+      {
+        "category": "ACTORS",
+        "question": "This actor, whose career has included collaborations with Martin Scorsese, Christopher Nolan, and Baz Luhrmann among others, got his start acting in the film Critters 3 (1991).",
+        "answer": "Leonardo DiCaprio",
+        "alternateAnswers": ["dicaprio", "leo dicaprio", "leonardo"]
+      },
+      {
+        "category": "ON THE CALENDAR",
+        "question": "The Daylight Saving Time \"Fall Back\" occurs on what day each year?",
+        "answer": "The first Sunday in November",
+        "alternateAnswers": ["first sunday in november", "first sunday of november"]
+      }
+    ]
   }
 ]
