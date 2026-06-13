@@ -2772,5 +2772,29 @@
         "alternateAnswers": ["first sunday in november", "first sunday of november"]
       }
     ]
+  },
+  {
+    "day": 114,
+    "date": "2026-06-13",
+    "questions": [
+      {
+        "category": "THEIR LAST ROLE",
+        "question": "Paul Newman's last performance in a film was in what 2006 Disney feature?",
+        "answer": "Cars",
+        "alternateAnswers": []
+      },
+      {
+        "category": "TRANSPORTATION",
+        "question": "The Wright Brothers operated what kind of store while they experimented on their flying machines?",
+        "answer": "Bicycle Shop",
+        "alternateAnswers": ["bike shop", "bicycle store", "bike store", "bicycle repair shop", "bicycle"]
+      },
+      {
+        "category": "EARLY WEB",
+        "question": "Founded in Los Angeles in 1994 by Sky Dayton, what major 1990s ISP eschewed AOL's custom interface to give millions of users a direct connection to the open web?",
+        "answer": "EarthLink",
+        "alternateAnswers": ["earth link", "earthlink internet"]
+      }
+    ]
   }
 ]
