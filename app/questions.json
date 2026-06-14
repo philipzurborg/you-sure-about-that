@@ -2796,5 +2796,29 @@
         "alternateAnswers": ["earth link", "earthlink internet"]
       }
     ]
+  },
+  {
+    "day": 115,
+    "date": "2026-06-14",
+    "questions": [
+      {
+        "category": "TRAINS",
+        "question": "Which train has the longest route on New York's Subway?",
+        "answer": "A",
+        "alternateAnswers": ["a train", "the a train", "the a"]
+      },
+      {
+        "category": "WORLD CUP TEAMS",
+        "question": "This World Cup competing country's flag is an exact horizontal mirror of the Irish flag.",
+        "answer": "Ivory Coast",
+        "alternateAnswers": ["cote d'ivoire", "cote divoire", "ivory coast"]
+      },
+      {
+        "category": "WORLD GEOGRAPHY",
+        "question": "What is the only country to be named after a geographical feature?",
+        "answer": "Ecuador",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
