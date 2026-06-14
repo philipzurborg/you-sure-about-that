@@ -2817,7 +2817,7 @@
         "category": "WORLD GEOGRAPHY",
         "question": "What is the only country to be named after a geographical feature?",
         "answer": "Ecuador",
-        "alternateAnswers": []
+        "alternateAnswers": ["montenegro", "iceland", "greenland"]
       }
     ]
   }
