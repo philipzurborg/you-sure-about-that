@@ -2820,5 +2820,32 @@
         "alternateAnswers": ["montenegro", "iceland", "greenland"]
       }
     ]
+  },
+  {
+    "day": 116,
+    "date": "2026-06-15",
+    "questions": [
+      {
+        "category": "STATE NAMES",
+        "question": "Of the original 13 colonies, name two that were named after British royalty.",
+        "type": "bank",
+        "answerBank": ["New York", "North Carolina", "South Carolina", "Georgia", "Maryland", "Virginia"],
+        "requiredCount": 2,
+        "answer": "New York · North Carolina · South Carolina · Georgia · Maryland · Virginia (any 2)",
+        "alternateAnswers": []
+      },
+      {
+        "category": "WORLD CUP COUNTRIES",
+        "question": "Located on the northern coast along the Mediterranean Sea, what person is Egypt's second-largest city named for?",
+        "answer": "Alexander the Great",
+        "alternateAnswers": ["alexander", "alexander the great"]
+      },
+      {
+        "category": "JUST FOR LAUGHS",
+        "question": "This sketch comedy company was a springboard for names like Joan Rivers, Mike Myers, Steve Carell, and Tim Robinson.",
+        "answer": "Second City",
+        "alternateAnswers": ["the second city"]
+      }
+    ]
   }
 ]
