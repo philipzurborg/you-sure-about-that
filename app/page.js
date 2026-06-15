@@ -423,7 +423,7 @@ export default function App() {
             category={q.category}
             question={q.question}
             questionIndex={questionIndex}
-            bankHint={q.type === "bank" ? `Name ${q.requiredCount}, separated by commas` : null}
+            bankHint={q.type === "bank" ? `List ${q.requiredCount} answers, separated by commas (e.g. Answer 1, Answer 2)` : null}
           />
         )}
         {phase === PHASES.INTER_RESULT && (

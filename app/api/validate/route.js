@@ -178,13 +178,44 @@ function matchesBankEntry(item, entry) {
   );
 }
 
-// Validates a comma-separated user answer against an answer bank.
+// Strict match (exact/normalized/fuzzy only — no keyword/word-set) used for splitting heuristics
+function strictMatchesBankEntry(item, entry) {
+  return !!(tierExact(item, entry, []) || tierNormalized(item, entry, []) || tierFuzzy(item, entry, []));
+}
+
+// Validates a user answer against an answer bank.
 // Rules:
 //   - Fewer than requiredCount valid matches → incorrect
 //   - More than requiredCount items submitted AND any are wrong → incorrect (spam prevention)
 //   - Otherwise → correct
 function validateBank(userAnswer, answerBank, requiredCount) {
-  const items = userAnswer.split(/[,;|\n]+/).map(s => s.trim()).filter(Boolean);
+  // Split on explicit delimiters first
+  const primaryItems = userAnswer.split(/[,;|&\n]+|\s+and\s+/i).map(s => s.trim()).filter(Boolean);
+
+  // Expand each chunk: if it doesn't strictly match any bank entry, scan word-by-word
+  // left-to-right to pull out individual answers (handles "Georgia Virginia" → ["Georgia","Virginia"])
+  const items = [];
+  for (const part of primaryItems) {
+    if (answerBank.some(e => strictMatchesBankEntry(part, e))) {
+      items.push(part);
+      continue;
+    }
+    const words = part.split(/\s+/);
+    let i = 0;
+    while (i < words.length) {
+      let found = false;
+      for (let len = words.length - i; len >= 1; len--) {
+        const chunk = words.slice(i, i + len).join(" ");
+        if (answerBank.some(e => strictMatchesBankEntry(chunk, e))) {
+          items.push(chunk);
+          i += len;
+          found = true;
+          break;
+        }
+      }
+      if (!found) { items.push(words[i]); i++; }
+    }
+  }
 
   // Track which bank entries have been claimed (deduplication)
   const claimedIndices = new Set();
