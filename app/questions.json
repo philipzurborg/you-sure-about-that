@@ -2842,9 +2842,33 @@
       },
       {
         "category": "JUST FOR LAUGHS",
-        "question": "This sketch comedy company was a springboard for names like Joan Rivers, Mike Myers, Steve Carell, and Tim Robinson.",
+        "question": "This sketch comedy company was a springboard for names like Joan Rivers, Mike Myers, Steve Carrell, and Tim Robinson.",
         "answer": "Second City",
         "alternateAnswers": ["the second city"]
+      }
+    ]
+  },
+  {
+    "day": 117,
+    "date": "2026-06-16",
+    "questions": [
+      {
+        "category": "EATING GOOD",
+        "question": "This award is considered the highest honor for a chef (it's not a Michelin star).",
+        "answer": "James Beard Award",
+        "alternateAnswers": ["james beard", "beard award", "the james beard award"]
+      },
+      {
+        "category": "HOME FIELD",
+        "question": "What is the NFL's oldest currently-used dome stadium?",
+        "answer": "Superdome",
+        "alternateAnswers": ["the superdome", "caesars superdome", "saints", "new orleans", "louisiana superdome"]
+      },
+      {
+        "category": "WORLD CAPITALS",
+        "question": "What is the capital of Senegal?",
+        "answer": "Dakar",
+        "alternateAnswers": []
       }
     ]
   }
