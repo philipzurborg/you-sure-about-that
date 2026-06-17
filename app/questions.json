@@ -2871,5 +2871,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 118,
+    "date": "2026-06-17",
+    "questions": [
+      {
+        "category": "OVER/UNDER",
+        "question": "Joey Chestnut owns the record for the 4th of July Nathan's Hot Dog Eating Contest. Does his record sit OVER or UNDER 75 hot dogs?",
+        "answer": "Over",
+        "alternateAnswers": ["over 75", "over 75 hot dogs"]
+      },
+      {
+        "category": "STICKY WEATHER",
+        "question": "What is the most humid major city in America?",
+        "answer": "New Orleans",
+        "alternateAnswers": ["new orleans la", "new orleans louisiana"]
+      },
+      {
+        "category": "FATHER'S DAY",
+        "question": "In 1972, Father's Day became a nationally recognized legal holiday. Which president signed it into law?",
+        "answer": "Richard Nixon",
+        "alternateAnswers": ["nixon"]
+      }
+    ]
   }
 ]
