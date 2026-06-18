@@ -2895,5 +2895,29 @@
         "alternateAnswers": ["nixon"]
       }
     ]
+  },
+  {
+    "day": 119,
+    "date": "2026-06-18",
+    "questions": [
+      {
+        "category": "TONY TONY TONY",
+        "question": "This actor just won the Tony Award for Best Leading Actor in a Play for his performance as Roald Dahl in Giant.",
+        "answer": "John Lithgow",
+        "alternateAnswers": ["lithgow"]
+      },
+      {
+        "category": "FOOD",
+        "question": "This type of fruit — with thin skin, fleshy pulp, and large pits — comes into season around August each year.",
+        "answer": "Stone Fruit",
+        "alternateAnswers": ["stone fruits", "drupes"]
+      },
+      {
+        "category": "LEVEL UP",
+        "question": "The PlayStation 3 swapped what storage method for an internal HDD?",
+        "answer": "Memory Card",
+        "alternateAnswers": ["memory cards", "memory stick"]
+      }
+    ]
   }
 ]
