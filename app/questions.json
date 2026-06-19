@@ -2919,5 +2919,29 @@
         "alternateAnswers": ["memory cards", "memory stick"]
       }
     ]
+  },
+  {
+    "day": 120,
+    "date": "2026-06-19",
+    "questions": [
+      {
+        "category": "FOOTBALL",
+        "question": "How many FIFA World Cup titles has England won?",
+        "answer": "1",
+        "alternateAnswers": ["one"]
+      },
+      {
+        "category": "ON THIS DAY",
+        "question": "1846: The New York Knickerbockers played the first officially recorded game of what sport?",
+        "answer": "Baseball",
+        "alternateAnswers": []
+      },
+      {
+        "category": "CAN YOU HEAR THE MUSIC?",
+        "question": "How many symphonies did Gustav Mahler complete in his lifetime?",
+        "answer": "9",
+        "alternateAnswers": ["nine"]
+      }
+    ]
   }
 ]
