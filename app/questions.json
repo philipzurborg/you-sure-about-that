@@ -2943,5 +2943,29 @@
         "alternateAnswers": ["nine"]
       }
     ]
+  },
+  {
+    "day": 121,
+    "date": "2026-06-20",
+    "questions": [
+      {
+        "category": "PET SOUNDS",
+        "question": "It's the treat your dog might receive in the Starbucks drive-thru.",
+        "answer": "Pup Cup",
+        "alternateAnswers": ["pupcup", "pup-cup", "puppuccino", "pup cup"]
+      },
+      {
+        "category": "KIDS MOVIES",
+        "question": "Billy Crystal plays this loveable creature in Monsters, Inc.",
+        "answer": "Mike Wazowski",
+        "alternateAnswers": ["mike", "wazowski"]
+      },
+      {
+        "category": "LANDMARKS",
+        "question": "This monument was built to commemorate the westward expansion of the United States in the \"Gateway to the West.\"",
+        "answer": "Gateway Arch",
+        "alternateAnswers": ["the arch", "st. louis arch", "saint louis arch", "st louis arch", "arch", "the gateway arch"]
+      }
+    ]
   }
 ]
