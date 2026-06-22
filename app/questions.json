@@ -2967,5 +2967,29 @@
         "alternateAnswers": ["the arch", "st. louis arch", "saint louis arch", "st louis arch", "arch", "the gateway arch"]
       }
     ]
+  },
+  {
+    "day": 122,
+    "date": "2026-06-22",
+    "questions": [
+      {
+        "category": "IN 3D",
+        "question": "What was the first fully CGI feature film?",
+        "answer": "Toy Story",
+        "alternateAnswers": ["toy story 1"]
+      },
+      {
+        "category": "MEASURE ONCE",
+        "question": "How many feet are in a mile?",
+        "answer": "5,280",
+        "alternateAnswers": ["5280", "five thousand two hundred eighty", "five thousand two hundred and eighty"]
+      },
+      {
+        "category": "CUT TWICE",
+        "question": "This is the name for the kitchen tool with a short, narrow blade, usually between 2.5 to 4 inches long, designed for precise, off-the-cutting-board tasks.",
+        "answer": "Paring Knife",
+        "alternateAnswers": ["pairing knife", "paring knives"]
+      }
+    ]
   }
 ]
