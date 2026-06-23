@@ -2991,5 +2991,29 @@
         "alternateAnswers": ["pairing knife", "paring knives"]
       }
     ]
+  },
+  {
+    "day": 123,
+    "date": "2026-06-23",
+    "questions": [
+      {
+        "category": "TV",
+        "question": "This reality show originally began in 2005 as an English celebrity dating show.",
+        "answer": "Love Island",
+        "alternateAnswers": ["celebrity love island"]
+      },
+      {
+        "category": "IN THE SKY",
+        "question": "With its first flight in 2024, Pathfinder-1 is currently the largest flying aircraft in the world. It's one of fewer than 15 of what type of aircraft in the United States?",
+        "answer": "Blimp",
+        "alternateAnswers": ["airship", "air ship", "rigid airship", "blimps"]
+      },
+      {
+        "category": "NFL",
+        "question": "At 297, what QB holds the record for starts in consecutive regular-season games?",
+        "answer": "Brett Favre",
+        "alternateAnswers": ["favre"]
+      }
+    ]
   }
 ]
