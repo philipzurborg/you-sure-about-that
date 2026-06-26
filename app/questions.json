@@ -3063,5 +3063,29 @@
         "alternateAnswers": ["rumble pack", "the rumble pak", "the rumble pack", "rumble"]
       }
     ]
+  },
+  {
+    "day": 126,
+    "date": "2026-06-26",
+    "questions": [
+      {
+        "category": "UP IN THE AIR",
+        "question": "Originating from the Latin word for \"heap\" or \"pile,\" these common, cotton ball-like clouds are frequently referred to as \"fair-weather clouds\" because they typically indicate clear, sunny conditions.",
+        "answer": "Cumulus",
+        "alternateAnswers": ["cumulus clouds"]
+      },
+      {
+        "category": "BENCHWARMERS",
+        "question": "The 1994 MLB strike was ended when what future Obama-nominated Supreme Court Justice issued an injunction against the owners, forcing them to play under the existing rules until a new deal was reached?",
+        "answer": "Sonia Sotomayor",
+        "alternateAnswers": ["sotomayor"]
+      },
+      {
+        "category": "TO THE MOON",
+        "question": "What year did Apollo's Saturn rocket first launch?",
+        "answer": "1961",
+        "alternateAnswers": []
+      }
+    ]
   }
 ]
