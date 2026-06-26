@@ -81,13 +81,16 @@ function levenshtein(a, b) {
   return dp[m][n];
 }
 
-// Accept answers within 1 edit for short words, 2 edits for longer ones
+// Accept answers within 1 edit for short words, 2 edits for longer ones.
+// Numeric answers (years, counts, scores) are never fuzzy-matched — wrong numbers are wrong.
 function tierFuzzy(userAnswer, correctAnswer, alternateAnswers) {
   const nu = normalize(userAnswer);
-  if (nu.length < 4) return null; // don't fuzzy-match very short answers
+  if (nu.length < 4) return null;
+  if (/^\d+$/.test(nu)) return null; // user typed a number — must match exactly
   const candidates = [correctAnswer, ...alternateAnswers].map(normalize);
   for (const candidate of candidates) {
     if (!candidate || candidate.length < 4) continue;
+    if (/^\d+$/.test(candidate)) continue; // numeric candidate — skip fuzzy
     const threshold = Math.max(nu.length, candidate.length) <= 6 ? 1 : 2;
     if (levenshtein(nu, candidate) <= threshold) {
       return { correct: true, method: "fuzzy" };
