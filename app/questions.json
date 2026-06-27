@@ -3087,5 +3087,29 @@
         "alternateAnswers": []
       }
     ]
+  },
+  {
+    "day": 127,
+    "date": "2026-06-27",
+    "questions": [
+      {
+        "category": "SITCOMS",
+        "question": "In 2007, CBS debuted this David Spade sitcom.",
+        "answer": "Rules of Engagement",
+        "alternateAnswers": ["rules of engagement"]
+      },
+      {
+        "category": "OFF BRANDS",
+        "question": "What is the name of Walmart's in-house generic grocery brand?",
+        "answer": "Great Value",
+        "alternateAnswers": []
+      },
+      {
+        "category": "DRINKS UP",
+        "question": "This amaro was invented in Milan, Italy, in 1845 by a self-taught herbalist named Bernardino Branca.",
+        "answer": "Fernet-Branca",
+        "alternateAnswers": ["fernet", "fernet branca"]
+      }
+    ]
   }
 ]
