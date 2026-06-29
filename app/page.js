@@ -96,6 +96,32 @@ function Wordmark({ size = 1 }) {
   );
 }
 
+// ─── Break notice modal ───────────────────────────────────────────────────────
+function BreakNoticeModal({ onClose }) {
+  return (
+    <div style={S.modalOverlay} onClick={onClose}>
+      <div style={S.modal} className="modalIn" onClick={e => e.stopPropagation()}>
+        <div style={S.modalHeader}>
+          <Wordmark size={0.38} />
+        </div>
+
+        <div style={{ ...S.resultBanner, background: "var(--giants)" }} className="popIn">
+          <span style={S.resultIcon}>&#x23F8;</span>
+          <span style={S.resultLabel}>ON BREAK</span>
+        </div>
+
+        <div style={{ fontFamily: "var(--body-font), sans-serif", fontSize: 15, color: "var(--text)", lineHeight: 1.7, textAlign: "center" }}>
+          <em>You Sure About That?</em> is going on break. I will be taking some time away from daily questions to work on other projects. I hope to return with version 2 of <em>You Sure About That?</em> in the future. Thank you for playing — it has been a blast.
+        </div>
+
+        <button style={S.mainBtn} className="mainBtn" onClick={onClose}>
+          Got It &#x2192;
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ─── Rules modal ──────────────────────────────────────────────────────────────
 function RulesModal({ onClose, isOnboarding }) {
   return (
@@ -161,6 +187,7 @@ export default function App() {
   const [checking, setChecking]       = useState(false);
   const [copied, setCopied]           = useState(false);
   const [showInfo, setShowInfo]       = useState(false);
+  const [showBreakNotice, setShowBreakNotice] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(() => {
     try { return !localStorage.getItem(SEEN_KEY); } catch { return true; }
   });
@@ -464,8 +491,9 @@ export default function App() {
     <div style={S.root}>
       <style>{css}</style>
 
-      {showOnboarding && <RulesModal onClose={dismissOnboarding} isOnboarding />}
-      {showInfo && !showOnboarding && <RulesModal onClose={() => setShowInfo(false)} />}
+      {showBreakNotice && <BreakNoticeModal onClose={() => setShowBreakNotice(false)} />}
+      {showOnboarding && !showBreakNotice && <RulesModal onClose={dismissOnboarding} isOnboarding />}
+      {showInfo && !showOnboarding && !showBreakNotice && <RulesModal onClose={() => setShowInfo(false)} />}
 
       <div style={S.container}>
         {/* ── Header ── */}
